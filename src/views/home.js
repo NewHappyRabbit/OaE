@@ -24,6 +24,14 @@ export function homePage(ctx, next) {
             <li>Orcs - units, morphs, upgrades, buildings</li>
             <li>My precious sleep :(</li>
         </ul>
+
+        <h4 class="mt-5">Website related stuff:</h4>
+        <ul class="text-yellow">
+            <li>CDN</li>
+            <li>Design</li>
+            <li>Accessability</li>
+            <li>Light mode :D</li>
+        </ul>
         <p>Please don't be scared by this ugly mess of a website! Design will be coming after all the info is imported from the game.</p>
     `;
 
