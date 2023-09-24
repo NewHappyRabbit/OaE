@@ -1,0 +1,126 @@
+/*!**********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/global.css ***!
+  \**********************************************************************/
+:root {
+	--yellow: #f6c501;
+	--primary-blue: #02bbea;
+	--purple: #c401f5;
+	--green: #4af44b;
+
+	/* From https://www.behance.net/gallery/90125427/WARCRAFT-3-REFORGED-UIUX-DESIGN*/
+	--orange: #e6a51a;
+	--red: #e01a1a;
+	--dark-red: #8b2635;
+	--blue: #2274a5;
+	--dark-purple: #574f7d;
+	--light-blue: #82bdd6;
+	--gray: #bbbbbb;
+	--dark-gray: #070f1a;
+}
+
+@font-face {
+	font-family: Folkard;
+	src: url(66aa40b4f9f80c91b0e8.ttf);
+}
+
+@font-face {
+	font-family: Friz;
+	src: url(dd73f16d645281511b3f.ttf);
+}
+
+body {
+	background-color: var(--dark-gray);
+	color: white;
+	margin: 0px;
+	font-size: 18px;
+	box-sizing: border-box;
+	font-family: "Friz", sans-serif;
+}
+
+.upgradeImage,
+.unitImage,
+.abilityImage {
+	height: 64px;
+	width: 64px;
+}
+
+.ws-nowrap {
+	white-space: nowrap;
+}
+
+.hotkey {
+	color: var(--purple);
+}
+
+.text-yellow,
+td.text-yellow {
+	color: var(--yellow);
+}
+
+.unitInfo a,
+a {
+	color: var(--primary-blue);
+	text-decoration: none;
+}
+
+.text-blue,
+td.text-blue {
+	color: var(--primary-blue);
+}
+
+.text-green,
+td.text-green {
+	color: var(--green);
+}
+
+.text-red,
+td.text-red {
+	color: var(--red);
+}
+
+.text-purple,
+td.text-purple {
+	color: var(--purple);
+}
+
+td.name {
+	font-size: 20px;
+}
+
+td.description h4:first-of-type {
+	margin-top: 12px;
+}
+
+.feed {
+	/* disable text going to next line */
+	white-space: nowrap;
+}
+
+.mainImg {
+	width: 64px;
+}
+
+/* when :target, play little highlight animation */
+@keyframes highlight {
+	0% {
+		background-color: transparent;
+	}
+	50% {
+		background-color: var(--primary-blue);
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+:target > td {
+	animation: highlight 3s ease-in-out;
+}
+
+/* TODO REMOVE THIS LATER AND TEST */
+table td,
+table th {
+	/* Dont allow text to overlow */
+	white-space: nowrap;
+}
+

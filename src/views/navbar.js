@@ -28,6 +28,5 @@ const navBar = () => html`
 `;
 
 export function renderNav() {
-    console.log('here');
     render(navBar(), document.querySelector('nav'));
 }

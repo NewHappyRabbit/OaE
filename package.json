@@ -1,5 +1,5 @@
 {
-	"name": "Oae",
+	"name": "oae",
 	"version": "1.0.0",
 	"dependencies": {
 		"lit": "^2.8.0",
