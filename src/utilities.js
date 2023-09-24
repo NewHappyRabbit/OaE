@@ -1,8 +1,8 @@
 export function markers(string) {
-    // Markers: &link& *blue* ^yellow^ @red@ $green$ %purple%
+    // Markers: &link& *blue* ^yellow^ @red@ $green$ %%purple%%
 
     // Replace markers with span
-    const newString = string.replace(/\^([^^]+)\^/g, '<span class="text-yellow">$1</span>').replace((/@([^@]+)@/g), '<span class="text-red">$1</span>').replace(/\$([^\$]+)\$/g, '<span class="text-green">$1</span>').replace(/%([^%]+)%/g, '<span class="text-purple">$1</span>').replace(/\*([^*]+)\*/g, '<span class="text-blue">$1</span>');
+    const newString = string.replace(/\^([^^]+)\^/g, '<span class="text-yellow">$1</span>').replace((/@([^@]+)@/g), '<span class="text-red">$1</span>').replace(/\$([^\$]+)\$/g, '<span class="text-green">$1</span>').replace(/\*([^*]+)\*/g, '<span class="text-blue">$1</span>').replace(/%%([^%]+)%%/g, '<span class="text-purple">$1</span>');
 
     function replacer(match, offset) {
         const link = rmvSpc(offset);
@@ -20,4 +20,17 @@ export function markers(string) {
 
 export function rmvSpc(string) {
     return string.replaceAll(' ', '');
-}
+}/* 
+
+export function scrollToView() {
+    const hash = window.location.hash;
+
+    if (!hash) return;
+
+    // Remove # from hash
+    const element = document.getElementById(hash.replace('#', ''));
+
+    if (!element) return;
+
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+} */

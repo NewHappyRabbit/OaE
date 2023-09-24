@@ -4,8 +4,9 @@ import { container } from '../app';
 import { markers, rmvSpc } from '../utilities';
 import { allUnits, treeOfWarUpgrades } from './buildings';
 
-export function unitPage(ctx) {
+export function unitPage(ctx, next) {
     const selectedUnitName = ctx.params.name;
+    const selectedUnit = allUnits.find(unit => rmvSpc(unit.name) === selectedUnitName);
 
     const unitAbilitiesTable = (abilities) => html`
         <div class="mb-5">
@@ -70,23 +71,29 @@ export function unitPage(ctx) {
             <img class="mainImg" src="${unit.imgR}" class="unitImage" title="Reforged Image"/>
             <h1 class="text-blue">${unit.name} ${unit.hotkey ? html`<span>(<span class="hotkey">${unit.hotkey}</span>)</span>` : ""}</h1>
         </div>
-        <div class="d-flex flex-row gap-5 mb-5">
-            <div class="border border-warning">
+        <div class="d-flex flex-row align-items-start gap-5 mb-5">
+            <div class="statsContainer border border-warning">
                 <h4 class="text-yellow text-center">Stats</h4>
                 <table class="ws-nowrap table table-striped table-hover w-auto mb-0" data-bs-theme="dark">
                     <tbody>
-                        <tr>
-                            <th>Gold cost</th>
-                            <td class="text-center"><span class="text-yellow">${unit.gold}g</span></td>
-                        </tr>
-                        <tr>
-                            <th>Supply cost</th>
-                            <td class="text-center">${unit.supply}</td>
-                        </tr>
-                        <tr>
-                            <th>Feed</th>
-                            <td class="text-center"><span class="text-danger">${unit.feed}</span></td>
-                        </tr>
+                        ${unit.gold ? html`
+                            <tr>
+                                <th>Gold cost</th>
+                                <td class="text-center"><span class="text-yellow">${unit.gold + "g"}</span></td>
+                            </tr>
+                        ` : ""}
+                        ${unit.supply ? html`
+                            <tr>
+                                <th>Supply cost</th>
+                                <td class="text-center">${unit.supply}</td>
+                            </tr>
+                        ` : ""}
+                        ${unit.feed ? html`
+                            <tr>
+                                <th>Feed</th>
+                                <td class="text-center"><span class="text-danger">${unit.feed}</span></td>
+                            </tr>
+                        ` : ""}
                         ${unit.stats ? Object.entries(unit.stats).map(([name, value] = entry) => html`
                             <tr>
                                 <th>${name}</th>
@@ -124,20 +131,21 @@ export function unitPage(ctx) {
     `;
 
     const allTemplates = () => html`
-        <div class="p-3" id="unitsContainer">
+        <div id="unitsContainer">
             <h3>Units</h3>
             <p>Select unit to view information about it.</p>
             <div class="d-flex flex-wrap gap-5 p-2 mb-5">
-                ${Object.values(allUnits).map(unit => html`
+                ${allUnits.map(unit => html`
                     <a href=${`/units/${rmvSpc(unit.name)}`} class="border-0 bg-transparent p-0 d-flex flex-column align-items-center fw-bold text-blue">
                         <img src="${unit.img}" class="unitImage" title=${unit.name}>${unit.name}
                     </a>
                 `)}
             </div>
 
-            ${selectedUnitName ? unitTemplate(allUnits[selectedUnitName]) : ""}
+            ${selectedUnitName ? unitTemplate(selectedUnit) : ""}
         </div>
     `;
 
     render(allTemplates(), container);
+    next();
 }

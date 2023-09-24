@@ -28,7 +28,6 @@
 body {
 	background-color: var(--dark-gray);
 	color: white;
-	padding: 12px;
 	margin: 0px;
 	font-size: 18px;
 	box-sizing: border-box;
@@ -113,4 +112,11 @@ td.description h4:first-of-type {
 
 :target > td {
 	animation: highlight 3s ease-in-out;
+}
+
+/* TODO REMOVE THIS LATER AND TEST */
+table td,
+table th {
+	/* Dont allow text to overlow */
+	white-space: nowrap;
 }
