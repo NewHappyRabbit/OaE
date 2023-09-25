@@ -2,7 +2,7 @@ import { html, render } from 'lit-html'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { container } from '../app';
 import { markers, rmvSpc } from '../utilities';
-import { allUnits, treeOfWarUpgrades } from './buildings';
+import { allUnits, treeOfLifeUpgrades, treeOfWarUpgrades } from './buildings';
 
 export function unitPage(ctx, next) {
     const selectedUnitName = ctx.params.name;
@@ -11,58 +11,70 @@ export function unitPage(ctx, next) {
     const unitAbilitiesTable = (abilities) => html`
         <div class="mb-5">
             <h4 class="text-yellow">Abilities</h4>
-            <table class="table table-striped table-hover w-auto" data-bs-theme="dark">
+            <div class="tableWrapper customTableWrapper">
+                <div class="customTopBorder"></div>
+                <div class="customRightBorder"></div>
+                <div class="customBottomBorder"></div>
+                <div class="customLeftBorder"></div>
+                <div class="customTopLeftBorder"></div>
+                <div class="customTopRightBorder"></div>
+                <div class="customBottomLeftBorder"></div>
+                <div class="customBottomRightBorder"></div>
+                <table class="table table-hover w-auto customTable" data-bs-theme="dark">
+                    <thead>
+                        ${console.log(abilities.some(ability => ability.hasOwnProperty('cooldown')))}
+                        <th class="text-center">Classic</th>
+                        <th class="text-center">Reforged</th>
+                        <th class="text-center">Name</th>
+                        ${abilities.some(ability => ability.hotkey) ? html`<th class="text-center">Hotkey</th>` : ""}
+                        ${abilities.some(ability => ability.hasOwnProperty('mana')) ? html`<th class="text-center">Mana</th>` : ""}
+                        ${abilities.some(ability => ability.hasOwnProperty('cooldown')) ? html`<th class="text-center">Cooldown</th>` : ""}
+                        ${abilities.some(ability => ability.range) ? html`<th class="text-center">Range</th>` : ""}
+                        <th>Description</th>
+                    </thead>
+                    <tbody>
+                        ${abilities.map(ability => {
+        return html`
+                            <tr id="${rmvSpc(ability.name)}">
+                                <td class="text-center"><img src="${ability.img}" class="abilityImage"></td>
+                                <td class="text-center"><img src="${ability.imgR}" class="abilityImage"></td>
+                                <td class="abilityName name text-center">${unsafeHTML(markers(ability.name))}</td>
+                                ${abilities.some(ability => ability.hotkey) ? ability.hotkey ? html`<td class="text-center">(${ability.hotkey})</td>` : ability.passive === true ? html`<td><span class="text-purple text-center">Passive</span></td>` : html`<td></td>` : ""}
+                                ${abilities.some(ability => ability.mana) ? ability.mana ? html`<td class="text-blue text-center">${ability.mana}</td>` : html`<td></td>` : ""}
+                                ${abilities.some(ability => ability.cooldown) ? ability.cooldown ? html`<td class="text-center">${ability.cooldown}</td>` : html`<td></td>` : ""}
+                                ${abilities.some(ability => ability.range) ? ability.range ? html`<td class="text-center">${ability.range}</td>` : html`<td></td>` : ""}
+                                <td class="abilityDescription description">${unsafeHTML(markers(ability.description))}</td>
+                            </tr>`})}
+                            </tbody>
+                </table>
+            </div>
+        </div>
+    `;
+
+    const unitUpgradesTable = (upgrades, building) => html`
+        <h4 class="text-yellow mt-3">Upgrades from <a href="/buildings/${rmvSpc(building)}">${building}</a></h4>
+        <div class="tableWrapper">
+            <table class="table table-striped table-hover mb-0 w-auto" data-bs-theme="dark">
                 <thead>
                     <th class="text-center">Classic</th>
                     <th class="text-center">Reforged</th>
                     <th class="text-center">Name</th>
-                    <th class="text-center">Hotkey</th>
-                    <th class="text-center">Mana</th>
-                    <th class="text-center">Cooldown</th>
+                    <th class="text-center">Gold cost</th>
                     <th>Description</th>
                 </thead>
                 <tbody>
-                    ${abilities.map(ability => {
+                    ${upgrades.map(upgrade => {
         return html`
-                        <tr id="${rmvSpc(ability.name)}">
-                            <td class="text-center"><img src="${ability.img}" class="abilityImage"></td>
-                            <td class="text-center"><img src="${ability.imgR}" class="abilityImage"></td>
-                            <td class="abilityName name text-center">${unsafeHTML(markers(ability.name))}</td>
-                            <td class="abilityHotkey hotkey text-center">
-                                ${ability.hotkey ? `(${ability.hotkey})` : ""}
-                                ${ability.passive === true ? html`<span class="text-purple">Passive</span>` : ""}
-                            </td>
-                            <td class="abilityMana mana text-center text-blue">${ability.mana || ""}</td>
-                            <td class="abilityCooldown cooldown text-center">${ability.cooldown ? `${ability.cooldown}s` : ""}</td>
-                            <td class="abilityDescription description">${unsafeHTML(markers(ability.description))}</td>
+                        <tr id=${rmvSpc(upgrade.name)}>
+                            <td class="text-center"><img src="${upgrade.img}" class="abilityImage"></td>
+                            <td class="text-center"><img src="${upgrade.imgR}" class="abilityImage"></td>
+                            <td class="text-center">${unsafeHTML(markers(upgrade.name))}</td>
+                            <td class="text-center"><span class="text-yellow">${upgrade.gold}g</span></td>
+                            <td>${unsafeHTML(markers(upgrade.description))}</td>
                         </tr>`})}
                         </tbody>
             </table>
         </div>
-    `;
-
-    const unitUpgradesTable = (upgrades) => html`
-        <h4 class="text-yellow mt-3">Upgrades from <a href="/buildings/TreeOfWar">Tree Of War</a></h4>
-        <table class="table table-striped table-hover mb-0 w-auto" data-bs-theme="dark">
-            <thead>
-                <th class="text-center">Classic</th>
-                <th class="text-center">Reforged</th>
-                <th class="text-center">Name</th>
-                <th class="text-center">Gold cost</th>
-                <th>Description</th>
-            </thead>
-            <tbody>
-                ${upgrades.map(upgrade => {
-        return html`
-                    <tr id=${rmvSpc(upgrade.name)}>
-                        <td class="text-center"><img src="${upgrade.img}" class="abilityImage"></td>
-                        <td class="text-center"><img src="${upgrade.imgR}" class="abilityImage"></td>
-                        <td class="text-center">${unsafeHTML(markers(upgrade.name))}</td>
-                        <td class="text-center"><span class="text-yellow">${upgrade.gold}g</span></td>
-                        <td>${unsafeHTML(markers(upgrade.description))}</td>
-                    </tr>`})}
-                    </tbody>
-        </table>
     `;
 
     const unitTemplate = (unit) => html`
@@ -72,36 +84,38 @@ export function unitPage(ctx, next) {
             <h1 class="text-blue">${unit.name} ${unit.hotkey ? html`<span>(<span class="hotkey">${unit.hotkey}</span>)</span>` : ""}</h1>
         </div>
         <div class="d-flex flex-row align-items-start gap-5 mb-5">
-            <div class="statsContainer border border-warning">
+            <div class="statsContainer wideTable border border-warning">
                 <h4 class="text-yellow text-center">Stats</h4>
-                <table class="ws-nowrap table table-striped table-hover w-auto mb-0" data-bs-theme="dark">
-                    <tbody>
-                        ${unit.gold ? html`
-                            <tr>
-                                <th>Gold cost</th>
-                                <td class="text-center"><span class="text-yellow">${unit.gold + "g"}</span></td>
-                            </tr>
-                        ` : ""}
-                        ${unit.supply ? html`
-                            <tr>
-                                <th>Supply cost</th>
-                                <td class="text-center">${unit.supply}</td>
-                            </tr>
-                        ` : ""}
-                        ${unit.feed ? html`
-                            <tr>
-                                <th>Feed</th>
-                                <td class="text-center"><span class="text-danger">${unit.feed}</span></td>
-                            </tr>
-                        ` : ""}
-                        ${unit.stats ? Object.entries(unit.stats).map(([name, value] = entry) => html`
-                            <tr>
-                                <th>${name}</th>
-                                <td class="text-center">${value}</td>
-                            </tr>
-                        `) : ""}
-                    </tbody>
-                </table>
+                <div class="tableWrapper">
+                    <table class="table table-striped table-hover w-auto mb-0" data-bs-theme="dark">
+                        <tbody>
+                            ${unit.gold ? html`
+                                <tr>
+                                    <th>Gold cost</th>
+                                    <td class="text-center"><span class="text-yellow">${unit.gold + "g"}</span></td>
+                                </tr>
+                            ` : ""}
+                            ${unit.supply ? html`
+                                <tr>
+                                    <th>Supply cost</th>
+                                    <td class="text-center">${unit.supply}</td>
+                                </tr>
+                            ` : ""}
+                            ${unit.feed ? html`
+                                <tr>
+                                    <th>Feed</th>
+                                    <td class="text-center"><span class="text-danger">${unit.feed}</span></td>
+                                </tr>
+                            ` : ""}
+                            ${unit.stats ? Object.entries(unit.stats).map(([name, value] = entry) => html`
+                                <tr>
+                                    <th>${name}</th>
+                                    <td class="text-center">${value}</td>
+                                </tr>
+                            `) : ""}
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div>
                 <div class="description mb-3">
@@ -126,8 +140,9 @@ export function unitPage(ctx, next) {
             </div>
         </div>
         ${unit.abilities ? unitAbilitiesTable(unit.abilities) : ""}
-        ${treeOfWarUpgrades[unit.name] ? unitUpgradesTable(treeOfWarUpgrades[unit.name]) : ""}
-        ${unit.additionalUpgrades ? html`<p class="fw-bold text-green fs-5 mt-5">This unit can get additional upgrades for health, armor, etc. from the <a href="/buildings/TreeOfTechnology">Tree Of Technology</a>!</p>` : ""}
+        ${treeOfWarUpgrades[unit.name] ? unitUpgradesTable(treeOfWarUpgrades[unit.name], 'Tree Of War') : ""}
+        ${rmvSpc(unit.name).toLowerCase() == 'elvenworker' ? unitUpgradesTable(treeOfLifeUpgrades, 'Tree Of Life') : ""}
+        ${unit.treeOfTechnologyUpgrades ? html`<p class="fw-bold text-green fs-5 mt-5">This unit can get additional upgrades for health, armor, etc. from the <a href="/buildings/TreeOfTechnology">Tree Of Technology</a>!</p>` : ""}
     `;
 
     const allTemplates = () => html`

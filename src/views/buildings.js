@@ -3,6 +3,99 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { container } from '../app';
 import { markers, rmvSpc } from '../utilities';
 
+const spellBookAbilities = [
+    {
+        img: "/images/spellbook/regrowth.webp",
+        imgR: "/images/spellbook/regrowthR.webp",
+        name: "Regrowth",
+        hotkey: "Q",
+        mana: "40/40/40",
+        cooldown: "20/15/10",
+        description: "<p>^Level 1^: Restore up to ^150^ life over ^20^ seconds to an allied structure. The healing cannot exceed ^100%^ of the targets max health. %%(Requires &/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Restore up to ^225^ life over ^20^ seconds to an allied structure. The building also gains ^5^ armor over ^15^ seconds. The healing cannot exceed ^150%^ of the targets max health. %%(Requires &/buildings/treeOfTechnology#Magic& *2*)%%</p><p>^Level 3^: Restore up to ^300^ life over ^20^ seconds to an allied structure. The building also gains ^5^ armor over ^10^ seconds. The healing cannot exceed ^200%^ of the targets max health. If the target is killed by a hostile unit while the armor bonus is maxed, then the area will be covered in vines for ^3^ seconds. Enemies that step on the vines are snared until they expire. %%(Requires &/buildings/treeOfTechnology#Magic& *4*)%%</p>"
+    },
+    {
+        img: "/images/spellbook/watchingOwl.webp",
+        imgR: "/images/spellbook/watchingOwlR.webp",
+        name: "Watching Owl",
+        hotkey: "W",
+        mana: "40/35/30",
+        cooldown: "60/45/30",
+        description: "<p>^Level 1^: Place a watching owl at the selected point that gives vision over ^500^ range for ^60^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Place a watching owl at the selected point that gives vision over ^700^ range for ^90^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *3*)%%</p><p>^Level 3^: Place a watching owl at the selected point that gives vision over ^900^ range for ^120^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *5*)%%</p>"
+    },
+    {
+        img: "/images/spellbook/reverse.webp",
+        imgR: "/images/spellbook/reverseR.webp",
+        name: "Reverse",
+        hotkey: "E",
+        mana: "20/20/20",
+        cooldown: "60/50/40",
+        description: "<p>^Level 1^: Activate to memorize your current position for ^5^ seconds. While active, you can reactivate this ability for ^10^ mana to return to this location. %%(Requires &/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Activate to memorize your movement patterns for the next ^10^ seconds. You can reactivate this ability for ^7^ mana to teleport back ^3^ seconds in time. You can teleport up to ^4^ times. %%(Requires &/buildings/treeOfTechnology#Magic& *2*)%%</p><p>^Level 3^: Activate to memorize your movement patterns for the next ^15^ seconds. You can reactivate this ability for ^5^ mana to teleport back ^3^ seconds in time. You can teleport up to ^8^ times. %%(Requires &/buildings/treeOfTechnology#Magic& *3*)%%</p>"
+    },
+    {
+        img: "/images/spellbook/restore.webp",
+        imgR: "/images/spellbook/restoreR.webp",
+        name: "Restore",
+        hotkey: "R",
+        range: "200/300/400",
+        cooldown: "10/8/6",
+        description: "<p>^Level 1^: Heal a friendly unit for ^1^ life per point of mana until the target is fully healed or you run out of mana. %%(Requires &/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Heal a friendly unit for ^1.5^ life per point of mana until the target is fully healed or you run out of mana. The cooldown is reduced to ^4^ seconds when used on a non-worker target. %%(Requires &/buildings/treeOfTechnology#Magic& *2*)%%</p><p>^Level 3^: Heal a friendly unit for ^21.5^ life per point of mana until the target is fully healed or you run out of mana. The cooldown is reduced to ^2^ seconds when used on a non-worker target. %%(Requires &/buildings/treeOfTechnology#Magic& *3*)%%</p>"
+    },
+    {
+        img: "/images/spellbook/freeze.webp",
+        imgR: "/images/spellbook/freezeR.webp",
+        name: "Freeze",
+        hotkey: "A",
+        mana: "20/20/20",
+        cooldown: "60/45/30",
+        description: "<p>^Level 1^: Silence the target and reduce move speed by ^90%^ for ^1^ second. %%(Requires &/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Deal ^100^ damage and silence the target for ^1^ second. Movement speed is reduced by ^90%^, which fades away over ^2^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *2*)%%</p><p>^Level 3^: Deal ^200^ damage and silence the target for ^1^ second. Movement speed is reduced by ^90%^, which fades away over ^3^ seconds. If the target has less than ^30%^ health, your remaining mana is consumed to deal ^10^ damage per point of mana over over ^3^ seconds. This effect stacks. %%(Requires &/buildings/treeOfTechnology#Magic& *5*)%%</p>"
+    },
+    {
+        img: "/images/spellbook/recycle.webp",
+        imgR: "/images/spellbook/recycleR.webp",
+        name: "Recycle",
+        hotkey: "S",
+        mana: "25/15/10",
+        cooldown: "", //TODO Check if it has
+        description: "<p>^Level 1^: Select a player owned unit or structure to sell. The target takes damage over time until it's killed and up to ^50%^ of the total building cost is returned over ^5^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Select a player owned unit or structure to sell. The target takes damage over time until it's killed and up to ^75%^ of the total building cost is returned over ^4^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *3*)%%</p><p>^Level 13^: Select a player owned unit or structure to sell. The target takes damage over time until it's killed and up to ^100%^ of the total building cost is returned over ^3^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *5*)%%</p>" //TODO Check if unit gives refund
+    },
+    {
+        img: "/images/spellbook/divineShield.png",
+        imgR: "/images/spellbook/divineShieldR.png",
+        name: "Divine Shield",
+        hotkey: "D",
+        mana: "50/50/50",
+        cooldown: "120/90/60",
+        description: "<p>^Level 1^: Activate to make the user invulnerable for ^2^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Activate to make the user invulnerable for ^2.5^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *3*)%%</p><p>^Level 3^: Activate to make the user invulnerable for ^3^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *4*)%%</p>"
+    },
+    {
+        img: "/images/spellbook/possess.webp",
+        imgR: "/images/spellbook/possessR.webp",
+        name: "Possess",
+        hotkey: "F",
+        mana: "40/40/40",
+        cooldown: "75/60/45",
+        description: "<p>^Level 1^: Possess a friendly unit and gradually increase it's move speed by ^12%^ and restore ^10^ mana to the caster and target over ^6^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Possess a friendly unit and gradually increase it's move speed by ^21%^ and restore ^15^ mana to the caster and target over ^8^ seconds. You can also possess a hostile unit to gradually reduce it's move speed by ^15%^ and remove ^15^ mana from the target over ^8^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *3*)%%</p><p>^Level 3^: Possess a friendly unit and gradually increase it's move speed by ^30%^ and restore ^20^ mana to the caster and target over ^10^ seconds. You can also possess a hostile unit to gradually reduce it's move speed by ^30%^ and remove ^20^ mana from the target over ^10^ seconds. If the effect remains for the full duration the target is silenced and unable to hit for ^5^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *5*)%%</p>"
+    },
+    {
+        img: "/images/spellbook/refill.webp",
+        imgR: "/images/spellbook/refillR.webp",
+        name: "Refill",
+        hotkey: "Z",
+        mana: "10/8/3 per 1% gold",
+        cooldown: "25/10/4 per 1% gold",
+        description: "<p>^Level 1^: Select a neutral &/buildings/Gold Mine& and restore up to ^5%^ of the targets original gold value. You cannot restore more than ^20%^ gold per mine. %%(Requires &/buildings/treeOfTechnology#Magic& *2*)%%</p><p>^Level 2^: Select a neutral &/buildings/Gold Mine& and restore up to ^10%^ of the targets original gold value. You cannot restore more than ^20%^ gold per mine. %%(Requires &/buildings/treeOfTechnology#Magic& *3*)%%</p><p>^Level 3^: Select a neutral &/buildings/Gold Mine& and restore up to ^20%^ of the targets original gold value. You cannot restore more than ^20%^ gold per mine. %%(Requires &/buildings/treeOfTechnology#Magic& *5*)%%</p>"
+    },
+    {
+        img: "/images/spellbook/fade.webp",
+        imgR: "/images/spellbook/fadeR.webp",
+        name: "Fade",
+        hotkey: "V",
+        mana: "50/50/50",
+        cooldown: "90/75/60",
+        description: "<p>^Level 1^: Activate to disable unit collision and reduce movement speed by ^40%^ for ^3^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Activate to disable unit collision and reduce movement speed by ^35%^ for ^5^ seconds. After ^2^ seconds delay, the user becomes invisible. %%(Requires &/buildings/treeOfTechnology#Magic& *3*)%%</p><p>^Level 3^: Activate to ^instantly^ become invisible, disable unit collision and reduce movement speed by ^30%^ for ^7^ seconds. %%(Requires &/buildings/treeOfTechnology#Magic& *4*)%%</p>"
+    }
+];
+
 export const allUnits = [
     {
         img: "/images/units/elvenWorker/elvenWorker.webp",
@@ -10,16 +103,14 @@ export const allUnits = [
         name: "Elven Worker",
         team: "elves",
         description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.", //TODO
-        additionalUpgrades: true,
+        treeOfTechnologyUpgrades: true,
         stats: {
             "Damage": 80,
             "Move speed": 250,
             "Health": 20,
             //TODO
         },
-        abilities: [
-            //TODO
-        ],
+        abilities: spellBookAbilities
     },
     {
         img: "/images/units/owlScout/owlScout.webp",
@@ -38,11 +129,10 @@ export const allUnits = [
         },
         transformsTo: [
             "Hippogryph",
-            "Hippogryph Rider"
         ],
         abilities: [
             {
-                img: "/images/units/owlScout/abilities/scout.webp",
+                img: "/images/units/owlScout/abilities/scout.webp", // TODO Change icon, since its a passive icon
                 imgR: "/images/units/owlScout/abilities/scoutR.webp",
                 name: "Scout",
                 hotkey: "C",
@@ -75,7 +165,7 @@ export const allUnits = [
         gold: 20,
         supply: 2,
         feed: "8-16",
-        additionalUpgrades: true,
+        treeOfTechnologyUpgrades: true,
         description: "<p>^Requires &/buildings/treeOfTechnology#Architecture& *1* upgrade to train.^</p><p>A ranged attacker with low health and damage. Archers are best used as a support unit to increase the damage output of a base. Put your archers behind upgraded blockers and enable hold position to prevent them from chasing the enemy.</p>",
         transformsTo: [
             "Hippogryph Rider"
@@ -106,7 +196,7 @@ export const allUnits = [
         gold: 30,
         supply: 3,
         feed: "12-24",
-        additionalUpgrades: true,
+        treeOfTechnologyUpgrades: true,
         description: "<p>^Requires &#Sprout& upgrade to train.^</p><p>The Ent is a slow and durable melee attacker that can be used to setup kills, but it is not strong enough to fight the enemy head-on. It is most effective when paired with a reliable damage source, but can be dangerous in large numbers.</p>",
         transformsTo: [
             "Ancient"
@@ -153,7 +243,7 @@ export const allUnits = [
         gold: 60,
         supply: 3,
         feed: "24-48",
-        additionalUpgrades: true,
+        treeOfTechnologyUpgrades: true,
         description: "^Requires &#Druid Training 1& upgrade.<p>You can only build one of this unit.</p>^<p>A spell-caster with powerful offensive and supportive abilities. The druid can be used to setup kills, to weaken the enemy or to shut-down power plays.</p>",
         stats: {
             "Attack Damage": 42,
@@ -225,8 +315,9 @@ export const allUnits = [
         imgR: "/images/units/hippogryph/hippogryphR.webp",
         name: "Hippogryph",
         team: "elves",
-        description: "<p>@This unit is not trainable!@</p><p>$Morphs from &/units/Owl Scout&.$</p>The hippogryph is a ferocious flying predator that weakens the target by reducing its move speed.They are most effective when used in large packs to chase down injured foes or to kill isolated enemies.",
+        description: "<p>@This unit is not trainable!@</p><p>$Morphs from &/units/Owl Scout&.$</p>The hippogryph is a ferocious flying predator that weakens the target by reducing its move speed. They are most effective when used in large packs to chase down injured foes or to kill isolated enemies.",
         feed: "16-32",
+        treeOfTechnologyUpgrades: true,
         stats: {
             "Attack Damage": 4,
             "Attack Speed": 1.0,
@@ -234,12 +325,17 @@ export const allUnits = [
             "Move speed": 300,
             "Health": 50
         },
+        transformsTo: [
+            "Owl Scout",
+            "Hippogryph Rider"
+        ],
         abilities: [
             {
                 img: "/images/units/hippogryph/abilities/deepWounds.webp",
                 imgR: "/images/units/hippogryph/abilities/deepWoundsR.webp",
                 name: "Deep Wounds",
                 description: "Attacks deal ^100%^ extra damage as true damage to orcs and reduce the targets move speed by ^2%^ for ^4^ seconds. The slow is stackable, but are limited to one stack per unit.",
+                passive: true,
             },
             {
                 img: "/images/units/owlScout/owlScout.webp",
@@ -272,8 +368,43 @@ export const allUnits = [
             "Move speed": 300,
             "Health": 40
         },
-    }
-]; // TODO ADD Ancient
+    },
+    {
+        img: "/images/units/ancient/ancient.webp",
+        imgR: "/images/units/ancient/ancientR.webp",
+        name: "Ancient",
+        team: "elves",
+        feed: "", //TODO
+        description: "<p>@This unit is not trainable!@</p><p>$Morphs from &/units/Ent&.$</p><p>The &/units/Ancient& is larger than the &/units/Ent&, making it the perfect unit to trap your enemies. He is also slower and cannot &/units/Ent#Burrow&.</p>",
+        transformsTo: [
+            "Ent"
+        ],
+        stats: {
+            "Attack Damage": 18,
+            "Attack Speed": 2.0,
+            "Attack Range": 128,
+            "Move speed": 190, // TODO CHANGE
+            "Health": 50
+        },
+        abilities: [
+            {
+                img: "/images/units/ent/ent.webp",
+                imgR: "/images/units/ent/entR.webp",
+                name: "Transform to &/units/Ent&",
+                hotkey: "Q",
+                description: "Transform the &/units/Ancient& into an &/units/Ent&.",
+                cooldown: 20
+            },
+            {
+                img: "/images/units/ent/abilities/wrath.png",
+                imgR: "/images/units/ent/abilities/wrath.png",
+                name: "Wrath",
+                hotkey: "E",
+                description: "Sacrifice the caster to release a projectile that travels in a straight line towards the selected direction. If the projectile collides with a hostile ground unit it will explode, dealing ^50^ to ^200^ damage to the target over ^6^ seconds. The projectile deals more damage the further it travels.<p>@The projectile is destroyed without any effect if it collides with a cliff or neutral object.@</p>",
+            },
+        ]
+    },
+];
 
 export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
     "Owl Scout": [
@@ -282,7 +413,6 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/upgrades/treeOfWar/owlSpecialistR.webp",
             name: "Owl Specialist 1",
             hotkey: "A",
-            from: "Tree Of War",
             description: `&/units/Owl Scout& <ul><li>Vision range: 600 -> ^750^ (^+150^)</li><li>Health: 40 -> ^60^ (^+20^)</li><li>Unlocks &/units/OwlScout#Night Vision& (passive) - reveal invisible units within 600 range.</li></ul>`,
             gold: 50
         },
@@ -291,7 +421,6 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/upgrades/treeOfWar/owlSpecialistR.webp",
             name: "Owl Specialist 2",
             hotkey: "A",
-            from: "Tree Of War",
             description: `&/units/Owl Scout& <ul><li>Vision range: 750 -> ^900^ (^+150^)</li><li>Move speed: 325 -> ^406.25^ (^+25%^)</li></ul>&/units/Owl Scout#Scout& ability<ul><li>Duration: 10 -> ^15^ seconds (^+5 seconds^)</li><li>Cooldown: 75 -> ^45^ seconds (^-30 seconds^)</li></ul>`,
             gold: 125
         },
@@ -300,7 +429,6 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/units/hippogryph/hippogryphR.webp",
             name: "Bird Training 1",
             hotkey: "Z",
-            from: "Tree Of War",
             description: "Allow the &/units/Owl Scout& to morph into a &/units/Hippogryph&.",
             gold: 300
         },
@@ -309,7 +437,6 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/units/hippogryphRider/hippogryphRiderR.webp",
             name: "Bird Training 2",
             hotkey: "Z",
-            from: "Tree Of War",
             description: "Allow the &/units/Archer& to mount a &/units/Hippogryph&, creating a &/units/Hippogryph Rider&.",
             gold: 200
         }
@@ -3415,7 +3542,7 @@ const treeOfTechnologyUpgrades = [
     }
 ]
 
-const treeOfLifeUpgrades = [
+export const treeOfLifeUpgrades = [
     {
         img: "/images/upgrades/treeOfLife/regeneration.webp",
         imgR: "/images/upgrades/treeOfLife/regenerationR.webp",
@@ -3428,28 +3555,28 @@ const treeOfLifeUpgrades = [
         imgR: "/images/upgrades/treeOfLife/wildGrowthR.webp",
         name: "Wild Growth",
         hotkey: "W",
-        description: "Allows you to build structures without a #Gold Mine#."
+        description: "Allows you to build structures without a &/buildings/Gold Mine&."
     },
     {
         img: "/images/upgrades/treeOfLife/techCenter.webp",
         imgR: "/images/upgrades/treeOfLife/techCenterR.webp",
         name: "Tech Center",
         hotkey: "E",
-        description: "Replace the #Tree Of Technology# with the #Tech Center#.<br>The #Tech Center# has ^2x2^ size and is built ^+33%^ faster.<br><span class='text-danger'>All player owned #Tree Of Technology# are destroyed and refunded when you choose this talent.</span>"
+        description: "<p>Replace the &/buildings/Tree Of Technology& with the &/buildings/Tech Center&.</p><p>The &/buildings/Tech Center& has ^2x2^ size and is built ^+33%^ faster.</p><p class='text-danger'>All player owned &/buildings/Tree Of Technology& are destroyed and refunded when you choose this talent.</p>"
     },
     {
         img: "/images/upgrades/treeOfLife/barracks.webp",
         imgR: "/images/upgrades/treeOfLife/barracksR.webp",
         name: "Barracks",
         hotkey: "R",
-        description: "Replace the #Tree Of War# with the #Barracks#.<br>The #Barracks# has ^2x2^ size and is built ^+33%^ faster.<br><span class='text-danger'>All player owned #Tree Of War# are destroyed and refunded when you choose this talent.</span>"
+        description: "<p>Replace the &/buildings/Tree Of War& with the &/buildings/Barracks&.</p><p>The &/buildings/Barracks& has ^2x2^ size and is built ^+33%^ faster.</p><p class='text-danger'>All player owned &/buildings/Tree Of War& are destroyed and refunded when you choose this talent.</p>"
     },
     {
         img: "/images/upgrades/treeOfLife/persistence.webp",
         imgR: "/images/upgrades/treeOfLife/persistenceR.webp",
         name: "Persistence",
         hotkey: "A",
-        description: "Your next revive is free and without death penalty (doesn't take a life).<br><span class='text-danger'>If you are dead when you select this talent, then it takes effect immediately but the charge is consumed.</span>"
+        description: "<p>Your next revive is free and without death penalty (doesn't take a life).</p><p class='text-danger'>If you are dead when you select this talent, then it takes effect immediately but the charge is consumed.</p>"
     },
     {
         img: "/images/upgrades/treeOfLife/savior.webp",
@@ -3463,36 +3590,39 @@ const treeOfLifeUpgrades = [
         imgR: "/images/upgrades/treeOfLife/trickeryR.webp",
         name: "Trickery",
         hotkey: "D",
-        description: "Reduce the &/units/Elven Worker& abilities cooldown by ^-15%^.<br>You also respawn with ^50%^ of your maximum mana when returning to the map after a resurection."
+        description: "<p>Reduce the &/units/Elven Worker& abilities cooldown by ^-15%^.</p><p>You also respawn with ^50%^ of your maximum mana when returning to the map after a resurrection.</p>"
     },
     {
         img: "/images/upgrades/treeOfLife/naturalBond.webp",
         imgR: "/images/upgrades/treeOfLife/naturalBondR.webp",
         name: "Natural Bond",
         hotkey: "F",
-        description: "Reduce resurection time by ^-50%^.<br>Spawn a free #Owl Scout# when you return to the map after resurrecting."
+        description: "<p>Reduce resurrection time by ^-50%^.</p><p>Spawn a free &/units/Owl Scout& when you return to the map after resurrecting.</p>"
     },
     {
         img: "/images/upgrades/treeOfLife/shatter.webp",
         imgR: "/images/upgrades/treeOfLife/shatterR.webp",
         name: "Shatter",
         hotkey: "Z",
-        description: "The &/unitsElven Worker& deals ^+1^ additional damage per hit to destructible objects."
+        description: "The &/units/Elven Worker& deals ^+1^ additional damage per hit to destructible objects."
     },
     {
-        img: "/images/upgrades/treeOfLife/resurrection.webp", //TODO ADD FROM GAME
-        imgR: "/images/upgrades/treeOfLife/resurrection.webp", //TODO ADD FROM GAME
+        img: "/images/upgrades/treeOfLife/resurrection.png",
+        imgR: "/images/upgrades/treeOfLife/resurrection.png",
         name: "Resurrection",
         hotkey: "V",
-        description: "Revive your &/units/Elven Worker& for 0 gold after 20 seconds." //TODO ADD FROM GAME
+        description: "Resurrect your &/units/Elven Worker& for 0/// gold after 20/// seconds." //TODO ADD FROM GAME
     }
 ];
 
-const spellBook = [
-    //TODO
-]
-
 const buildings = [
+    {
+        name: "Spell Book",
+        hotkey: "F2",
+        description: "The &/buildings/Spell Book& is used to unlock abilities for your &/units/Elven Worker&. When you gain skill points by upgrading &/buildings/treeOfTechnology#Magic&, you can spend them here by pressing %%F2%% or typing ^-sb^ in chat.",
+        // upgrades: spellBookAbilities, //TODO CHECK
+        noGoldColumn: true,
+    },
     {
         img: "/images/buildings/goldMine.webp",
         imgR: "/images/buildings/goldMineR.webp",
@@ -3502,7 +3632,7 @@ const buildings = [
         stats: {
             "Health": 40,
         },
-        description: "Entangle a &/buildings/Gold Mine& so that the &/units/Elven Worker& can harvest gold.<p>@This structure feeds gold after the ^10^ minute mark.@</p>",
+        description: "Entangle a &/buildings/Gold Mine& so that the &/units/Elven Worker& can harvest gold.<p>@This structure feeds gold only when killed after the ^10^ minute mark.@</p>",
     },
     {
         img: "/images/buildings/blocker/blocker.webp",
@@ -3510,7 +3640,7 @@ const buildings = [
         name: "Blocker",
         hotkey: "B",
         gold: 8,
-        additionalUpgrades: true,
+        treeOfTechnologyUpgrades: true,
         hasRequires: true,
         feed: "3-6",
         description: "The &/buildings/Blocker& has ^80^ health and can be used to wall off sections of the map to restrict the mobility of the opposing team.<p>You can use the blocker as a ruler to measure the distance between objects. If there is ^1^ blocker space between any obstacle either horizontally, vertically or diagonally the enemy cannot walk in.</p>",
@@ -3576,7 +3706,7 @@ const buildings = [
         stats: {
             "Health": 40,
         },
-        description: "A structure that can train and upgrade units. Build this near structure behind upgraded blockers or inside a strong base to get more time to produce an army.",
+        description: "A structure that can train and upgrade units. Build this structure behind upgraded blockers or inside a strong base to get more time to produce an army.",
         upgrades: treeOfWarUpgradesArray,
     },
     {
@@ -3597,7 +3727,7 @@ const buildings = [
         imgR: "/images/buildings/treeOfLifeR.webp",
         name: "Tree Of Life",
         description: "A structure that can unlock talents. It's located in the top-left corner of the map.",
-        offersUpgrades: treeOfLifeUpgrades
+        upgrades: treeOfLifeUpgrades
     },
     {
         img: "/images/buildings/magicTower.webp",
@@ -3615,7 +3745,7 @@ const buildings = [
             "Health": 20,
             "Mana regeneration": 0.2,
         },
-        additionalUpgrades: true,
+        treeOfTechnologyUpgrades: true,
         upgrades: [
             //TODO
         ]
@@ -3635,7 +3765,7 @@ const buildings = [
             "Health": 20,
             "Mana regeneration": 0.2,
         },
-        additionalUpgrades: true,
+        treeOfTechnologyUpgrades: true,
         upgrades: [
             //TODO
         ],
@@ -3658,7 +3788,7 @@ const buildings = [
             "Health": 20,
             "Mana regeneration": 0.2,
         },
-        additionalUpgrades: true,
+        treeOfTechnologyUpgrades: true,
         upgrades: [
             //TODO
         ],
@@ -3678,7 +3808,7 @@ const buildings = [
             "Health": 20,
             "Mana regeneration": 0.2,
         },
-        additionalUpgrades: true,
+        treeOfTechnologyUpgrades: true,
         upgrades: [
             //TODO
         ],
@@ -3701,7 +3831,7 @@ const buildings = [
             "Health": 20,
             "Mana regeneration": 0.2,
         },
-        additionalUpgrades: true,
+        treeOfTechnologyUpgrades: true,
         upgrades: [
             //TODO
         ],
@@ -3723,31 +3853,33 @@ export function buildingPage(ctx, next) {
 
     const buildingUpgradesTable = (upgrades) => html`
         <h4 class="text-yellow mt-3">Upgrades</h4>
-        <table class="table table-striped table-hover mb-0 w-auto" data-bs-theme="dark">
-            <thead>
-                <th class="text-center">Classic</th>
-                <th class="text-center">Reforged</th>
-                <th class="text-center">Name</th>
-                <th class="text-center">Hotkey</th>
-                <th class="text-center">Gold cost</th>
-                <th>Description</th>
-            </thead>
-            <tbody>
-                ${upgrades.map(upgrade => {
+        <div class="tableWrapper">
+            <table class="table table-striped table-hover mb-0 w-auto" data-bs-theme="dark">
+                <thead>
+                    <th class="text-center">Classic</th>
+                    <th class="text-center">Reforged</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Hotkey</th>
+                    ${selectedBuilding.noGoldColumn ? "" : html`<th class="text-center">Gold cost</th>`}
+                    <th>Description</th>
+                </thead>
+                <tbody>
+                    ${upgrades.map(upgrade => {
         return html`
-                    <tr id=${rmvSpc(upgrade.name)}>
-                        <td class="text-center"><img src="${upgrade.img}" class="abilityImage"></td>
-                        <td class="text-center"><img src="${upgrade.imgR}" class="abilityImage"></td>
-                        <td class="text-center">${unsafeHTML(markers(upgrade.name))}</td>
-                        <td class="text-center">(${upgrade.hotkey})</td>
-                        <td class="text-center"><span class="text-yellow">${upgrade.gold}g</span></td>
-                        <td>${unsafeHTML(markers(upgrade.description))}</td>
-                    </tr>`})}
-                    </tbody>
-        </table>
+                        <tr id=${rmvSpc(upgrade.name)}>
+                            <td class="text-center"><img src="${upgrade.img}" class="abilityImage"></td>
+                            <td class="text-center"><img src="${upgrade.imgR}" class="abilityImage"></td>
+                            <td class="text-center">${unsafeHTML(markers(upgrade.name))}</td>
+                            <td class="text-center">(${upgrade.hotkey})</td>
+                            ${selectedBuilding.noGoldColumn ? "" : html`<td class="text-center"><span class="text-yellow">${upgrade.gold}g</span></td>`}
+                            <td>${unsafeHTML(markers(upgrade.description))}</td>
+                        </tr>`})}
+                        </tbody>
+            </table>
+        </div>
     `;
 
-    const buildingUpgradesSeparatedTable = (upgrades) => html`
+    const treeOfTechnologyTableUpgradesTable = (upgrades) => html`
         <h4 class="text-yellow mt-3">Upgrades</h4>
         <div>
             ${upgrades.map(mainUpgrade => {
@@ -3755,52 +3887,54 @@ export function buildingPage(ctx, next) {
             <div id=${rmvSpc(mainUpgrade.name)} class="mb-5">
                 <h4 class="mt-3">${mainUpgrade.name} ${mainUpgrade.hotkey ? html`(<span class="text-purple">${mainUpgrade.hotkey}</span>)` : ""}</h4>
                 ${mainUpgrade.description ? html`<p>${unsafeHTML(markers(mainUpgrade.description))}</p>` : ""}
-                <table class="table table-striped table-hover mb-0 w-auto" data-bs-theme="dark">
-                    <tr>
-                        <th class="text-center">Level</th>
-                        ${mainUpgrade.upgrades.map(upgrade => html`
-                            <td id=${rmvSpc(mainUpgrade.name) + upgrade.lvl} class="text-center">${upgrade.lvl}</td>
-                        `)}
-                    </tr>
-                    <tr>
-                        <th class="text-center">Icons</th>
-                        ${mainUpgrade.upgrades.map(upgrade => html`
-                            <td class="text-center">
-                                <img src="${upgrade.img}" class="upgradeImage">
-                                ${upgrade.imgR ? html`<img src="${upgrade.imgR}" class="upgradeImage">` : ""}
-                            </td>
-                        `)}
-                    </tr>
-                    <tr>
-                        <th class="text-center">Gold</th>
-                        ${mainUpgrade.upgrades.map(upgrade => html`
-                            <td class="text-center text-yellow">${upgrade.gold}g</td>
-                        `)}
-                    </tr>
-                    ${mainUpgrade.hasRequires ? html`
+                <div class="tableWrapper wideTable">
+                    <table class="table table-striped table-hover mb-0 w-auto" data-bs-theme="dark">
                         <tr>
-                            <th class="text-center">Requires</th>
+                            <th class="text-center">Level</th>
                             ${mainUpgrade.upgrades.map(upgrade => html`
-                                ${upgrade.requires ? html`<td class="text-center">${unsafeHTML(markers(upgrade.requires))}</td>` : html`<td></td>`}
+                                <td id=${rmvSpc(mainUpgrade.name) + upgrade.lvl} class="text-center">${upgrade.lvl}</td>
                             `)}
                         </tr>
-                    ` : ""}
-                    <tr>
-                        <th>Description</th>
-                        ${mainUpgrade.upgrades.map(upgrade => html`
-                            <td>
-                                ${upgrade.changes.map(element => html`
-                                    <a href=${element.type ? `/${element.type}/${rmvSpc(element.name)}` : ""}>${element.name}</a>
-                                    <ul>
-                                        ${element.stats.map(stat => html`
-                                            <li>${stat.name}: ${stat.hasOwnProperty('old') ? `${stat.old} -> ` : ""}<span class="text-yellow">${stat.new}</span> ${stat.parenthesesVal ? html`(<span class="text-yellow">${stat.parenthesesVal}</span>)` : ""} ${stat.description ? unsafeHTML(markers(stat.description)) : ""}</li>
-                                        `)}
-                                    </ul>
+                        <tr>
+                            <th class="text-center">Icons</th>
+                            ${mainUpgrade.upgrades.map(upgrade => html`
+                                <td class="text-center">
+                                    <img src="${upgrade.img}" class="upgradeImage">
+                                    ${upgrade.imgR ? html`<img src="${upgrade.imgR}" class="upgradeImage">` : ""}
+                                </td>
+                            `)}
+                        </tr>
+                        <tr>
+                            <th class="text-center">Gold</th>
+                            ${mainUpgrade.upgrades.map(upgrade => html`
+                                <td class="text-center text-yellow">${upgrade.gold}g</td>
+                            `)}
+                        </tr>
+                        ${mainUpgrade.hasRequires ? html`
+                            <tr>
+                                <th class="text-center">Requires</th>
+                                ${mainUpgrade.upgrades.map(upgrade => html`
+                                    ${upgrade.requires ? html`<td class="text-center">${unsafeHTML(markers(upgrade.requires))}</td>` : html`<td></td>`}
                                 `)}
-                            </td>
-                        `)}
-                    </tr>
-                </table>
+                            </tr>
+                        ` : ""}
+                        <tr>
+                            <th>Description</th>
+                            ${mainUpgrade.upgrades.map(upgrade => html`
+                                <td>
+                                    ${upgrade.changes.map(element => html`
+                                        <a href=${element.type ? `/${element.type}/${rmvSpc(element.name)}` : ""}>${element.name}</a>
+                                        <ul>
+                                            ${element.stats.map(stat => html`
+                                                <li>${stat.name}: ${stat.hasOwnProperty('old') ? `${stat.old} -> ` : ""}<span class="text-yellow">${stat.new}</span> ${stat.parenthesesVal ? html`(<span class="text-yellow">${stat.parenthesesVal}</span>)` : ""} ${stat.description ? unsafeHTML(markers(stat.description)) : ""}</li>
+                                            `)}
+                                        </ul>
+                                    `)}
+                                </td>
+                            `)}
+                        </tr>
+                    </table>
+                </div>
             </div>
             `})}
         </div>
@@ -3813,36 +3947,38 @@ export function buildingPage(ctx, next) {
             <h1 class="text-blue">${building.name} ${building.hotkey ? html`<span>(<span class="hotkey">${building.hotkey}</span>)</span>` : ""}</h1>
         </div>
         <div class="d-flex flex-row align-items-start gap-5 mb-5">
-            <div class="statsContainer border border-warning">
+            <div class="statsContainer wideTable border border-warning">
                 <h4 class="text-yellow text-center">Stats</h4>
-                <table class="ws-nowrap table table-striped table-hover w-auto mb-0" data-bs-theme="dark">
-                    <tbody>
-                        ${building.gold ? html`
-                            <tr>
-                                <th>Gold cost</th>
-                                <td class="text-center"><span class="text-yellow">${building.gold + "g"}</span></td>
-                            </tr>
-                        ` : ""}
-                        ${building.supply ? html`
-                            <tr>
-                                <th>Supply cost</th>
-                                <td class="text-center">${building.supply}</td>
-                            </tr>
-                        ` : ""}
-                        ${building.feed ? html`
-                            <tr>
-                                <th>Feed</th>
-                                <td class="text-center"><span class="text-danger">${building.feed}</span></td>
-                            </tr>
-                        ` : ""}
-                        ${building.stats ? Object.entries(building.stats).map(([name, value] = entry) => html`
-                            <tr>
-                                <th>${name}</th>
-                                <td class="text-center">${value}</td>
-                            </tr>
-                        `) : ""}
-                    </tbody>
-                </table>
+                <div class="tableWrapper">
+                    <table class="table table-striped table-hover w-auto mb-0" data-bs-theme="dark">
+                        <tbody>
+                            ${building.gold ? html`
+                                <tr>
+                                    <th>Gold cost</th>
+                                    <td class="text-center"><span class="text-yellow">${building.gold + "g"}</span></td>
+                                </tr>
+                            ` : ""}
+                            ${building.supply ? html`
+                                <tr>
+                                    <th>Supply cost</th>
+                                    <td class="text-center">${building.supply}</td>
+                                </tr>
+                            ` : ""}
+                            ${building.feed ? html`
+                                <tr>
+                                    <th>Feed</th>
+                                    <td class="text-center"><span class="text-danger">${building.feed}</span></td>
+                                </tr>
+                            ` : ""}
+                            ${building.stats ? Object.entries(building.stats).map(([name, value] = entry) => html`
+                                <tr>
+                                    <th>${name}</th>
+                                    <td class="text-center">${value}</td>
+                                </tr>
+                            `) : ""}
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div>
                 <div class="description mb-3">
@@ -3858,8 +3994,8 @@ export function buildingPage(ctx, next) {
         </div>
         ${building.abilities ? buildingAbilitiesTable(building.abilities) : ""}
         ${building.upgrades ? buildingUpgradesTable(building.upgrades) : ""}
-        ${building.upgradesSeparated ? buildingUpgradesSeparatedTable(building.upgradesSeparated) : ""}
-        ${building.additionalUpgrades ? html`<p class="fw-bold text-green fs-5 mt-5">This building can get additional upgrades for health, damage, etc. from the <a href="/buildings/TreeOfTechnology">Tree Of Technology</a>!</p>` : ""}
+        ${building.upgradesSeparated ? treeOfTechnologyTableUpgradesTable(building.upgradesSeparated) : ""}
+        ${building.treeOfTechnologyUpgrades ? html`<p class="fw-bold text-green fs-5 mt-5">This building can get additional upgrades for health, damage, etc. from the <a href="/buildings/TreeOfTechnology">Tree Of Technology</a>!</p>` : ""}
     `;
 
     const allTemplates = () => html`

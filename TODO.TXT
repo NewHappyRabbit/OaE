@@ -1,13 +1,8 @@
 Whats missing:
 - Maybe add "Requires" in unit upgrades, etc.?
 - Check this tool: https://www.hiveworkshop.com/asset-scanner - to find the custom icons used in the map
+- Here link for map scanned: https://www.hiveworkshop.com/asset-scanner/ee1937eae7e1de3658b692359a985c46/
 - Check this tool to find the borders textures and get them in the site: https://www.hiveworkshop.com/threads/ladiks-casc-viewer.331540/ , https://www.hiveworkshop.com/threads/warcraft-iii-borders.226648/
-
-!URGENT!
-- Wrap all tables in another div with class tableWrapper and do css: overflow-x: auto, like this:
-<div class="tableWrapper" style="overflow-x: auto" (but as CSS not inline)>
- <table>...</table>
-</div>
 
 F1 menu and commands from F9
 
@@ -19,8 +14,6 @@ Elves
 - Units
 -- All units
 ---desc, tips
-
--- Ancient
 
 -- Elven Worker
 --- Abilities (from spell book)

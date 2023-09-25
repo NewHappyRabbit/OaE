@@ -29,7 +29,7 @@ body {
 	background-color: var(--dark-gray);
 	color: white;
 	margin: 0px;
-	font-size: 18px;
+	font-size: 20px;
 	box-sizing: border-box;
 	font-family: "Friz", sans-serif;
 }
@@ -97,7 +97,7 @@ td.description h4:first-of-type {
 	width: 64px;
 }
 
-/* when :target, play little highlight animation */
+/* when :target, play little highlight animation (using url#something to focus) */
 @keyframes highlight {
 	0% {
 		background-color: transparent;
@@ -114,9 +114,122 @@ td.description h4:first-of-type {
 	animation: highlight 3s ease-in-out;
 }
 
-/* TODO REMOVE THIS LATER AND TEST */
-table td,
-table th {
-	/* Dont allow text to overlow */
+/* Dont let table text overflow on next line (keep text in one line) */
+.wideTable td,
+.wideTable th {
 	white-space: nowrap;
+}
+
+.tableWrapper {
+	overflow-x: auto;
+}
+
+/* Table borders like in-game */
+.customTableWrapper {
+	position: relative;
+	display: inline-block;
+}
+
+/* .customTableWrapper .customTopBorder {
+	z-index: 1000;
+	background-image: url("/images/frames/war3_frame_divider_horizontal_repeat_4k.png");
+	background-size: 100% 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+} */
+
+.customTableWrapper .customBottomBorder,
+.customTableWrapper .customTopBorder {
+	z-index: 1000;
+	background-image: url("/images/table_frames/frame_horizontal.png");
+	background-repeat: repeat-x;
+	background-size: contain;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 20px;
+}
+
+.customTableWrapper .customBottomBorder {
+	top: auto;
+	bottom: 0;
+}
+
+.customTableWrapper .customLeftBorder,
+.customTableWrapper .customRightBorder {
+	z-index: 1000;
+	background-image: url("/images/table_frames/frame_vertical.png");
+	background-repeat: repeat-y;
+	background-size: contain;
+	position: absolute;
+	left: 0;
+	width: 20px;
+	height: calc(100% - 40px);
+}
+
+.customTableWrapper .customRightBorder {
+	left: auto;
+	right: 0;
+}
+
+.customTableWrapper .customTopRightBorder,
+.customTableWrapper .customTopLeftBorder,
+.customTableWrapper .customBottomLeftBorder,
+.customTableWrapper .customBottomRightBorder {
+	background-image: url("/images/table/frame_corner.png");
+	z-index: 1000;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 20px;
+	height: 20px;
+}
+
+.customTableWrapper .customTopLeftBorder {
+	/* rotate bg 90deg */
+	transform: rotate(-90deg);
+}
+
+.customTableWrapper .customTopRightBorder {
+	left: auto;
+	right: 0;
+}
+
+.customTableWrapper .customBottomLeftBorder {
+	top: auto;
+	bottom: 0;
+	transform: rotate(180deg);
+}
+
+.customTableWrapper .customBottomRightBorder {
+	top: auto;
+	left: auto;
+	bottom: 0;
+	right: 0;
+	transform: rotate(90deg);
+}
+
+.customTableWrapper {
+	padding: 20px;
+}
+
+.customTable {
+	margin: 0px;
+}
+
+.customTable,
+.customTable tbody,
+.customTable th,
+.customTable td {
+	background: none;
+}
+
+.customTable {
+	background-image: url("/images/table/bg.png");
 }
