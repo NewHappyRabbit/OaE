@@ -18,9 +18,9 @@ const navBar = () => html`
             <li class="nav-item">
                 <a class="nav-link" href="/elves">Elves</a>
             </li>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="/orcs">Orcs</a>
-            </li> -->
+            </li>
         <!-- //TODO IMPLEMENT SEARCH 
             <form class="form d-flex gap-3 my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
