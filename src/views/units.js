@@ -1,12 +1,17 @@
+import '../css/units.css';
 import { html, render } from 'lit-html'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { container } from '../app';
 import { markers, rmvSpc } from '../utilities';
-import { allUnits, treeOfLifeUpgrades, treeOfWarUpgrades } from './buildings';
+import { teams } from './teams';
+import { treeOfLifeUpgrades, treeOfWarUpgrades } from './data/elves/buildings';
 
 export function unitPage(ctx, next) {
     const selectedUnitName = ctx.params.name;
-    const selectedUnit = allUnits.find(unit => rmvSpc(unit.name) === selectedUnitName);
+    const selectedTeam = teams[ctx.params.team];
+    const selectedUnit = selectedTeam.units.find(unit => rmvSpc(unit.name.toLowerCase()) === selectedUnitName.toLowerCase());
+
+    document.title = `OaE - ${selectedUnit.name}`;
 
     const unitAbilitiesTable = (abilities) => html`
         <div class="mb-5">
@@ -20,9 +25,8 @@ export function unitPage(ctx, next) {
                 <div class="customTopRightBorder"></div>
                 <div class="customBottomLeftBorder"></div>
                 <div class="customBottomRightBorder"></div>
-                <table class="table table-hover w-auto customTable" data-bs-theme="dark">
+                <table class="table w-auto customTable customTableAlternateRows" data-bs-theme="dark">
                     <thead>
-                        ${console.log(abilities.some(ability => ability.hasOwnProperty('cooldown')))}
                         <th class="text-center">Classic</th>
                         <th class="text-center">Reforged</th>
                         <th class="text-center">Name</th>
@@ -78,11 +82,25 @@ export function unitPage(ctx, next) {
     `;
 
     const unitTemplate = (unit) => html`
+        <div class="d-flex flex gap-3 mb-5 justify-content-evenly">
+            ${selectedTeam.units.map(unit => html`
+                <div class="card text-bg-dark p-2">
+                        <a href="/${selectedTeam.name}/units/${rmvSpc(unit.name)}"><img src=${unit.imgR} class="card-img-top"></a>
+                        <div class="card-body p-0">
+                            <a href="/${selectedTeam.name}/units/${rmvSpc(unit.name)}"><h5 class="card-title text-center">${unit.name}</h5></a>
+                        </div>
+                </div>
+            `)}
+        </div>
+
         <div class="d-flex align-items-center gap-3 mb-3 justify-content-center">
+            <img src=${selectedTeam.header}/>
             <img class="mainImg" src="${unit.img}" class="unitImage" title="Classic Image"/>
             <img class="mainImg" src="${unit.imgR}" class="unitImage" title="Reforged Image"/>
             <h1 class="text-blue">${unit.name} ${unit.hotkey ? html`<span>(<span class="hotkey">${unit.hotkey}</span>)</span>` : ""}</h1>
+            <img style="transform: rotate(180deg)" src=${selectedTeam.header}/>
         </div>
+
         <div class="d-flex flex-row align-items-start gap-5 mb-5">
             <div class="statsContainer wideTable border border-warning">
                 <h4 class="text-yellow text-center">Stats</h4>
@@ -145,22 +163,6 @@ export function unitPage(ctx, next) {
         ${unit.treeOfTechnologyUpgrades ? html`<p class="fw-bold text-green fs-5 mt-5">This unit can get additional upgrades for health, armor, etc. from the <a href="/buildings/TreeOfTechnology">Tree Of Technology</a>!</p>` : ""}
     `;
 
-    const allTemplates = () => html`
-        <div id="unitsContainer">
-            <h3>Units</h3>
-            <p>Select unit to view information about it.</p>
-            <div class="d-flex flex-wrap gap-5 p-2 mb-5">
-                ${allUnits.map(unit => html`
-                    <a href=${`/units/${rmvSpc(unit.name)}`} class="border-0 bg-transparent p-0 d-flex flex-column align-items-center fw-bold text-blue">
-                        <img src="${unit.img}" class="unitImage" title=${unit.name}>${unit.name}
-                    </a>
-                `)}
-            </div>
-
-            ${selectedUnitName ? unitTemplate(selectedUnit) : ""}
-        </div>
-    `;
-
-    render(allTemplates(), container);
+    render(unitTemplate(selectedUnit), container);
     next();
 }

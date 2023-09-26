@@ -2,7 +2,7 @@ import { html, render } from 'lit-html'
 import { container } from '../app';
 
 export function homePage(ctx, next) {
-
+    document.title = "OaE - Home";
 
     const template = html`
         <h1 class="text-center">Welcome to the Orcs and Elves website!</h1>
@@ -107,7 +107,7 @@ export function homePage(ctx, next) {
         
         <h4 class="mt-5">Website related stuff:</h4>
         <ul class="text-yellow">
-            <li>Custom scrollbar</li>
+            <li class="text-green">Custom scrollbar ✓</li>
             <li>Custom borders for tables - like the borders in-game</li>
             <li>OCR - verified members can upload an image of the scoreboard when the game ends and have it converted & saved as data in the website for stats and games history</li>
             <li>Mobile responsive</li>

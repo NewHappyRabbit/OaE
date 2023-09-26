@@ -1,5 +1,5 @@
 import { html, render } from 'lit-html';
-import { allUnits } from './buildings';
+
 const navBar = () => html`
     <a class="navbar-brand" href="/">OaE</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -12,13 +12,15 @@ const navBar = () => html`
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
             </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="/teams">Teams</a>
+            </li> -->
             <li class="nav-item">
-                <a class="nav-link" href="/units">Units</a>
+                <a class="nav-link" href="/elves">Elves</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/buildings">Buildings</a>
-            </li>
-        </ul>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="/orcs">Orcs</a>
+            </li> -->
         <!-- //TODO IMPLEMENT SEARCH 
             <form class="form d-flex gap-3 my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

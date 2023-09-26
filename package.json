@@ -6,6 +6,7 @@
 		"page": "^1.11.6"
 	},
 	"scripts": {
+		"Install dependencies": "npm i",
 		"Build DEV": "webpack --config webpack.dev.config.js --mode=development",
 		"Build LIVE": "webpack --config webpack.prod.config.js --mode=production"
 	},

@@ -1,3 +1,5 @@
+import { html, render } from 'lit-html'
+
 export function markers(string) {
     // Markers: &link& *blue* ^yellow^ @red@ $green$ %%purple%%
 
@@ -20,17 +22,4 @@ export function markers(string) {
 
 export function rmvSpc(string) {
     return string.replaceAll(' ', '');
-}/* 
-
-export function scrollToView() {
-    const hash = window.location.hash;
-
-    if (!hash) return;
-
-    // Remove # from hash
-    const element = document.getElementById(hash.replace('#', ''));
-
-    if (!element) return;
-
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-} */
+}
