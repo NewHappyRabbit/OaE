@@ -25,7 +25,7 @@ export const elvesUnits = [
         gold: 40,
         supply: 2,
         feed: "16-32",
-        description: "<p>A flying scout with a large field of vision that can see over cliffs. The &/units/Owl Scout& can be used to spy on the enemy or to help you find safe passages through unexplored terrain.</p>",
+        description: "<p>A flying scout with a large field of vision that can see over cliffs. The &/elves/units/Owl Scout& can be used to spy on the enemy or to help you find safe passages through unexplored terrain.</p>",
         stats: {
             "Vision Range": 600,
             "Move speed": 325,
@@ -46,9 +46,9 @@ export const elvesUnits = [
             {
                 img: "/images/elves/units/hippogryph/hippogryph.webp",
                 imgR: "/images/elves/units/hippogryph/hippogryphR.webp",
-                name: "Transform to &/units/Hippogryph&",
+                name: "Transform to &/elves/units/Hippogryph&",
                 hotkey: "M",
-                description: "Transforms the &/units/Owl Scout& into a &/units/Hippogryph&.",
+                description: "Transforms the &/elves/units/Owl Scout& into a &/elves/units/Hippogryph&.",
                 cooldown: 40,
             },
             {
@@ -85,9 +85,9 @@ export const elvesUnits = [
             {
                 img: "/images/elves/units/hippogryphRider/hippogryphRider.webp",
                 imgR: "/images/elves/units/hippogryphRider/hippogryphRiderR.webp",
-                name: "Mount &/units/Hippogryph&",
+                name: "Mount &/elves/units/Hippogryph&",
                 hotkey: "Q",
-                description: "The &/units/Archer& mounts the &/units/Hippogryph& - forming a &/units/Hippogryph Rider&.",
+                description: "The &/elves/units/Archer& mounts the &/elves/units/Hippogryph& - forming a &/elves/units/Hippogryph Rider&.",
             }
         ]
     },
@@ -116,9 +116,9 @@ export const elvesUnits = [
             {
                 img: "/images/elves/units/ancient/ancient.webp",
                 imgR: "/images/elves/units/ancient/ancientR.webp",
-                name: "Transform to &/units/Ancient&",
+                name: "Transform to &/elves/units/Ancient&",
                 hotkey: "Q",
-                description: "Transform the &/units/Ent& into an &/units/Ancient&. The &/units/Ancient& is larger, slower and cannot &#Burrow&.",
+                description: "Transform the &/elves/units/Ent& into an &/elves/units/Ancient&. The &/elves/units/Ancient& is larger, slower and cannot &#Burrow&.",
                 cooldown: 20
             },
             {
@@ -126,7 +126,7 @@ export const elvesUnits = [
                 imgR: "/images/elves/units/ent/abilities/burrow.png",
                 name: "Burrow",
                 hotkey: "W",
-                description: "The &/units/Ent& burrow and becomes invisible.",
+                description: "The &/elves/units/Ent& burrow and becomes invisible.",
                 cooldown: 8
             },
             {
@@ -219,7 +219,7 @@ export const elvesUnits = [
         imgR: "/images/elves/units/hippogryph/hippogryphR.webp",
         name: "Hippogryph",
         team: "elves",
-        description: "<p>@This unit is not trainable!@</p><p>$Morphs from &/units/Owl Scout&.$</p>The hippogryph is a ferocious flying predator that weakens the target by reducing its move speed. They are most effective when used in large packs to chase down injured foes or to kill isolated enemies.",
+        description: "<p>@This unit is not trainable!@</p><p>$Morphs from &/elves/units/Owl Scout&.$</p>The hippogryph is a ferocious flying predator that weakens the target by reducing its move speed. They are most effective when used in large packs to chase down injured foes or to kill isolated enemies.",
         feed: "16-32",
         treeOfTechnologyUpgrades: true,
         stats: {
@@ -244,15 +244,15 @@ export const elvesUnits = [
             {
                 img: "/images/elves/units/owlScout/owlScout.webp",
                 imgR: "/images/elves/units/owlScout/owlScoutR.webp",
-                name: "Transform to &/units/Owl Scout&",
+                name: "Transform to &/elves/units/Owl Scout&",
                 hotkey: "M",
-                description: "Transforms the &/units/Hippogryph& into an &/units/Owl Scout&.",
+                description: "Transforms the &/elves/units/Hippogryph& into an &/elves/units/Owl Scout&.",
                 cooldown: 40,
             },
             {
                 img: "/images/elves/units/hippogryphRider/hippogryphRider.webp",
                 imgR: "/images/elves/units/hippogryphRider/hippogryphRiderR.webp",
-                name: "Take &/units/Archer&",
+                name: "Take &/elves/units/Archer&",
                 hotkey: "Q",
                 description: "The hippogryph rider is a flying ranged attacker with high mobility. It can be used to defend large bases, to harass the enemy from a distance and to chase down isolated or injured foes.",
             }
@@ -262,7 +262,7 @@ export const elvesUnits = [
         img: "/images/elves/units/hippogryphRider/hippogryphRider.webp",
         imgR: "/images/elves/units/hippogryphRider/hippogryphRiderR.webp",
         name: "Hippogryph Rider",
-        description: "<p>@This unit is not trainable!@</p><p>$Morphs from combining &/units/Hippogryph& and &/units/Archer&.$</p>The hippogryph rider is a flying ranged attacker with high mobility. It can be used to defend large bases, to harass the enemy from a distance and to chase down isolated or injured foes.",
+        description: "<p>@This unit is not trainable!@</p><p>$Morphs from combining &/elves/units/Hippogryph& and &/elves/units/Archer&.$</p>The hippogryph rider is a flying ranged attacker with high mobility. It can be used to defend large bases, to harass the enemy from a distance and to chase down isolated or injured foes.",
         feed: "24-48",
         team: "elves",
         stats: {
@@ -279,7 +279,7 @@ export const elvesUnits = [
         name: "Ancient",
         team: "elves",
         feed: "", //TODO
-        description: "<p>@This unit is not trainable!@</p><p>$Morphs from &/units/Ent&.$</p><p>The &/units/Ancient& is larger than the &/units/Ent&, making it the perfect unit to trap your enemies. He is also slower and cannot &/units/Ent#Burrow&.</p>",
+        description: "<p>@This unit is not trainable!@</p><p>$Morphs from &/elves/units/Ent&.$</p><p>The &/elves/units/Ancient& is larger than the &/elves/units/Ent&, making it the perfect unit to trap your enemies. He is also slower and cannot &/elves/units/Ent#Burrow&.</p>",
         transformsTo: [
             "Ent"
         ],
@@ -294,9 +294,9 @@ export const elvesUnits = [
             {
                 img: "/images/elves/units/ent/ent.webp",
                 imgR: "/images/elves/units/ent/entR.webp",
-                name: "Transform to &/units/Ent&",
+                name: "Transform to &/elves/units/Ent&",
                 hotkey: "Q",
-                description: "Transform the &/units/Ancient& into an &/units/Ent&.",
+                description: "Transform the &/elves/units/Ancient& into an &/elves/units/Ent&.",
                 cooldown: 20
             },
             {

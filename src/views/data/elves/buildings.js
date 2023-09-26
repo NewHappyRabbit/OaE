@@ -6,7 +6,7 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/elves/upgrades/treeOfWar/owlSpecialistR.webp",
             name: "Owl Specialist 1",
             hotkey: "A",
-            description: `&/units/Owl Scout& <ul><li>Vision range: 600 -> ^750^ (^+150^)</li><li>Health: 40 -> ^60^ (^+20^)</li><li>Unlocks &/units/OwlScout#Night Vision& (passive) - reveal invisible units within 600 range.</li></ul>`,
+            description: `&/elves/units/Owl Scout& <ul><li>Vision range: 600 -> ^750^ (^+150^)</li><li>Health: 40 -> ^60^ (^+20^)</li><li>Unlocks &/elves/units/OwlScout#Night Vision& (passive) - reveal invisible units within 600 range.</li></ul>`,
             gold: 50
         },
         {
@@ -14,7 +14,7 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/elves/upgrades/treeOfWar/owlSpecialistR.webp",
             name: "Owl Specialist 2",
             hotkey: "A",
-            description: `&/units/Owl Scout& <ul><li>Vision range: 750 -> ^900^ (^+150^)</li><li>Move speed: 325 -> ^406.25^ (^+25%^)</li></ul>&/units/Owl Scout#Scout& ability<ul><li>Duration: 10 -> ^15^ seconds (^+5 seconds^)</li><li>Cooldown: 75 -> ^45^ seconds (^-30 seconds^)</li></ul>`,
+            description: `&/elves/units/Owl Scout& <ul><li>Vision range: 750 -> ^900^ (^+150^)</li><li>Move speed: 325 -> ^406.25^ (^+25%^)</li></ul>&/elves/units/Owl Scout#Scout& ability<ul><li>Duration: 10 -> ^15^ seconds (^+5 seconds^)</li><li>Cooldown: 75 -> ^45^ seconds (^-30 seconds^)</li></ul>`,
             gold: 125
         },
         {
@@ -22,7 +22,7 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/elves/units/hippogryph/hippogryphR.webp",
             name: "Bird Training 1",
             hotkey: "Z",
-            description: "Allow the &/units/Owl Scout& to morph into a &/units/Hippogryph&.",
+            description: "Allow the &/elves/units/Owl Scout& to morph into a &/elves/units/Hippogryph&.",
             gold: 300
         },
         {
@@ -30,7 +30,7 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/elves/units/hippogryphRider/hippogryphRiderR.webp",
             name: "Bird Training 2",
             hotkey: "Z",
-            description: "Allow the &/units/Archer& to mount a &/units/Hippogryph&, creating a &/units/Hippogryph Rider&.",
+            description: "Allow the &/elves/units/Archer& to mount a &/elves/units/Hippogryph&, creating a &/elves/units/Hippogryph Rider&.",
             gold: 200
         }
     ],
@@ -40,7 +40,7 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/elves/upgrades/treeOfWar/marksmanshipR.png",
             name: "Marksmanship",
             hotkey: "S",
-            description: "&/units/Archer&<ul><li>Attack range: 600 -> ^750^ (^+150^)</li></ul>&/units/Hippogryph Rider&<ul><li>Attack range: 600 -> ^750^ (^+150^)</li></ul>",
+            description: "&/elves/units/Archer&<ul><li>Attack range: 600 -> ^750^ (^+150^)</li></ul>&/elves/units/Hippogryph Rider&<ul><li>Attack range: 600 -> ^750^ (^+150^)</li></ul>",
             gold: 100
         },
     ],
@@ -50,7 +50,7 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/elves/upgrades/treeOfWar/sproutsR.webp",
             name: "Sprout",
             hotkey: "D",
-            description: "Unlocks the &/units/Ent& unit.",
+            description: "Unlocks the &/elves/units/Ent& unit.",
             gold: 100
         },
         {
@@ -58,7 +58,7 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/elves/upgrades/treeOfWar/burrowR.png",
             name: "Burrow",
             hotkey: "D",
-            description: "&/units/Ent&<ul><li>Unlocks &/units/Ent#Burrow& ability</li></ul>",
+            description: "&/elves/units/Ent&<ul><li>Unlocks &/elves/units/Ent#Burrow& ability</li></ul>",
             gold: 100
         },
     ],
@@ -68,7 +68,7 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/elves/upgrades/treeOfWar/druidTraining1R.webp",
             name: "Druid Training 1",
             hotkey: "F",
-            description: "Unlocks the &/units/Druid&.",
+            description: "Unlocks the &/elves/units/Druid&.",
             gold: 100
         },
         {
@@ -76,7 +76,7 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/elves/upgrades/treeOfWar/druidTraining2R.webp",
             name: "Druid Training 2",
             hotkey: "F",
-            description: "&/units/Druid&<ul><li>Mana regeneration ^+0.15^/second</li><li>Unlocks the &/units/Druid#Faerie Fire& ability</li></ul></ul>",
+            description: "&/elves/units/Druid&<ul><li>Mana regeneration ^+0.15^/second</li><li>Unlocks the &/elves/units/Druid#Faerie Fire& ability</li></ul></ul>",
             gold: 150
         },
         {
@@ -84,7 +84,7 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/elves/upgrades/treeOfWar/druidTraining3R.webp",
             name: "Druid Training 3",
             hotkey: "F",
-            description: "&/units/Druid&<ul><li>Mana regeneration ^+0.15^/second</li><li>Unlocks the &/units/Druid#Cleanse& ability</li><li>Unlocks the &/units/Druid#Drain Mana& ability</li></ul></ul>",
+            description: "&/elves/units/Druid&<ul><li>Mana regeneration ^+0.15^/second</li><li>Unlocks the &/elves/units/Druid#Cleanse& ability</li><li>Unlocks the &/elves/units/Druid#Drain Mana& ability</li></ul></ul>",
             gold: 150
         },
         {
@@ -92,7 +92,7 @@ export const treeOfWarUpgrades = { //TODO Do like treeOfTechnology
             imgR: "/images/elves/upgrades/treeOfWar/druidTraining4R.webp",
             name: "Druid Training 4",
             hotkey: "F",
-            description: "&/units/Druid&<ul><li>Mana regeneration ^+0.15^/second</li><li>Unlocks the &/units/Druid#Slumber& ability</li><li>Unlocks the &/units/Druid#Healing Rain& ability</li></ul></ul>",
+            description: "&/elves/units/Druid&<ul><li>Mana regeneration ^+0.15^/second</li><li>Unlocks the &/elves/units/Druid#Slumber& ability</li><li>Unlocks the &/elves/units/Druid#Healing Rain& ability</li></ul></ul>",
             gold: 250
         },
     ]
@@ -109,7 +109,7 @@ const treeOfTechnologyUpgrades = [
     {
         name: "Speed", // Main upgrade category
         hotkey: "Q",
-        description: "This upgrade lets you increase the movement speed of your &/units/Elven Worker&. Useful for scouting, trapping and running away from enemies.",
+        description: "This upgrade lets you increase the movement speed of your &/elves/units/Elven Worker&. Useful for scouting, trapping and running away from enemies.",
         hasRequires: false, // if any of the levels requires another upgrade to progress (NO NEED TO USE FALSE, THIS IS HERE JUST TO SHOW HIERARCHY)
         upgrades: [ // All levels of the upgrade
             {
@@ -120,7 +120,8 @@ const treeOfTechnologyUpgrades = [
                 changes: [ // Each change to unit/building
                     {
                         name: "Elven Worker",
-                        type: "units", // can be "unit", "building" or not initialize  at all
+                        type: "units", team: "elves", // can be "unit", "building" or not initialize  at all
+                        team: "elves",
                         stats: [ // Each change to specific stat of unit/building
                             {
                                 name: "Move speed",
@@ -140,7 +141,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Move speed",
@@ -159,7 +160,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Move speed",
@@ -178,7 +179,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Move speed",
@@ -197,7 +198,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Move speed",
@@ -214,7 +215,7 @@ const treeOfTechnologyUpgrades = [
     {
         name: "Life",
         hotkey: "W",
-        description: "This upgrade lets you increase the health points of your &/units/Elven Worker&.",
+        description: "This upgrade lets you increase the health points of your &/elves/units/Elven Worker&.",
         upgrades: [
             {
                 lvl: 1,
@@ -223,7 +224,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Health",
@@ -242,7 +243,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Health",
@@ -261,7 +262,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Health",
@@ -280,7 +281,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Health",
@@ -299,7 +300,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Health",
@@ -316,7 +317,7 @@ const treeOfTechnologyUpgrades = [
     {
         name: "Magic",
         hotkey: "E",
-        description: "Skill points can be spent in the &/buildings/Spell Book& (%%F2%%) to unlock powerful abilities for your &/units/Elven Worker&.",
+        description: "Skill points can be spent in the &/elves/buildings/Spell Book& (%%F2%%) to unlock powerful abilities for your &/elves/units/Elven Worker&.",
         upgrades: [
             {
                 lvl: 1,
@@ -325,7 +326,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Skill points",
@@ -354,7 +355,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Skill points",
@@ -377,7 +378,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Skill points",
@@ -400,7 +401,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Skill points",
@@ -423,7 +424,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Skill points",
@@ -450,11 +451,10 @@ const treeOfTechnologyUpgrades = [
                 lvl: 1,
                 img: "/images/elves/upgrades/treeOfTechnology/nourishment.png",
                 gold: 50,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *2*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *2*",
                 changes: [
                     {
                         name: "Buildings",
-                        type: "buildings",
                         stats: [
                             {
                                 name: "Health regeneration",
@@ -480,7 +480,6 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Buildings",
-                        type: "buildings",
                         stats: [
                             {
                                 name: "Health regeneration",
@@ -506,7 +505,6 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Buildings",
-                        type: "buildings",
                         stats: [
                             {
                                 name: "Health regeneration",
@@ -594,7 +592,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -643,7 +641,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -692,7 +690,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -741,7 +739,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -774,7 +772,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Elven Worker",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Armor",
@@ -791,7 +789,7 @@ const treeOfTechnologyUpgrades = [
     {
         name: "Tenacity",
         hotkey: "D",
-        description: "Used for upgrading your &/units/Ent& and &/units/Druid&.",
+        description: "Used for upgrading your &/elves/units/Ent& and &/elves/units/Druid&.",
         hasRequires: true,
         upgrades: [
             {
@@ -802,7 +800,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Ent",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -820,7 +818,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Druid",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -846,7 +844,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Ent",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -870,7 +868,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Druid",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -905,11 +903,11 @@ const treeOfTechnologyUpgrades = [
                 img: "/images/elves/upgrades/treeOfTechnology/tenacity/tenacity3.webp",
                 imgR: "/images/elves/upgrades/treeOfTechnology/tenacity/tenacity3R.webp",
                 gold: 75,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *2*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *2*",
                 changes: [
                     {
                         name: "Ent",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -927,7 +925,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Druid",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -953,7 +951,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Ent",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -971,7 +969,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Druid",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1000,11 +998,11 @@ const treeOfTechnologyUpgrades = [
                 img: "/images/elves/upgrades/treeOfTechnology/tenacity/tenacity5.webp",
                 imgR: "/images/elves/upgrades/treeOfTechnology/tenacity/tenacity5R.webp",
                 gold: 95,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *3*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *3*",
                 changes: [
                     {
                         name: "Ent",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1022,7 +1020,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Druid",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1048,7 +1046,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Ent",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1072,7 +1070,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Druid",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1107,11 +1105,11 @@ const treeOfTechnologyUpgrades = [
                 img: "/images/elves/upgrades/treeOfTechnology/tenacity/tenacity7.webp",
                 imgR: "/images/elves/upgrades/treeOfTechnology/tenacity/tenacity7R.webp",
                 gold: 115,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *4*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *4*",
                 changes: [
                     {
                         name: "Ent",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1129,7 +1127,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Druid",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1155,7 +1153,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Ent",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1173,7 +1171,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Druid",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1202,11 +1200,11 @@ const treeOfTechnologyUpgrades = [
                 img: "/images/elves/upgrades/treeOfTechnology/tenacity/tenacity9.webp",
                 imgR: "/images/elves/upgrades/treeOfTechnology/tenacity/tenacity9R.webp",
                 gold: 135,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *5*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *5*",
                 changes: [
                     {
                         name: "Ent",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1224,7 +1222,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Druid",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1250,7 +1248,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Ent",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1272,7 +1270,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Druid",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -1533,7 +1531,7 @@ const treeOfTechnologyUpgrades = [
                 img: "/images/elves/buildings/fireTower.webp",
                 imgR: "/images/elves/buildings/fireTowerR.webp",
                 gold: 75,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *2*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *2*",
                 changes: [
                     {
                         name: "Magic Tower",
@@ -1760,7 +1758,7 @@ const treeOfTechnologyUpgrades = [
                 img: "/images/elves/buildings/frostTower.webp",
                 imgR: "/images/elves/buildings/frostTowerR.webp",
                 gold: 95,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *3*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *3*",
                 changes: [
                     {
                         name: "Magic Tower",
@@ -1997,7 +1995,7 @@ const treeOfTechnologyUpgrades = [
                 img: "/images/elves/buildings/earthTower.webp",
                 imgR: "/images/elves/buildings/earthTowerR.webp",
                 gold: 115,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *4*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *4*",
                 changes: [
                     //only damage and health upg
                     {
@@ -2213,7 +2211,7 @@ const treeOfTechnologyUpgrades = [
                 img: "/images/elves/buildings/lightningTower.webp",
                 imgR: "/images/elves/buildings/lightningTowerR.webp",
                 gold: 135,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *5*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *5*",
                 changes: [
                     {
                         name: "Magic Tower",
@@ -2440,7 +2438,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Archer",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2458,7 +2456,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2476,7 +2474,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph Rider",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2501,7 +2499,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Archer",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2523,7 +2521,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2545,7 +2543,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph Rider",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2571,11 +2569,11 @@ const treeOfTechnologyUpgrades = [
                 lvl: 3,
                 img: "/images/elves/upgrades/treeOfTechnology/leadership/leadership3.png",
                 gold: 75,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *2*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *2*",
                 changes: [
                     {
                         name: "Archer",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2593,7 +2591,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2611,7 +2609,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph Rider",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2636,7 +2634,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Archer",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2660,7 +2658,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2684,7 +2682,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph Rider",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2712,11 +2710,11 @@ const treeOfTechnologyUpgrades = [
                 lvl: 5,
                 img: "/images/elves/upgrades/treeOfTechnology/leadership/leadership5.png",
                 gold: 95,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *3*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *3*",
                 changes: [
                     {
                         name: "Archer",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2734,7 +2732,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2752,7 +2750,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph Rider",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2777,7 +2775,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Archer",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2801,7 +2799,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2825,7 +2823,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph Rider",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2853,11 +2851,11 @@ const treeOfTechnologyUpgrades = [
                 lvl: 7,
                 img: "/images/elves/upgrades/treeOfTechnology/leadership/leadership7.png",
                 gold: 115,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *4*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *4*",
                 changes: [
                     {
                         name: "Archer",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2875,7 +2873,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2893,7 +2891,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph Rider",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2918,7 +2916,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Archer",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2942,7 +2940,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2966,7 +2964,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph Rider",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -2994,11 +2992,11 @@ const treeOfTechnologyUpgrades = [
                 lvl: 9,
                 img: "/images/elves/upgrades/treeOfTechnology/leadership/leadership9.png",
                 gold: 135,
-                requires: "&/buildings/treeOfTechnology/#Architecture& *5*",
+                requires: "&/elves/buildings/treeOfTechnology/#Architecture& *5*",
                 changes: [
                     {
                         name: "Archer",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -3016,7 +3014,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -3034,7 +3032,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph Rider",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -3059,7 +3057,7 @@ const treeOfTechnologyUpgrades = [
                 changes: [
                     {
                         name: "Archer",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -3083,7 +3081,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -3107,7 +3105,7 @@ const treeOfTechnologyUpgrades = [
                     },
                     {
                         name: "Hippogryph Rider",
-                        type: "units",
+                        type: "units", team: "elves",
                         stats: [
                             {
                                 name: "Damage",
@@ -3141,28 +3139,28 @@ export const treeOfLifeUpgrades = [
         imgR: "/images/elves/upgrades/treeOfLife/regenerationR.webp",
         name: "Regeneration",
         hotkey: "Q",
-        description: "The &/units/Elven Worker& health regenerates ^+3%^ life per second."
+        description: "The &/elves/units/Elven Worker& health regenerates ^+3%^ life per second."
     },
     {
         img: "/images/elves/upgrades/treeOfLife/wildGrowth.webp",
         imgR: "/images/elves/upgrades/treeOfLife/wildGrowthR.webp",
         name: "Wild Growth",
         hotkey: "W",
-        description: "Allows you to build structures without a &/buildings/Gold Mine&."
+        description: "Allows you to build structures without a &/elves/buildings/Gold Mine&."
     },
     {
         img: "/images/elves/upgrades/treeOfLife/techCenter.webp",
         imgR: "/images/elves/upgrades/treeOfLife/techCenterR.webp",
         name: "Tech Center",
         hotkey: "E",
-        description: "<p>Replace the &/buildings/Tree Of Technology& with the &/buildings/Tech Center&.</p><p>The &/buildings/Tech Center& has ^2x2^ size and is built ^+33%^ faster.</p><p class='text-danger'>All player owned &/buildings/Tree Of Technology& are destroyed and refunded when you choose this talent.</p>"
+        description: "<p>Replace the &/elves/buildings/Tree Of Technology& with the &/elves/buildings/Tech Center&.</p><p>The &/elves/buildings/Tech Center& has ^2x2^ size and is built ^+33%^ faster.</p><p class='text-danger'>All player owned &/elves/buildings/Tree Of Technology& are destroyed and refunded when you choose this talent.</p>"
     },
     {
         img: "/images/elves/upgrades/treeOfLife/barracks.webp",
         imgR: "/images/elves/upgrades/treeOfLife/barracksR.webp",
         name: "Barracks",
         hotkey: "R",
-        description: "<p>Replace the &/buildings/Tree Of War& with the &/buildings/Barracks&.</p><p>The &/buildings/Barracks& has ^2x2^ size and is built ^+33%^ faster.</p><p class='text-danger'>All player owned &/buildings/Tree Of War& are destroyed and refunded when you choose this talent.</p>"
+        description: "<p>Replace the &/elves/buildings/Tree Of War& with the &/elves/buildings/Barracks&.</p><p>The &/elves/buildings/Barracks& has ^2x2^ size and is built ^+33%^ faster.</p><p class='text-danger'>All player owned &/elves/buildings/Tree Of War& are destroyed and refunded when you choose this talent.</p>"
     },
     {
         img: "/images/elves/upgrades/treeOfLife/persistence.webp",
@@ -3183,28 +3181,28 @@ export const treeOfLifeUpgrades = [
         imgR: "/images/elves/upgrades/treeOfLife/trickeryR.webp",
         name: "Trickery",
         hotkey: "D",
-        description: "<p>Reduce the &/units/Elven Worker& abilities cooldown by ^-15%^.</p><p>You also respawn with ^50%^ of your maximum mana when returning to the map after a resurrection.</p>"
+        description: "<p>Reduce the &/elves/units/Elven Worker& abilities cooldown by ^-15%^.</p><p>You also respawn with ^50%^ of your maximum mana when returning to the map after a resurrection.</p>"
     },
     {
         img: "/images/elves/upgrades/treeOfLife/naturalBond.webp",
         imgR: "/images/elves/upgrades/treeOfLife/naturalBondR.webp",
         name: "Natural Bond",
         hotkey: "F",
-        description: "<p>Reduce resurrection time by ^-50%^.</p><p>Spawn a free &/units/Owl Scout& when you return to the map after resurrecting.</p>"
+        description: "<p>Reduce resurrection time by ^-50%^.</p><p>Spawn a free &/elves/units/Owl Scout& when you return to the map after resurrecting.</p>"
     },
     {
         img: "/images/elves/upgrades/treeOfLife/shatter.webp",
         imgR: "/images/elves/upgrades/treeOfLife/shatterR.webp",
         name: "Shatter",
         hotkey: "Z",
-        description: "The &/units/Elven Worker& deals ^+1^ additional damage per hit to destructible objects."
+        description: "The &/elves/units/Elven Worker& deals ^+1^ additional damage per hit to destructible objects."
     },
     {
         img: "/images/elves/upgrades/treeOfLife/resurrection.png",
         imgR: "/images/elves/upgrades/treeOfLife/resurrection.png",
         name: "Resurrection",
         hotkey: "V",
-        description: "Resurrect your &/units/Elven Worker&."
+        description: "Resurrect your &/elves/units/Elven Worker&."
     }
 ];
 
@@ -3218,7 +3216,7 @@ export const elvesBuildings = [
         stats: {
             "Health": 40,
         },
-        description: "Entangle a &/buildings/Gold Mine& so that the &/units/Elven Worker& can harvest gold.<p>@This structure feeds gold only when killed after the ^10^ minute mark.@</p>",
+        description: "Entangle a &/elves/buildings/Gold Mine& so that the &/elves/units/Elven Worker& can harvest gold.<p>@This structure feeds gold only when killed after the ^10^ minute mark.@</p>",
     },
     {
         img: "/images/elves/buildings/blocker/blocker.webp",
@@ -3229,7 +3227,7 @@ export const elvesBuildings = [
         treeOfTechnologyUpgrades: true,
         hasRequires: true,
         feed: "3-6",
-        description: "The &/buildings/Blocker& has ^80^ health and can be used to wall off sections of the map to restrict the mobility of the opposing team.<p>You can use the blocker as a ruler to measure the distance between objects. If there is ^1^ blocker space between any obstacle either horizontally, vertically or diagonally the enemy cannot walk in.</p>",
+        description: "The &/elves/buildings/Blocker& has ^80^ health and can be used to wall off sections of the map to restrict the mobility of the opposing team.<p>You can use the blocker as a ruler to measure the distance between objects. If there is ^1^ blocker space between any obstacle either horizontally, vertically or diagonally the enemy cannot walk in.</p>",
         stats: {
             "Health": 80,
         },
@@ -3241,8 +3239,8 @@ export const elvesBuildings = [
                 gold: 6,
                 feed: "6-12",
                 name: "Big Blocker",
-                requires: "&/buildings/treeOfTechnology#Architecture& *1*",
-                description: `Upgrade &/buildings/Blocker& to &/buildings/Blocker#Big Blocker&<ul><li>Health: 80 -> ^154^ (^+74^)</li><li>Feed: 3-6 -> @6-12@</li></ul>`
+                requires: "&/elves/buildings/treeOfTechnology#Architecture& *1*",
+                description: `Upgrade &/elves/buildings/Blocker& to &/elves/buildings/Blocker#Big Blocker&<ul><li>Health: 80 -> ^154^ (^+74^)</li><li>Feed: 3-6 -> @6-12@</li></ul>`
             },
             {
                 img: "/images/elves/buildings/blocker/stoneBlocker.webp",
@@ -3251,7 +3249,7 @@ export const elvesBuildings = [
                 gold: 8,
                 feed: "9-18",
                 name: "Stone Blocker",
-                description: "Upgrade &/buildings/Blocker#Big Blocker& to &/buildings/Blocker#Stone Blocker&<ul><li>Health: 154 -> ^264^ (^+110^)</li><li>Feed: 6-12 -> @9-18@</li></ul>"
+                description: "Upgrade &/elves/buildings/Blocker#Big Blocker& to &/elves/buildings/Blocker#Stone Blocker&<ul><li>Health: 154 -> ^264^ (^+110^)</li><li>Feed: 6-12 -> @9-18@</li></ul>"
             },
             {
                 img: "/images/elves/buildings/blocker/redStoneBlocker.webp",
@@ -3260,7 +3258,7 @@ export const elvesBuildings = [
                 gold: 13,
                 feed: "14-28",
                 name: "Red Stone Blocker",
-                description: "Upgrade &/buildings/Blocker#Stone Blocker& to &/buildings/Blocker#Red Stone Blocker&<ul><li>Health: 264 -> ^455^ (^+191^)</li><li>Feed: 9-18 -> @14-28@</li></ul>"
+                description: "Upgrade &/elves/buildings/Blocker#Stone Blocker& to &/elves/buildings/Blocker#Red Stone Blocker&<ul><li>Health: 264 -> ^455^ (^+191^)</li><li>Feed: 9-18 -> @14-28@</li></ul>"
             },
             {
                 img: "/images/elves/buildings/blocker/crystalBlocker.webp",
@@ -3269,7 +3267,7 @@ export const elvesBuildings = [
                 gold: 19,
                 feed: "22-44",
                 name: "Crystal Blocker",
-                description: "Upgrade &/buildings/Blocker#Red Stone Blocker& to &/buildings/Blocker#Crystal Blocker&<ul><li>Health: 455 -> ^756^ (^+301^)</li><li>Feed: 14-28 -> @22-44@</li></ul>"
+                description: "Upgrade &/elves/buildings/Blocker#Red Stone Blocker& to &/elves/buildings/Blocker#Crystal Blocker&<ul><li>Health: 455 -> ^756^ (^+301^)</li><li>Feed: 14-28 -> @22-44@</li></ul>"
             },
             {
                 img: "/images/elves/buildings/blocker/magicBlocker.webp",
@@ -3278,7 +3276,7 @@ export const elvesBuildings = [
                 gold: 26,
                 feed: "32-64",
                 name: "Magic Blocker",
-                description: "Upgrade &/buildings/Blocker#Crystal Blocker& to &/buildings/Blocker#Magic Blocker&<ul><li>Health: 756 -> ^1200^ (^+444^)</li><li>Feed: 22-44 -> @32-64@</li></ul>"
+                description: "Upgrade &/elves/buildings/Blocker#Crystal Blocker& to &/elves/buildings/Blocker#Magic Blocker&<ul><li>Health: 756 -> ^1200^ (^+444^)</li><li>Feed: 22-44 -> @32-64@</li></ul>"
             },
         ]
     },
@@ -3319,7 +3317,7 @@ export const elvesBuildings = [
         img: "/images/elves/buildings/magicTower.webp",
         imgR: "/images/elves/buildings/magicTowerR.webp",
         name: "Magic Tower",
-        requires: "&/buildings/treeOfTechnology#Architecture& *1*",
+        requires: "&/elves/buildings/treeOfTechnology#Architecture& *1*",
         description: "A balanced tower with moderate damage output, range and attack speed.",
         gold: 20,
         feed: "8-16",

@@ -86,7 +86,8 @@ export function buildingPage(ctx, next) {
                             ${mainUpgrade.upgrades.map(upgrade => html`
                                 <td>
                                     ${upgrade.changes.map(element => html`
-                                        <a href=${element.type ? `/${element.type}/${rmvSpc(element.name)}` : ""}>${element.name}</a>
+                                        ${!element.team && !element.type ? html`<span class="text-blue">${element.name}</span>` : html`<a href=${`/${element.team}/${element.type ? element.type + "/" : ""}${rmvSpc(element.name)}`}>${element.name}</a>
+                                        `}
                                         <ul>
                                             ${element.stats.map(stat => html`
                                                 <li>${stat.name}: ${stat.hasOwnProperty('old') ? `${stat.old} -> ` : ""}<span class="text-yellow">${stat.new}</span> ${stat.parenthesesVal ? html`(<span class="text-yellow">${stat.parenthesesVal}</span>)` : ""} ${stat.description ? unsafeHTML(markers(stat.description)) : ""}</li>

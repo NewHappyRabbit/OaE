@@ -30,12 +30,8 @@ page('/', homePage, scrollToView);
 page('/teams', selectTeamPage, scrollToView);
 page('/orcs', teamPage, scrollToView);
 page('/elves', teamPage, scrollToView);
-
-
 page('/:team/units/:name', unitPage, scrollToView);
-
-
-
 page('/:team/buildings/:name', buildingPage, scrollToView);
+
 page('*', () => page('/')); // Everything else, redirect to home page
 page();

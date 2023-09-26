@@ -160,7 +160,7 @@ export function unitPage(ctx, next) {
         ${unit.abilities ? unitAbilitiesTable(unit.abilities) : ""}
         ${treeOfWarUpgrades[unit.name] ? unitUpgradesTable(treeOfWarUpgrades[unit.name], 'Tree Of War') : ""}
         ${rmvSpc(unit.name).toLowerCase() == 'elvenworker' ? unitUpgradesTable(treeOfLifeUpgrades, 'Tree Of Life') : ""}
-        ${unit.treeOfTechnologyUpgrades ? html`<p class="fw-bold text-green fs-5 mt-5">This unit can get additional upgrades for health, armor, etc. from the <a href="/buildings/TreeOfTechnology">Tree Of Technology</a>!</p>` : ""}
+        ${unit.treeOfTechnologyUpgrades ? html`<p class="fw-bold text-green fs-5 mt-5">This unit can get additional upgrades for health, armor, etc. from the <a href="/elves/buildings/TreeOfTechnology">Tree Of Technology</a>!</p>` : ""}
     `;
 
     render(unitTemplate(selectedUnit), container);
