@@ -10,8 +10,8 @@ export function homePage(ctx, next) {
 
         <h4 class="mt-5">Here's whats available right now:</h4>
         <ul class="fs-4">
-            <li><a href="/buildings">Buildings</a></li>
-            <li><a href="/units">Units</a></li>
+            <li><a href="/elves">Elves</a></li>
+            <li><a href="/orcs">Orcs</a></li>
         </ul>
 
         <h5 class="text-blue">I've tried using the game borders in tables (can be seen in Units > Any unit > Abilities table). Maybe we can stick with it</h5>
