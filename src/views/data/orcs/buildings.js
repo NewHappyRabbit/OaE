@@ -8,21 +8,25 @@ export const altarUpgrades = [
     {
         name: "Weapon",
         hotkey: "W",
+        description: ""
         //TODO
     },
     {
         name: "Armor",
         hotkey: "E",
+        description: ""
         //TODO I have all the images for the upgrades
     },
     {
         name: "Conjurer",
         hotkey: "R",
+        description: ""
         //TODO
     },
     {
         name: "Recover",
         hotkey: "A",
+        description: ""
         //TODO
     }
 ]
