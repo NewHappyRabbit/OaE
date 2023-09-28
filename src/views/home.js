@@ -25,7 +25,11 @@ export function homePage(ctx, next) {
             <li>Spell book
                 <ul>
                     <li class="text-green">Elves ✓</li>
-                    <li>Orcs</li>
+                    <li class="text-green">Orcs</li>
+                    <ul>
+                        <li>Scryer - find icon</li>
+                        <li>Ghost - find icon</li>
+                    </ul>
                 </ul>
             </li>
             <li>Elves
@@ -34,16 +38,16 @@ export function homePage(ctx, next) {
                         <ul>
                             <li>Description for all units</li>
                             <li>Tips for all units</li>
+                            <li>Owl Scout
+                                <ul>
+                                    <li>Check if reforged icon is correct</li>
+                                </ul>
+                            </li>
                             <li class="text-green">Ancient ✓</li>
                             <li class="text-green">Elven Worker ✓
                                 <ul>
                                     <li class="text-green">Abilities (spell book) ✓</li>
                                     <li class="text-green">Upgrades from Tree of Life ✓</li>
-                                </ul>
-                            </li>
-                            <li>Owl Scout
-                                <ul>
-                                    <li>Check if reforged icon is correct</li>
                                 </ul>
                             </li>
                             <li class="text-green">Hippogryph ✓
@@ -58,11 +62,6 @@ export function homePage(ctx, next) {
                     <ul>
                         <li>Tech center</li>
                         <li>Barracks</li>
-                        <li class="text-green">Gold mine ✓
-                            <ul>
-                                <li class="text-green">Change description "feed" text to "This structure feeds gold only when killed after the 10 minute mark" ✓</li>
-                            </ul>
-                        </li>
                         <li>Blocker
                             <ul>
                                 <li>Change the description to be more universal, because now it just states its health and etc. Make it something like: "The blocker is a defensive structure, used to block paths, etc."</li>
@@ -85,6 +84,11 @@ export function homePage(ctx, next) {
                                 <li>Add upgrades and abilities</li>
                             </ul>
                         </li>
+                        <li class="text-green">Gold mine ✓
+                            <ul>
+                                <li class="text-green">Change description "feed" text to "This structure feeds gold only when killed after the 10 minute mark" ✓</li>
+                            </ul>
+                        </li>
                     </li>
                 </ul>
             </li>
@@ -93,12 +97,51 @@ export function homePage(ctx, next) {
                 <ul>
                     <li>Units
                         <ul>
-                            <li>Add Grunt, Shaman, Doctor, Berserker, ....</li>
+                            <li class="text-green">Grunt ✓</li>
+                            <li>Shaman</li>
+                            <ul>
+                                <li>Ability Lightning - find icon</li>
+                            </ul>
+                            <li>Doctor</li>
+                            <ul>
+                                <li class="text-green">Description and stats ✓</li>
+                                <li>Abilities</li>
+                            </ul>
+                            <li>Tracker</li>
+                            <ul>
+                                <li class="text-green">Description and stats ✓</li>
+                                <li>Abilities</li>
+                            </ul>
+                            <li>Tauren</li>
+                            <ul>
+                                <li class="text-green">Description and stats ✓</li>
+                                <li>Abilities</li>
+                            </ul>
+                            <li>Inventor</li>
+                            <ul>
+                                <li class="text-green">Description and stats ✓</li>
+                                <li>Abilities</li>
+                            </ul>
+                            <li>Berserker</li>
+                            <ul>
+                                <li class="text-green">Description and stats ✓</li>
+                                <li>Abilities</li>
+                            </ul>
+                            <li>Morphs lvl 2: Far seer, ...</li>
                         </ul>
                     </li>
                     <li>Buildings
                         <ul>
-                            <li>Add all buildings</li>
+                            <li>Morph</li>
+                            <ul>
+                                <li>Description</li>
+                                <li>Upgrades</li>
+                            </ul>
+                            <li>Altar</li>
+                            <ul>
+                                <li>Description</li>
+                                <li>Upgrades - will be located in each units page</li>
+                            </ul>
                         </ul>
                     </li>
                 </ul>
