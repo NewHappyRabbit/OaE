@@ -4,7 +4,6 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { container } from '../app';
 import { markers, rmvSpc } from '../utilities';
 import { teams } from './teams';
-import { treeOfLifeUpgrades, treeOfWarUpgrades } from './data/elves/buildings';
 
 export function unitPage(ctx, next) {
     const selectedUnitName = ctx.params.name;
@@ -32,8 +31,9 @@ export function unitPage(ctx, next) {
                         <th class="text-center">Name</th>
                         ${abilities.some(ability => ability.hotkey) ? html`<th class="text-center">Hotkey</th>` : ""}
                         ${abilities.some(ability => ability.hasOwnProperty('mana')) ? html`<th class="text-center">Mana</th>` : ""}
-                        ${abilities.some(ability => ability.hasOwnProperty('cooldown')) ? html`<th class="text-center">Cooldown</th>` : ""}
+                        ${abilities.some(ability => ability.hasOwnProperty('cooldown') || ability.hasOwnProperty('passive')) ? html`<th class="text-center">Cooldown</th>` : ""}
                         ${abilities.some(ability => ability.range) ? html`<th class="text-center">Range</th>` : ""}
+                        ${abilities.some(ability => ability.gold) ? html`<th class="text-center">Gold cost</th>` : ""}
                         <th>Description</th>
                     </thead>
                     <tbody>
@@ -45,10 +45,11 @@ export function unitPage(ctx, next) {
                                 <td class="abilityName name text-center">${unsafeHTML(markers(ability.name))}</td>
                                 ${abilities.some(ability => ability.hotkey) ? ability.hotkey ? html`<td class="text-center">(${ability.hotkey})</td>` : ability.passive === true ? html`<td><span class="text-purple text-center">Passive</span></td>` : html`<td></td>` : ""}
                                 ${abilities.some(ability => ability.mana) ? ability.mana ? html`<td class="text-blue text-center">${ability.mana}</td>` : html`<td></td>` : ""}
-                                ${abilities.some(ability => ability.cooldown) ? ability.cooldown ? html`<td class="text-center">${ability.cooldown}</td>` : html`<td></td>` : ""}
+                                ${abilities.some(ability => ability.cooldown) ? ability.cooldown ? html`<td class="text-center">${ability.cooldown}` : html`<td></td>` : ""}
+                                ${abilities.some(ability => ability.gold) ? ability.gold ? html`<td class="text-center"><span class="text-yellow">${ability.gold}g</span></td>` : html`<td></td>` : ""}
                                 ${abilities.some(ability => ability.range) ? ability.range ? html`<td class="text-center">${ability.range}</td>` : html`<td></td>` : ""}
-                                <td class="abilityDescription description">${unsafeHTML(markers(ability.description))}</td>
-                            </tr>`})}
+        <td class="abilityDescription description">${unsafeHTML(markers(ability.description))}</td>
+                            </tr > `})}
                             </tbody>
                 </table>
             </div>
@@ -158,8 +159,9 @@ export function unitPage(ctx, next) {
             </div>
         </div>
         ${unit.abilities ? unitAbilitiesTable(unit.abilities) : ""}
-        ${treeOfWarUpgrades[unit.name] ? unitUpgradesTable(treeOfWarUpgrades[unit.name], 'Tree Of War') : ""}
-        ${rmvSpc(unit.name).toLowerCase() == 'elvenworker' ? unitUpgradesTable(treeOfLifeUpgrades, 'Tree Of Life') : ""}
+        ${unit.treeOfWarUpgrades ? unitUpgradesTable(unit.treeOfWarUpgrades, 'Tree Of War') : ""}
+        ${unit.treeOfLifeUpgrades ? unitUpgradesTable(unit.treeOfLifeUpgrades, 'Tree Of Life') : ""}
+        ${unit.altarUpgrades ? unitUpgradesTable(unit.altarUpgrades, 'Altar') : ""}
         ${unit.treeOfTechnologyUpgrades ? html`<p class="fw-bold text-green fs-5 mt-5">This unit can get additional upgrades for health, armor, etc. from the <a href="/elves/buildings/TreeOfTechnology">Tree Of Technology</a>!</p>` : ""}
     `;
 

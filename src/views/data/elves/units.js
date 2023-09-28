@@ -1,4 +1,5 @@
 import { spellBookAbilities } from "./spellbook";
+import { treeOfLifeUpgrades, treeOfWarUpgrades } from "./buildings";
 
 export const elvesUnits = [
     {
@@ -8,13 +9,16 @@ export const elvesUnits = [
         team: "elves",
         description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.", //TODO
         treeOfTechnologyUpgrades: true,
+        treeOfWarUpgrades: treeOfWarUpgrades["Elven Worker"],
+        treeOfLifeUpgrades: treeOfLifeUpgrades,
         stats: {
             "Damage": 80,
             "Move speed": 250,
             "Health": 20,
             //TODO
         },
-        abilities: spellBookAbilities
+        abilities: spellBookAbilities,
+
     },
     {
         img: "/images/elves/units/owlScout/owlScout.webp",
@@ -59,6 +63,7 @@ export const elvesUnits = [
                 description: "Reveal invisible units within ^600^ range.",
             }
         ],
+        treeOfWarUpgrades: treeOfWarUpgrades["Owl Scout"],
     },
     {
         img: "/images/elves/units/archer/archer.webp",
@@ -70,6 +75,7 @@ export const elvesUnits = [
         supply: 2,
         feed: "8-16",
         treeOfTechnologyUpgrades: true,
+        treeOfWarUpgrades: treeOfWarUpgrades["Archer"],
         description: "<p>^Requires &/buildings/treeOfTechnology#Architecture& *1* upgrade to train.^</p><p>A ranged attacker with low health and damage. Archers are best used as a support unit to increase the damage output of a base. Put your archers behind upgraded blockers and enable hold position to prevent them from chasing the enemy.</p>",
         transformsTo: [
             "Hippogryph Rider"
@@ -89,7 +95,8 @@ export const elvesUnits = [
                 hotkey: "Q",
                 description: "The &/elves/units/Archer& mounts the &/elves/units/Hippogryph& - forming a &/elves/units/Hippogryph Rider&.",
             }
-        ]
+        ],
+
     },
     {
         img: "/images/elves/units/ent/ent.webp",
@@ -101,6 +108,7 @@ export const elvesUnits = [
         supply: 3,
         feed: "12-24",
         treeOfTechnologyUpgrades: true,
+        treeOfWarUpgrades: treeOfWarUpgrades["Ent"],
         description: "<p>^Requires &#Sprout& upgrade to train.^</p><p>The Ent is a slow and durable melee attacker that can be used to setup kills, but it is not strong enough to fight the enemy head-on. It is most effective when paired with a reliable damage source, but can be dangerous in large numbers.</p>",
         transformsTo: [
             "Ancient"
@@ -148,12 +156,13 @@ export const elvesUnits = [
         supply: 3,
         feed: "24-48",
         treeOfTechnologyUpgrades: true,
+        treeOfWarUpgrades: treeOfWarUpgrades["Druid"],
         description: "^Requires &#Druid Training 1& upgrade.<p>You can only build one of this unit.</p>^<p>A spell-caster with powerful offensive and supportive abilities. The druid can be used to setup kills, to weaken the enemy or to shut-down power plays.</p>",
         stats: {
             "Attack Damage": 42,
             "Attack Speed": 2.0,
             "Attack Range": 600,
-            "Move speed": 250,
+            "Move speed": 140,
             "Health": 40,
             "Mana": 50
         },

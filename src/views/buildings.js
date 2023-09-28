@@ -2,7 +2,6 @@ import { html, render } from 'lit-html'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { container } from '../app';
 import { markers, rmvSpc } from '../utilities';
-import { elvesBuildings } from './data/elves/buildings';
 import { teams } from './teams';
 
 
