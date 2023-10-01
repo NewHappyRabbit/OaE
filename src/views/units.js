@@ -68,7 +68,7 @@ export function unitPage(ctx, next) {
                     <th class="text-center">Classic</th>
                     <th class="text-center">Reforged</th>
                     <th class="text-center">Name</th>
-                    <th class="text-center">Gold cost</th>
+                    ${upgrades.some(upgrade => upgrade.gold) ? html`<th class="text-center">Gold cost</th>` : ""}
                     <th>Description</th>
                 </thead>
                 <tbody>
@@ -78,7 +78,7 @@ export function unitPage(ctx, next) {
                             <td class="text-center"><img src="${upgrade.img}" class="abilityImage"></td>
                             <td class="text-center"><img src="${upgrade.imgR}" class="abilityImage"></td>
                             <td class="text-center">${unsafeHTML(markers(upgrade.name))}</td>
-                            <td class="text-center"><span class="text-yellow">${upgrade.gold}g</span></td>
+                            ${upgrades.some(upgrade => upgrade.gold) ? html`<td class="text-center"><span class="text-yellow">${upgrade.gold}g</span></td>` : ""}
                             <td>${unsafeHTML(markers(upgrade.description))}</td>
                         </tr>`})}
                         </tbody>

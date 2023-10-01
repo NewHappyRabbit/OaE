@@ -76,8 +76,8 @@ export function buildingPage(ctx, next) {
                             <td class="text-center"><img src="${upgrade.imgR}" class="abilityImage"></td>
                             <td class="text-center">${unsafeHTML(markers(upgrade.name))}</td>
                             <td class="text-center">(${upgrade.hotkey})</td>
-                            ${selectedBuilding.upgrades.some(upgrade => upgrade.gold) ? html`<td class="text-center"><span class="text-yellow">${upgrade.gold}g</span></td>` : ""}
-                            ${selectedBuilding.upgrades.some(upgrade => upgrade.supply) ? html`<td class="text-center">${upgrade.supply}</td>` : ""}
+                            ${upgrades.some(upgrade => upgrade.gold) ? html`<td class="text-center"><span class="text-yellow">${upgrade.gold}g</span></td>` : ""}
+                            ${upgrades.some(upgrade => upgrade.supply) ? html`<td class="text-center">${upgrade.supply}</td>` : ""}
                             <td>${unsafeHTML(markers(upgrade.description))}</td>
                         </tr>`})}
                         </tbody>
