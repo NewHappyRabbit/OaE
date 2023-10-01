@@ -1528,8 +1528,8 @@ const treeOfTechnologyUpgrades = [
             },
             {
                 lvl: 3,
-                img: "/images/elves/buildings/fireTower.webp",
-                imgR: "/images/elves/buildings/fireTowerR.webp",
+                img: "/images/elves/buildings/fireTower/fireTower.webp",
+                imgR: "/images/elves/buildings/fireTower/fireTowerR.webp",
                 gold: 75,
                 requires: "&/elves/buildings/treeOfTechnology/#Architecture& *2*",
                 changes: [
@@ -1627,8 +1627,8 @@ const treeOfTechnologyUpgrades = [
             },
             {
                 lvl: 4,
-                img: "/images/elves/buildings/fireTower.webp",
-                imgR: "/images/elves/buildings/fireTowerR.webp",
+                img: "/images/elves/buildings/fireTower/fireTower.webp",
+                imgR: "/images/elves/buildings/fireTower/fireTowerR.webp",
                 gold: 85,
                 changes: [
                     {
@@ -1755,8 +1755,8 @@ const treeOfTechnologyUpgrades = [
             },
             {
                 lvl: 5,
-                img: "/images/elves/buildings/frostTower.webp",
-                imgR: "/images/elves/buildings/frostTowerR.webp",
+                img: "/images/elves/buildings/frostTower/frostTower.webp",
+                imgR: "/images/elves/buildings/frostTower/frostTowerR.webp",
                 gold: 95,
                 requires: "&/elves/buildings/treeOfTechnology/#Architecture& *3*",
                 changes: [
@@ -1854,8 +1854,8 @@ const treeOfTechnologyUpgrades = [
             },
             {
                 lvl: 6,
-                img: "/images/elves/buildings/frostTower.webp",
-                imgR: "/images/elves/buildings/frostTowerR.webp",
+                img: "/images/elves/buildings/frostTower/frostTower.webp",
+                imgR: "/images/elves/buildings/frostTower/frostTowerR.webp",
                 gold: 105,
                 changes: [
                     {
@@ -1992,8 +1992,8 @@ const treeOfTechnologyUpgrades = [
             },
             {
                 lvl: 7,
-                img: "/images/elves/buildings/earthTower.webp",
-                imgR: "/images/elves/buildings/earthTowerR.webp",
+                img: "/images/elves/buildings/earthTower/earthTower.webp",
+                imgR: "/images/elves/buildings/earthTower/earthTowerR.webp",
                 gold: 115,
                 requires: "&/elves/buildings/treeOfTechnology/#Architecture& *4*",
                 changes: [
@@ -2092,8 +2092,8 @@ const treeOfTechnologyUpgrades = [
             },
             {
                 lvl: 8,
-                img: "/images/elves/buildings/earthTower.webp",
-                imgR: "/images/elves/buildings/earthTowerR.webp",
+                img: "/images/elves/buildings/earthTower/earthTower.webp",
+                imgR: "/images/elves/buildings/earthTower/earthTowerR.webp",
                 gold: 125,
                 changes: [
                     {
@@ -2208,8 +2208,8 @@ const treeOfTechnologyUpgrades = [
             },
             {
                 lvl: 9,
-                img: "/images/elves/buildings/lightningTower.webp",
-                imgR: "/images/elves/buildings/lightningTowerR.webp",
+                img: "/images/elves/buildings/lightningTower/lightningTower.webp",
+                imgR: "/images/elves/buildings/lightningTower/lightningTowerR.webp",
                 gold: 135,
                 requires: "&/elves/buildings/treeOfTechnology/#Architecture& *5*",
                 changes: [
@@ -2307,8 +2307,8 @@ const treeOfTechnologyUpgrades = [
             },
             {
                 lvl: 10,
-                img: "/images/elves/buildings/lightningTower.webp",
-                imgR: "/images/elves/buildings/lightningTowerR.webp",
+                img: "/images/elves/buildings/lightningTower/lightningTower.webp",
+                imgR: "/images/elves/buildings/lightningTower/lightningTowerR.webp",
                 gold: 145,
                 changes: [
                     {
@@ -3318,7 +3318,7 @@ export const elvesBuildings = [
         imgR: "/images/elves/buildings/magicTowerR.webp",
         name: "Magic Tower",
         requires: "&/elves/buildings/treeOfTechnology#Architecture& *1*",
-        description: "A balanced tower with moderate damage output, range and attack speed.",
+        description: "<p>^Requires &/elves/buildings/TreeOfTechnology#Architecture& *1*.^</p>A balanced tower with moderate damage output, range and attack speed.",
         gold: 20,
         feed: "8-16",
         supply: 2,
@@ -3331,12 +3331,79 @@ export const elvesBuildings = [
         },
         treeOfTechnologyUpgrades: true,
         upgrades: [
-            //TODO
+            {
+                img: "/images/elves/upgrades/magicTower/pathOfFire.webp",
+                imgR: "/images/elves/upgrades/magicTower/pathOfFireR.webp",
+                name: "Path of Fire",
+                hotkey: "Z",
+                gold: 100,
+                description: "Unlock the &/elves/buildings/Fire Tower&."
+            },
+            {
+                img: "/images/elves/upgrades/magicTower/pathOfEarth.webp",
+                imgR: "/images/elves/upgrades/magicTower/pathOfEarthR.webp",
+                name: "Path of Earth",
+                hotkey: "X",
+                gold: 100,
+                description: "Unlock the &/elves/buildings/Earth Tower&."
+            },
+            {
+                img: "/images/elves/upgrades/magicTower/pathOfFrost.webp",
+                imgR: "/images/elves/upgrades/magicTower/pathOfFrostR.webp",
+                name: "Path of Frost",
+                hotkey: "C",
+                gold: 100,
+                description: "Unlock the &/elves/buildings/Frost Tower&."
+            },
+            {
+                img: "/images/elves/upgrades/magicTower/pathOfLightning.webp",
+                imgR: "/images/elves/upgrades/magicTower/pathOfLightningR.webp",
+                name: "Path of Lightning",
+                hotkey: "V",
+                gold: 300,
+                description: "Unlock the &/elves/buildings/Lightning Tower&."
+            },
+            {
+                img: "/images/elves/buildings/fireTower/fireTower.webp",
+                imgR: "/images/elves/buildings/fireTower/fireTowerR.webp",
+                name: "Fire Tower",
+                hotkey: "Z",
+                gold: 30,
+                supply: 3,
+                description: "Upgrade to &/elves/buildings/Fire Tower&."
+            },
+            {
+                img: "/images/elves/buildings/earthTower/earthTower.webp",
+                imgR: "/images/elves/buildings/earthTower/earthTowerR.webp",
+                name: "Earth Tower",
+                hotkey: "X",
+                gold: 20,
+                supply: 2,
+                description: "Upgrade to &/elves/buildings/Earth Tower&."
+            },
+            {
+                img: "/images/elves/buildings/frostTower/frostTower.webp",
+                imgR: "/images/elves/buildings/frostTower/frostTowerR.webp",
+                name: "Frost Tower",
+                hotkey: "C",
+                gold: 10,
+                supply: 1,
+                description: "Upgrade to &/elves/buildings/Frost Tower&."
+            },
+            {
+                img: "/images/elves/buildings/lightningTower/lightningTower.webp",
+                imgR: "/images/elves/buildings/lightningTower/lightningTowerR.webp",
+                name: "Lightning Tower",
+                hotkey: "V",
+                gold: 55,
+                supply: 3,
+                description: "Upgrade to &/elves/buildings/Lightning Tower&."
+            },
         ]
     },
     {
-        img: "/images/elves/buildings/fireTower.webp",
-        imgR: "/images/elves/buildings/fireTowerR.webp",
+        img: "/images/elves/buildings/fireTower/fireTower.webp",
+        imgR: "/images/elves/buildings/fireTower/fireTowerR.webp",
         name: "Fire Tower",
         description: "A short-range tower with high burst damage and fast attack speed. Good positioning is required to utilize this tower to its fullest potential.",
         gold: 30,
@@ -3350,16 +3417,21 @@ export const elvesBuildings = [
             "Mana regeneration": 0.2,
         },
         treeOfTechnologyUpgrades: true,
-        upgrades: [
-            //TODO
-        ],
         abilities: [
-            //TODO
+            {
+                img: "/images/elves/buildings/fireTower/abilities/blaze.png",
+                imgR: "/images/elves/buildings/fireTower/abilities/blaze.png",
+                name: "Blaze",
+                hotkey: "E",
+                mana: 25,
+                cooldown: 5,
+                description: "Increase attack damage by ^50%^ for ^5^ seconds."
+            }
         ]
     },
     {
-        img: "/images/elves/buildings/earthTower.webp",
-        imgR: "/images/elves/buildings/earthTowerR.webp",
+        img: "/images/elves/buildings/earthTower/earthTower.webp",
+        imgR: "/images/elves/buildings/earthTower/earthTowerR.webp",
         name: "Earth Tower",
         description: "A mid-range tower that can attack up to ^4^ enemies at once. This tower is excellent at defending small bases from multiple attackers, but is very weak against duo and solo attacks.",
         gold: 20,
@@ -3373,13 +3445,10 @@ export const elvesBuildings = [
             "Mana regeneration": 0.2,
         },
         treeOfTechnologyUpgrades: true,
-        upgrades: [
-            //TODO
-        ],
     },
     {
-        img: "/images/elves/buildings/frostTower.webp",
-        imgR: "/images/elves/buildings/frostTowerR.webp",
+        img: "/images/elves/buildings/frostTower/frostTower.webp",
+        imgR: "/images/elves/buildings/frostTower/frostTowerR.webp",
         name: "Frost Tower",
         description: "A mid-range tower with moderate damage output and slow attack rate.", //TODO Its same as Magic Tower
         gold: 10,
@@ -3393,16 +3462,21 @@ export const elvesBuildings = [
             "Mana regeneration": 0.2,
         },
         treeOfTechnologyUpgrades: true,
-        upgrades: [
-            //TODO
-        ],
         abilities: [
-            //TODO
+            {
+                img: "/images/elves/buildings/frostTower/abilities/chill.webp",
+                imgR: "/images/elves/buildings/frostTower/abilities/chillR.webp",
+                name: "Chill",
+                hotkey: "E",
+                mana: 35,
+                cooldown: 12,
+                description: "When active, attacks reduce the target move speed scaling from ^2%^ to ^10%^ over ^6^ seconds. The slow lasts for ^2^ seconds. The total effect duration is ^12^ seconds."
+            }
         ]
     },
     {
-        img: "/images/elves/buildings/lightningTower.webp",
-        imgR: "/images/elves/buildings/lightningTowerR.webp",
+        img: "/images/elves/buildings/lightningTower/lightningTower.webp",
+        imgR: "/images/elves/buildings/lightningTower/lightningTowerR.webp",
         name: "Lightning Tower",
         description: "A long-range tower with high damage output and slow attack rate.",
         gold: 55,
@@ -3416,11 +3490,16 @@ export const elvesBuildings = [
             "Mana regeneration": 0.2,
         },
         treeOfTechnologyUpgrades: true,
-        upgrades: [
-            //TODO
-        ],
         abilities: [
-            //TODO
+            {
+                img: "/images/elves/buildings/lightningTower/abilities/stormStrike.png",
+                imgR: "/images/elves/buildings/lightningTower/abilities/stormStrike.png",
+                name: "Storm Strike",
+                hotkey: "E",
+                mana: 35,
+                cooldown: 12,
+                description: "Activate to increase attack range by ^300^ for ^12^ seconds."
+            }
         ]
     },
 ]; //TODO check if other buildings in game

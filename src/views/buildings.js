@@ -11,7 +11,49 @@ export function buildingPage(ctx, next) {
     const selectedTeam = teams[ctx.params.team];
     const selectedBuilding = selectedTeam.buildings.find(building => rmvSpc(building.name.toLowerCase()) === selectedBuildingName.toLowerCase());
 
-    const buildingAbilitiesTable = (abilities) => html``;
+    const buildingAbilitiesTable = (abilities) => html`
+        <div class="mb-5">
+            <h4 class="text-yellow">Abilities</h4>
+            <div class="tableWrapper customTableWrapper">
+                <div class="customTopBorder"></div>
+                <div class="customRightBorder"></div>
+                <div class="customBottomBorder"></div>
+                <div class="customLeftBorder"></div>
+                <div class="customTopLeftBorder"></div>
+                <div class="customTopRightBorder"></div>
+                <div class="customBottomLeftBorder"></div>
+                <div class="customBottomRightBorder"></div>
+                <table class="table w-auto customTable customTableAlternateRows" data-bs-theme="dark">
+                    <thead>
+                        <th class="text-center">Classic</th>
+                        <th class="text-center">Reforged</th>
+                        <th class="text-center">Name</th>
+                        ${abilities.some(ability => ability.hotkey) ? html`<th class="text-center">Hotkey</th>` : ""}
+                        ${abilities.some(ability => ability.hasOwnProperty('mana')) ? html`<th class="text-center">Mana</th>` : ""}
+                        ${abilities.some(ability => ability.hasOwnProperty('cooldown') || ability.hasOwnProperty('passive')) ? html`<th class="text-center">Cooldown</th>` : ""}
+                        ${abilities.some(ability => ability.range) ? html`<th class="text-center">Range</th>` : ""}
+                        ${abilities.some(ability => ability.gold) ? html`<th class="text-center">Gold cost</th>` : ""}
+                        <th>Description</th>
+                    </thead>
+                    <tbody>
+                        ${abilities.map(ability => {
+        return html`
+                            <tr id="${rmvSpc(ability.name)}">
+                                <td class="text-center"><img src="${ability.img}" class="abilityImage"></td>
+                                <td class="text-center"><img src="${ability.imgR}" class="abilityImage"></td>
+                                <td class="abilityName name text-center">${unsafeHTML(markers(ability.name))}</td>
+                                ${abilities.some(ability => ability.hotkey) ? ability.hotkey ? html`<td class="text-center">(${ability.hotkey})</td>` : ability.passive === true ? html`<td><span class="text-purple text-center">Passive</span></td>` : html`<td></td>` : ""}
+                                ${abilities.some(ability => ability.mana) ? ability.mana ? html`<td class="text-blue text-center">${ability.mana}</td>` : html`<td></td>` : ""}
+                                ${abilities.some(ability => ability.cooldown) ? ability.cooldown ? html`<td class="text-center">${ability.cooldown}` : html`<td></td>` : ""}
+                                ${abilities.some(ability => ability.gold) ? ability.gold ? html`<td class="text-center"><span class="text-yellow">${ability.gold}g</span></td>` : html`<td></td>` : ""}
+                                ${abilities.some(ability => ability.range) ? ability.range ? html`<td class="text-center">${ability.range}</td>` : html`<td></td>` : ""}
+        <td class="abilityDescription description">${unsafeHTML(markers(ability.description))}</td>
+                            </tr > `})}
+                            </tbody>
+                </table>
+            </div>
+        </div>
+    `;
 
     const buildingUpgradesTable = (upgrades) => html`
         <h4 class="text-yellow mt-3">Upgrades</h4>
@@ -22,7 +64,8 @@ export function buildingPage(ctx, next) {
                     <th class="text-center">Reforged</th>
                     <th class="text-center">Name</th>
                     <th class="text-center">Hotkey</th>
-                    ${selectedBuilding.noGoldColumn ? "" : html`<th class="text-center">Gold cost</th>`}
+                    ${selectedBuilding.upgrades.some(upgrade => upgrade.gold) ? html`<th class="text-center">Gold cost</th>` : ""}
+                    ${selectedBuilding.upgrades.some(upgrade => upgrade.supply) ? html`<th class="text-center">Supply cost</th>` : ""}
                     <th>Description</th>
                 </thead>
                 <tbody>
@@ -33,7 +76,8 @@ export function buildingPage(ctx, next) {
                             <td class="text-center"><img src="${upgrade.imgR}" class="abilityImage"></td>
                             <td class="text-center">${unsafeHTML(markers(upgrade.name))}</td>
                             <td class="text-center">(${upgrade.hotkey})</td>
-                            ${selectedBuilding.noGoldColumn ? "" : html`<td class="text-center"><span class="text-yellow">${upgrade.gold}g</span></td>`}
+                            ${selectedBuilding.upgrades.some(upgrade => upgrade.gold) ? html`<td class="text-center"><span class="text-yellow">${upgrade.gold}g</span></td>` : ""}
+                            ${selectedBuilding.upgrades.some(upgrade => upgrade.supply) ? html`<td class="text-center">${upgrade.supply}</td>` : ""}
                             <td>${unsafeHTML(markers(upgrade.description))}</td>
                         </tr>`})}
                         </tbody>

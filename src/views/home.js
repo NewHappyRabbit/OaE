@@ -74,15 +74,14 @@ export function homePage(ctx, next) {
                                 <li>Tenacity : check which lvl increases the dmg of blizzard (Druid)</li>
                             </ul>
                         </li>
-                        <li>Tree of Life
+                        <li class="text-green">Tree of Life
                             <ul>
                                 <li class="text-green">Add all upgrades and info ✓</li>
-                                <li>Resurrection - info for each revive (gold/sec)</li>
                             </ul>
                         </li>
-                        <li>Magic Tower and other towers
+                        <li class="text-green">Magic Tower and other towers ✓
                             <ul>
-                                <li>Add upgrades and abilities</li>
+                                <li>Add upgrades and abilities ✓</li>
                             </ul>
                         </li>
                         <li class="text-green">Gold mine ✓
