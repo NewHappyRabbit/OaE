@@ -15,6 +15,10 @@ export function unitPage(ctx, next) {
     const unitAbilitiesTable = (abilities) => html`
         <div class="mb-5">
             <h4 class="text-yellow">Abilities</h4>
+            ${selectedTeam.name === 'orcs' ? html`
+            <p class="fs-3 text-red">All orc abilities below will display cooldown and stats like this: <span class="text-yellow">X/Y</span>, where <span class="text-yellow">X is Morph Level 1</span> and <span class="text-yellow">Y is Morph Level 2</span>!</p>
+            <p class="text-yellow">Example: Cooldown 90/60 means: Shaman cooldown: 90. Far Seer cooldown: 60</p>
+            ` : ""}
             <div class="tableWrapper customTableWrapper">
                 <div class="customTopBorder"></div>
                 <div class="customRightBorder"></div>

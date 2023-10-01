@@ -21,6 +21,7 @@ export function homePage(ctx, next) {
         <p class="text-green">Text in green is fixed.</p>
         <h4 class="mt-5">Here's what's missing and coming soon:</h4>
         <ul class="text-yellow">
+            <li>General info - Natural Blocker, etc. (wc3-oae.com/general) page</li>
             <li>F1 menu and F9 info/commands</li>
             <li>Spell book
                 <ul>
@@ -95,52 +96,36 @@ export function homePage(ctx, next) {
         </ul>
             <li>Orcs
                 <ul>
-                    <li>Units
+                    <li class="text-green">Units ✓
                         <ul>
                             <li class="text-green">Grunt ✓</li>
-                            <li>Shaman</li>
-                            <ul>
-                                <li>Ability Lightning - find icon</li>
-                            </ul>
-                            <li>Doctor</li>
-                            <ul>
-                                <li class="text-green">Description and stats ✓</li>
-                                <li>Abilities</li>
-                            </ul>
-                            <li>Tracker</li>
-                            <ul>
-                                <li class="text-green">Description and stats ✓</li>
-                                <li>Abilities</li>
-                            </ul>
-                            <li>Tauren</li>
-                            <ul>
-                                <li class="text-green">Description and stats ✓</li>
-                                <li>Abilities</li>
-                            </ul>
-                            <li>Inventor</li>
-                            <ul>
-                                <li class="text-green">Description and stats ✓</li>
-                                <li>Abilities</li>
-                            </ul>
-                            <li>Berserker</li>
-                            <ul>
-                                <li class="text-green">Description and stats ✓</li>
-                                <li>Abilities</li>
-                            </ul>
-                            <li>Morphs lvl 2: Far seer, ...</li>
+                            <li class="text-green">Shaman ✓</li>
+                            <li class="text-green">Tracker ✓</li>
+                            <li class="text-green">Tauren ✓</li>
+                            <li class="text-green">Medic ✓</li>
+                            <li class="text-green">Inventor ✓</li>
+                            <li class="text-green">Berserker ✓</li>
+                            <li class="text-green">Morphs Level 2 ✓</li>
                         </ul>
                     </li>
-                    <li>Buildings
+                    <li class="text-green">Buildings ✓
                         <ul>
-                            <li>Morph</li>
+                            <li>Morph ✓</li>
                             <ul>
-                                <li>Description</li>
-                                <li>Upgrades</li>
+                                <li>Description ✓</li>
+                                <li class="text-green">Upgrades ✓</li>
+                                <ul>
+                                    <li class="text-green">Rage ✓</li>
+                                    <li class="text-green">Weapon ✓</li>
+                                    <li class="text-green">Armor ✓</li>
+                                    <li class="text-green">Conjurer ✓</li>
+                                    <li class="text-green">Recover ✓</li>
+                                </ul>
                             </ul>
-                            <li>Altar</li>
+                            <li>Altar ✓</li>
                             <ul>
-                                <li>Description</li>
-                                <li>Upgrades - will be located in each units page</li>
+                                <li>Description ✓</li>
+                                <li>Upgrades - will be located in each units page ✓</li>
                             </ul>
                         </ul>
                     </li>
