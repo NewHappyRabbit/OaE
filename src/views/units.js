@@ -69,7 +69,7 @@ export function unitsPage(ctx, next) {
     const unitTableMobile = (entities) => html`
         <div class="mb-5">
             ${entities.map(entity => html`
-                <div class="text-bg-dark mb-3 p-2">
+                <div class="text-bg-dark rounded-3 mb-5 p-2">
                     <div class="d-flex justify-content-center gap-3 align-items-center">
                         <img src="${entity.img}" class="entityImage">
                         <img src="${entity.imgR}" class="entityImage">
