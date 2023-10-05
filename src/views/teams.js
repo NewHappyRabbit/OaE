@@ -27,8 +27,8 @@ export const teams = {
     }
 }
 
-export const topRowTemplate = (units) => html`
-    <div class="d-flex flex-wrap gap-4 topRow">
+const topRowTemplate = (units) => html`
+    <div class="d-flex flex-wrap justify-content-center gap-4 topRow">
         ${units.map(unit => html`
             <div class="card text-bg-dark p-2">
                     <a class="text-center" href="/${unit.team}/${unit.type}/${rmvSpc(unit.name)}"><img src=${unit.imgR}></a>
@@ -53,10 +53,10 @@ export function teamPage(ctx, next) {
             <img style="transform: rotate(180deg)" src=${team.header}/>
         </div>
 
-        <h2>Units</h2>
+        <h2 class="mt-5 text-center">Units</h2>
         ${topRowTemplate(team.units, 'units')}
 
-        <h2 class="mt-5">Buildings</h2>
+        <h2 class="mt-5 text-center">Buildings</h2>
         ${topRowTemplate(team.buildings, 'buildings')}
     `;
 

@@ -93,7 +93,7 @@ export function unitsPage(ctx, next) {
 
     const statsContainer = (entity) => html`
         <div class="statsContainer wideTable border border-warning">
-                <h4 class="text-yellow text-center">Stats</h4>
+                <h4 class="text-yellow text-center">Base stats</h4>
                 <div class="tableWrapper">
                     <table class="table table-striped table-hover w-auto mb-0" data-bs-theme="dark">
                         <tbody>
@@ -190,7 +190,7 @@ export function unitsPage(ctx, next) {
     `;
 
     const unitTemplate = (entity) => html`
-        <a href="/${entity.team}" class="btn btn-outline-light fs-5 mb-5"><i class="bi bi-arrow-left"></i> Return</a>
+        <a href="/${entity.team}" class="btn btn-outline-light d-none d-md-inline fs-5"><i class="bi bi-arrow-left"></i> Return</a>
 
         ${deviceMobile ? html`
             <div class="d-flex flex-column align-items-center gap-3 mb-3 justify-content-center">
