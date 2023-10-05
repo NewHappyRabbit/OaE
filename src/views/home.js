@@ -1,5 +1,103 @@
 import { html, render } from 'lit-html'
 import { container } from '../app';
+import { markers } from '../utilities';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+
+const news = [
+    {
+        title: "Mobile responsiveness",
+        date: "05.10.2023",
+        content: `
+        <h4 class="text-yellow">New stuff in this website update:</h4>
+        <ul>
+            <li>Mobile responsiveness
+                <ul>
+                    <li>Updated the whole website to be easier to use on mobile</li>
+                    <li>Changed some tables to card-like views (example: Abilities, Upgrades)</li>
+                </ul>
+            </li>
+            <li>Navigation menu
+                <ul>
+                    <li>Increased gap between links in desktop and mobile view</li>
+                    <li>Fixed a bug where if you click a link in the navigation on mobile the menu stays open</li>
+                    <li>Added a discord link</li>
+                    <li>Changed the font of "OaE" title</li>
+                    <li>Color tweaks</li>
+                </ul>
+            </li>
+            <li>Added the &/orcs/units/Grunt&'s *Ghost* ability icon</li>
+            <li>Added "MP" text after mana value and "sec" after cooldowns in tables to avoid confusion when scrolling down a long table and you stop seeing the header.</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">Known issues or wrong info:</h4>
+        <ul>
+            <li>Orcs spell *Scryer*: icon missing</li>
+            <li>*Owl Scout*: check if Reforged icon is correct</li>
+            <li>*Blocker*: description</li>
+            <li>*Tenacity* - Check which level increases the damage of *Blizzard* (Druid ability)</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">Here's whats coming soon:</h4>
+        <ul>
+            <li>Elves and orcs: tips for units, buildings, upgrades, etc.</li>
+            <li>Elves units: better description</li>
+            <li>Elves buildings: *Tech Center*, *Barracks*</li>
+            <li>*Tree of Technology*: Description for main upgrades.</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">New things coming for the website:</h4>
+        <ul>
+            <li>Major design overhaul</li>
+            <li>Custom borders for tables</li>
+            <li>Ability for verified members to upload a photo of the scoreboard after a match and have it converted & saved as data that can be used for stats and game history (balance check)</li>
+        </ul>
+        `
+    },
+    {
+        title: "Website up!",
+        date: "04.10.2023",
+        content: `
+        <h4 class="text-yellow">Here's whats been added to our website:</h4>
+        <ul>
+            <li>Orcs - buildings, units, abilities and upgrades</li>
+            <li>Elfs - buildings, units, abilities and upgrades</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">Known issues or wrong info:</h4>
+        <ul>
+            <li>Orcs spells: *Scryer* and *Ghost* - abilities icons missing</li>
+            <li>*Owl Scout*: check if Reforged icon is correct</li>
+            <li>*Blocker*: description</li>
+            <li>*Tenacity* - Check which level increases the damage of *Blizzard* (Druid ability)</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">Here's whats coming soon:</h4>
+        <ul>
+            <li>Elves and orcs - tips for units, buildings, upgrades, etc.</li>
+            <li>Elves units: better description</li>
+            <li>Elves buildings: *Tech Center*, *Barracks*</li>
+            <li>*Tree of Technology*: Description for main upgrades.</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">New things coming for the website:</h4>
+        <ul>
+            <li>Major design changes</li>
+            <li>Mobile responsive</li>
+            <li>Custom borders for tables</li>
+            <li>Ability for verified members to upload a photo of the scoreboard after a match and have it converted & saved as data that can be used for stats and game history (balance check)</li>
+        </ul>
+        `,
+    }
+]
+
+const newsTemplate = (news) => html`
+    <div class="card border-primary text-bg-dark mb-5">
+        <h3 class="card-header border-primary">Latest news: ${news.title} [${news.date}]</h3>
+        <div class="card-body">
+            <div class="card-text">${unsafeHTML(markers(news.content))}</div>
+        </div>
+    </div>
+`;
 
 export function homePage(ctx, next) {
     document.title = "OaE - Home";
@@ -8,141 +106,7 @@ export function homePage(ctx, next) {
         <h1 class="text-center">Welcome to the Orcs and Elves website!</h1>
         <p class="text-danger fs-4 text-center">This website is still a Work-In-Progress. There may be wrong or missing information, if you spot it, please message me on Discord @ NewHappyRabbit :)</p>
 
-        <h4 class="mt-5">Here's whats available right now:</h4>
-        <ul class="fs-4">
-            <li><a href="/elves">Elves</a></li>
-            <li><a href="/orcs">Orcs</a></li>
-        </ul>
-
-        <h5 class="text-blue">I've tried using the game borders in tables (can be seen in Units > Any unit > Abilities table). Maybe we can stick with it</h5>
-
-        <br><br><br><br>
-        <p class="text-yellow">Text in yellow is a known bug/missing/wrong info or feature. I'm working on it.</p>
-        <p class="text-green">Text in green is fixed.</p>
-        <h4 class="mt-5">Here's what's missing and coming soon:</h4>
-        <ul class="text-yellow">
-            <li>General info - Natural Blocker, etc. (wc3-oae.com/general) page</li>
-            <li>F1 menu and F9 info/commands</li>
-            <li>Spell book
-                <ul>
-                    <li class="text-green">Elves ✓</li>
-                    <li class="text-green">Orcs</li>
-                    <ul>
-                        <li>Scryer - find icon</li>
-                        <li>Ghost - find icon</li>
-                    </ul>
-                </ul>
-            </li>
-            <li>Elves
-                <ul>
-                    <li>Units
-                        <ul>
-                            <li>Description for all units</li>
-                            <li>Tips for all units</li>
-                            <li>Owl Scout
-                                <ul>
-                                    <li>Check if reforged icon is correct</li>
-                                </ul>
-                            </li>
-                            <li class="text-green">Ancient ✓</li>
-                            <li class="text-green">Elven Worker ✓
-                                <ul>
-                                    <li class="text-green">Abilities (spell book) ✓</li>
-                                    <li class="text-green">Upgrades from Tree of Life ✓</li>
-                                </ul>
-                            </li>
-                            <li class="text-green">Hippogryph ✓
-                                <ul>
-                                    <li class="text-green">Add "Passive" to Deep Wounds ability ✓</li>
-                                    <li class="text-green">Add "... has upgrades from Tree of Technology" text ✓</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>Buildings
-                    <ul>
-                        <li>Tech center</li>
-                        <li>Barracks</li>
-                        <li>Blocker
-                            <ul>
-                                <li>Change the description to be more universal, because now it just states its health and etc. Make it something like: "The blocker is a defensive structure, used to block paths, etc."</li>
-                            </ul>
-                        </li>
-                        <li>Tree of Technology
-                            <ul>
-                                <li>Better descriptions for all upgrades</li>
-                                <li>Tenacity : check which lvl increases the dmg of blizzard (Druid)</li>
-                            </ul>
-                        </li>
-                        <li class="text-green">Tree of Life
-                            <ul>
-                                <li class="text-green">Add all upgrades and info ✓</li>
-                            </ul>
-                        </li>
-                        <li class="text-green">Magic Tower and other towers ✓
-                            <ul>
-                                <li>Add upgrades and abilities ✓</li>
-                            </ul>
-                        </li>
-                        <li class="text-green">Gold mine ✓
-                            <ul>
-                                <li class="text-green">Change description "feed" text to "This structure feeds gold only when killed after the 10 minute mark" ✓</li>
-                            </ul>
-                        </li>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-            <li>Orcs
-                <ul>
-                    <li class="text-green">Units ✓
-                        <ul>
-                            <li class="text-green">Grunt ✓</li>
-                            <li class="text-green">Shaman ✓</li>
-                            <li class="text-green">Tracker ✓</li>
-                            <li class="text-green">Tauren ✓</li>
-                            <li class="text-green">Medic ✓</li>
-                            <li class="text-green">Inventor ✓</li>
-                            <li class="text-green">Berserker ✓</li>
-                            <li class="text-green">Morphs Level 2 ✓</li>
-                        </ul>
-                    </li>
-                    <li class="text-green">Buildings ✓
-                        <ul>
-                            <li>Morph ✓</li>
-                            <ul>
-                                <li>Description ✓</li>
-                                <li class="text-green">Upgrades ✓</li>
-                                <ul>
-                                    <li class="text-green">Rage ✓</li>
-                                    <li class="text-green">Weapon ✓</li>
-                                    <li class="text-green">Armor ✓</li>
-                                    <li class="text-green">Conjurer ✓</li>
-                                    <li class="text-green">Recover ✓</li>
-                                </ul>
-                            </ul>
-                            <li>Altar ✓</li>
-                            <ul>
-                                <li>Description ✓</li>
-                                <li>Upgrades - will be located in each units page ✓</li>
-                            </ul>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        
-        <h4 class="mt-5">Website related stuff:</h4>
-        <ul class="text-yellow">
-            <li class="text-green">Custom scrollbar ✓</li>
-            <li>Custom borders for tables - like the borders in-game</li>
-            <li>OCR - verified members can upload an image of the scoreboard when the game ends and have it converted & saved as data in the website for stats and games history</li>
-            <li>Mobile responsive</li>
-            <li>Accessability</li>
-            <li>Light mode</li>
-            <li>CDN</li>
-        </ul>
-        <p>Please don't be scared by this ugly mess of a website! Design will be coming after all the info is imported from the game.</p>
+        ${newsTemplate(news[0])}
     `;
 
     render(template, container);

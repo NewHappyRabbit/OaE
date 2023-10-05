@@ -1,0 +1,18 @@
+@media (max-width: 768px) {
+	.navbar-nav li {
+		border-bottom: 1px solid var(--primary-blue);
+	}
+}
+
+.navbar ul a {
+	color: var(--primary-blue);
+}
+
+.navbar a:hover {
+	color: var(--primary-blue);
+	filter: brightness(1.2);
+}
+
+.navbar .discord-btn {
+	color: #7289da;
+}

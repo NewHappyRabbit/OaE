@@ -1,4 +1,8 @@
 /*!**********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/global.css ***!
+  \**********************************************************************/
+@import url(https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css);
+/*!**********************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/scroll.css ***!
   \**********************************************************************/
 ::-webkit-scrollbar {
@@ -25,139 +29,44 @@
 	background-color: var(--orange);
 }
 
-/*!*********************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/table.css ***!
-  \*********************************************************************/
-/* Table borders like in-game */
-.customTableWrapper {
-	position: relative;
-	width: fit-content;
-	max-width: 100%;
-	padding: 20px 15px;
-}
-
-/* Custom frame around table */
-.customTableWrapper .customBottomBorder,
-.customTableWrapper .customTopBorder {
-	z-index: 1000;
-	background-image: url(2cc52ef110906a3dc29b.png);
-	background-repeat: repeat-x;
-	background-size: contain;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 20px;
-}
-
-.customTableWrapper .customBottomBorder {
-	top: auto;
-	bottom: 0;
-}
-
-.customTableWrapper .customLeftBorder,
-.customTableWrapper .customRightBorder {
-	z-index: 1000;
-	background-image: url(ac32f3af42a09c97aaa4.png);
-	background-repeat: repeat-y;
-	background-size: contain;
-	position: absolute;
-	left: 0;
-	width: 20px;
-	height: calc(100% - 40px);
-}
-
-.customTableWrapper .customRightBorder {
-	left: auto;
-	right: 0;
-	transform: rotate(180deg);
-}
-
-.customTableWrapper .customTopRightBorder,
-.customTableWrapper .customTopLeftBorder,
-.customTableWrapper .customBottomLeftBorder,
-.customTableWrapper .customBottomRightBorder {
-	background-image: url(b7fd385ac9738ed72828.png);
-	z-index: 1000;
-	background-repeat: no-repeat;
-	background-size: contain;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 20px;
-	height: 20px;
-}
-
-.customTableWrapper .customTopLeftBorder {
-	transform: rotate(-90deg);
-}
-
-.customTableWrapper .customTopRightBorder {
-	left: auto;
-	right: 0;
-}
-
-.customTableWrapper .customBottomLeftBorder {
-	top: auto;
-	bottom: 0;
-	transform: rotate(180deg);
-}
-
-.customTableWrapper .customBottomRightBorder {
-	top: auto;
-	left: auto;
-	bottom: 0;
-	right: 0;
-	transform: rotate(90deg);
-}
-
-/* Custom background for table */
-.customTable tbody,
-.customTable th,
-.customTable td {
-	background: none;
-}
-
-.customTable {
-	margin: 0px;
-	background-image: url(42161e344b479d2754cb.png);
-}
-
-.customTable thead,
-.customTable thead tr {
-	position: relative;
-}
-
-.customTable thead::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-image: url(ff303dd609e4c8ceb0a8.png);
-	background-size: contain;
-	height: calc(100% + 15px);
-	filter: brightness(1.5);
-}
-
-/* Even rows get lighter background */
-.customTableAlternateRows tbody tr:nth-child(even) {
-	background-color: rgba(255, 255, 255, 0.08);
-}
-
-/* Custom border between rows */
-.customTable tbody tr td {
-	background-image: url(204db20cafd611e05550.png);
-	background-repeat: repeat-x;
-	background-position-y: 100%;
-	background-size: 3px;
-	border: none;
-}
-
 /*!**********************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/global.css ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/tables.css ***!
   \**********************************************************************/
+td.name {
+	font-size: 20px;
+}
+
+td.description h4:first-of-type {
+	margin-top: 12px;
+}
+
+/*!*******************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/nav.css ***!
+  \*******************************************************************/
+@media (max-width: 768px) {
+	.navbar-nav li {
+		border-bottom: 1px solid var(--primary-blue);
+	}
+}
+
+.navbar ul a {
+	color: var(--primary-blue);
+}
+
+.navbar a:hover {
+	color: var(--primary-blue);
+	filter: brightness(1.2);
+}
+
+.navbar .discord-btn {
+	color: #7289da;
+}
+
+/*!**************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/global.css (1) ***!
+  \**************************************************************************/
+/* @import url("./customTable.css"); */
+
 :root {
 	--yellow: #f6c501;
 	--primary-blue: #02bbea;
@@ -185,8 +94,30 @@
 	src: url(dd73f16d645281511b3f.ttf);
 }
 
+@font-face {
+	font-family: LifeCraft;
+	src: url(7f2bcab913fb2c2796e0.ttf);
+}
+
+@font-face {
+	font-family: Morpheus;
+	src: url(a8c7e4d15b0c6e4b2c48.ttf);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+.super {
+	font-size: 20px;
+	vertical-align: super;
+}
+
 body {
 	background-color: var(--dark-gray);
+	min-height: 100vh;
 	color: white;
 	margin: 0px;
 	font-size: 20px;
@@ -194,11 +125,15 @@ body {
 	font-family: "Friz", sans-serif;
 }
 
-.upgradeImage,
-.unitImage,
-.abilityImage {
-	height: 64px;
-	width: 64px;
+.lifecraft {
+	font-family: "LifeCraft", sans-serif;
+	letter-spacing: 0.2rem;
+	word-spacing: 0.3rem;
+}
+
+.morpheus {
+	font-family: "Morpheus", sans-serif;
+	word-spacing: 0.3rem;
 }
 
 .ws-nowrap {
@@ -214,10 +149,16 @@ td.text-yellow {
 	color: var(--yellow);
 }
 
-.unitInfo a,
-a {
+a,
+.unitInfo a {
 	color: var(--primary-blue);
 	text-decoration: none;
+}
+
+a:hover,
+.unitInfo a:hover {
+	color: var(--primary-blue);
+	filter: brightness(1.2);
 }
 
 .text-blue,
@@ -240,21 +181,14 @@ td.text-purple {
 	color: var(--purple);
 }
 
-td.name {
-	font-size: 20px;
-}
-
-td.description h4:first-of-type {
-	margin-top: 12px;
+.text-dark-purple,
+td.text-dark-purple {
+	color: var(--dark-purple);
 }
 
 .feed {
 	/* disable text going to next line */
 	white-space: nowrap;
-}
-
-.mainImg {
-	width: 64px;
 }
 
 /* when :target, play little highlight animation (using url#something to focus) */
@@ -287,6 +221,34 @@ td.description h4:first-of-type {
 /*!*********************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/units.css ***!
   \*********************************************************************/
+/* Abilities, units, upgrades icons set size */
+.upgradeImage,
+.unitImage,
+.entityImage {
+	height: 64px;
+	width: 64px;
+}
+
+/* Main building/unit images (top images) */
+.mainImg {
+	width: 64px;
+}
+
+@media (max-width: 768px) {
+	.mainImg {
+		width: 90px;
+		/* width: 120px; */
+	}
+
+	.statsContainer {
+		width: 100%;
+	}
+
+	.statsContainer table {
+		width: 100% !important;
+	}
+}
+
 .unitsContainer {
 	width: 50%;
 	background-repeat: no-repeat;
@@ -318,5 +280,18 @@ td.description h4:first-of-type {
 
 .teamFlags:hover {
 	filter: brightness(1.5);
+}
+
+.topRow .card img {
+	height: 120px;
+	width: auto;
+}
+
+.topRow .card {
+	filter: brightness(0.9);
+}
+
+.topRow .card:hover {
+	filter: brightness(1);
 }
 

@@ -27,6 +27,20 @@ export const teams = {
     }
 }
 
+export const topRowTemplate = (units) => html`
+    <div class="d-flex flex-wrap gap-4 topRow">
+        ${units.map(unit => html`
+            <div class="card text-bg-dark p-2">
+                    <a class="text-center" href="/${unit.team}/${unit.type}/${rmvSpc(unit.name)}"><img src=${unit.imgR}></a>
+                    <div class="card-body p-0">
+                        <a href="/${unit.team}/${unit.type}/${rmvSpc(unit.name)}"><h5 class="card-title text-center">${unit.name}</h5></a>
+                        <!-- TODO ADD small description  <p class="card-text fs-6">${unsafeHTML(unit.description)}</p> -->
+                    </div>
+            </div>
+        `)}
+    </div>
+`;
+
 export function teamPage(ctx, next) {
     const selectedTeamName = ctx.path.replace('/', '');
 
@@ -35,35 +49,15 @@ export function teamPage(ctx, next) {
     const teamTemplate = (team) => html`
         <div class="d-flex align-items-center justify-content-center">
             <img src=${team.header}/>
-            <h1>${team.nameCapitalized} team</h2>
+            <h1 class="m-0">${team.nameCapitalized} team</h2>
             <img style="transform: rotate(180deg)" src=${team.header}/>
         </div>
 
         <h2>Units</h2>
-        <div class="d-flex flex gap-3 justify-content-evenly">
-            ${team.units.map(unit => html`
-                <div class="card text-bg-dark p-2">
-                        <a href="/${team.name}/units/${rmvSpc(unit.name)}"><img src=${unit.imgR} class="card-img-top"></a>
-                        <div class="card-body p-0">
-                            <a href="/${team.name}/units/${rmvSpc(unit.name)}"><h5 class="card-title text-center">${unit.name}</h5></a>
-                            <!-- TODO ADD small description  <p class="card-text fs-6">${unsafeHTML(unit.description)}</p> -->
-                        </div>
-                </div>
-            `)}
-        </div>
+        ${topRowTemplate(team.units, 'units')}
 
         <h2 class="mt-5">Buildings</h2>
-        <div class="d-flex flex gap-3 justify-content-evenly">
-            ${team.buildings.map(building => html`
-                <div class="card text-bg-dark p-2">
-                        <a href="/${team.name}/buildings/${rmvSpc(building.name)}"><img src=${building.imgR} class="card-img-top"></a>
-                        <div class="card-body p-0">
-                            <a href="/${team.name}/buildings/${rmvSpc(building.name)}"><h5 class="card-title text-center">${building.name}</h5></a>
-                            <!-- TODO ADD short description  <p class="card-text fs-6">${unsafeHTML(building.description)}</p> -->
-                        </div>
-                </div>
-            `)}
-        </div>
+        ${topRowTemplate(team.buildings, 'buildings')}
     `;
 
     render(teamTemplate(teams[selectedTeamName]), container);

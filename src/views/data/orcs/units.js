@@ -376,6 +376,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/grunt/gruntR.webp",
         name: "Grunt",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.", //TODO
         stats: {
             "Damage": 14,
@@ -386,7 +393,6 @@ export const orcsUnits = [
 
         },
         abilities: spellBookAbilities,
-        altarUpgrades: altarUpgrades,
     },
     //Morphs Level 1
     {
@@ -394,6 +400,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/shaman/shamanR.webp",
         name: "Shaman",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "<p>^Replace the &/orcs/units/Grunt& with &/orcs/units/Shaman&.^</p><p>A spell-caster and short-ranged attacker. The shaman can snipe exposed targets, roam and protect allies from traps. But he is vulnerable to physical damage and require solid positioning to stay alive and to score kills.</p>",
         stats: {
             "Damage": 15,
@@ -409,6 +422,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/tracker/trackerR.webp",
         name: "Tracker",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "<p>^Replace the &/orcs/units/Grunt& with &/orcs/units/Tracker&.^</p><p>The tracker is a mobile melee attacker that excels at roaming, where he can cover a lot of ground and use various tools to catch his prey. But he is vulnerable to magic damage and may struggle against tower bases.</p>",
         stats: {
             "Damage": 15,
@@ -424,6 +444,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/tauren/taurenR.webp",
         name: "Tauren",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "<p>^Replace the &/orcs/units/Grunt& with &/orcs/units/Tauren&.^</p><p>A slow and durable melee attacker. The tauren has exceptional survival capacity and can apply consistent pressure over long periods of time. He is vulnerable to physical attacks and can easily be outmaneuvered by agile foes.</p>",
         stats: {
             "Damage": 16,
@@ -439,6 +466,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/medic/medicR.webp",
         name: "Medic",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "<p>^Replace the &/orcs/units/Grunt& with &/orcs/units/Medic&.^</p><p>The medic is a flexible support character with abilities that influence both allies and enemies. Positional awareness benefit him greatly and make it easier to stay alive and to assist the team. He is vulnerable to physical damage and may be at risk when played alone.</p>",
         stats: {
             "Damage": 15,
@@ -454,6 +488,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/inventor/inventorR.webp",
         name: "Inventor",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "<p>^Replace the &/orcs/units/Grunt& with &/orcs/units/Inventor&.^</p><p>A support character that relies on zone control and strategic placement. The inventor has access to many tools that contribute to map control, but his creations are deniable and require maintenance. He is most effective when left undisturbed, but struggles with foes that actively seek out and destroy his inventions. He is vulnerable to magic damage.</p>",
         stats: {
             "Damage": 15,
@@ -469,6 +510,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/berserker/berserkerR.webp",
         name: "Berserker",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "<p>^Replace the &/orcs/units/Grunt& with &/orcs/units/Berserker&.^</p><p>The berserker is an offensive pusher with moderate survivability. He is vulnerable to magic damage and may struggle with tower bases.</p>", //TODO
         stats: {
             "Damage": 16,
@@ -485,6 +533,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/hunterR.webp",
         name: "Hunter",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "<p>A level 2 Morph unit, replaces the &/orcs/units/Tracker&.</p>",
         stats: {
             "Damage": 20,
@@ -499,6 +554,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/farseerR.webp",
         name: "Far Seer",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "<p>A level 2 Morph unit, replaces the &/orcs/units/Shaman&.</p>",
         stats: {
             "Damage": 20,
@@ -513,6 +575,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/taurenchieftainR.webp",
         name: "Tauren Chieftain",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "<p>A level 2 Morph unit, replaces the &/orcs/units/Tauren&.</p>",
         stats: {
             "Damage": 20,
@@ -527,6 +596,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/witchdoctorR.webp",
         name: "Witch Doctor",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "<p>A level 2 Morph unit, replaces the &/orcs/units/Medic&.</p>",
         stats: {
             "Damage": 20,
@@ -541,6 +617,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/engineerR.webp",
         name: "Engineer",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "<p>A level 2 Morph unit, replaces the &/orcs/units/Inventor&.</p>",
         stats: {
             "Damage": 20,
@@ -555,6 +638,13 @@ export const orcsUnits = [
         imgR: "/images/orcs/units/warlordR.webp",
         name: "Warlord",
         team: "orcs",
+        type: "units",
+        externalUpgrades: [
+            {
+                name: "Altar",
+                url: "/orcs/buildings/altar",
+            }
+        ],
         description: "<p>A level 2 Morph unit, replaces the &/orcs/units/Berserker&.</p>",
         stats: {
             "Damage": 20,

@@ -7,10 +7,21 @@ export const elvesUnits = [
         imgR: "/images/elves/units/elvenWorker/elvenWorkerR.webp",
         name: "Elven Worker",
         team: "elves",
+        type: "units",
         description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.", //TODO
-        treeOfTechnologyUpgrades: true,
-        treeOfWarUpgrades: treeOfWarUpgrades["Elven Worker"],
-        treeOfLifeUpgrades: treeOfLifeUpgrades,
+        externalUpgrades: [
+            {
+                name: "Tree of Technology",
+                url: "/elves/buildings/treeOfTechnology",
+            }
+        ],
+        upgradesFromBuilding: [
+            {
+                name: "Tree of Life",
+                url: "/elves/buildings/treeOfLife",
+                upgrades: treeOfLifeUpgrades
+            }
+        ],
         stats: {
             "Damage": 80,
             "Move speed": 250,
@@ -25,6 +36,7 @@ export const elvesUnits = [
         imgR: "/images/elves/units/owlScout/owlScoutR.webp",
         name: "Owl Scout",
         team: "elves",
+        type: "units",
         hotkey: "Q",
         gold: 40,
         supply: 2,
@@ -63,19 +75,37 @@ export const elvesUnits = [
                 description: "Reveal invisible units within ^600^ range.",
             }
         ],
-        treeOfWarUpgrades: treeOfWarUpgrades["Owl Scout"],
+        upgradesFromBuilding: [
+            {
+                name: "Tree of War",
+                url: "/elves/buildings/treeOfWar",
+                upgrades: treeOfWarUpgrades["Owl Scout"],
+            },
+        ],
     },
     {
         img: "/images/elves/units/archer/archer.webp",
         imgR: "/images/elves/units/archer/archerR.webp",
         name: "Archer",
         team: "elves",
+        type: "units",
         hotkey: "W",
         gold: 20,
         supply: 2,
         feed: "8-16",
-        treeOfTechnologyUpgrades: true,
-        treeOfWarUpgrades: treeOfWarUpgrades["Archer"],
+        externalUpgrades: [
+            {
+                name: "Tree of Technology",
+                url: "/elves/buildings/treeOfTechnology",
+            }
+        ],
+        upgradesFromBuilding: [
+            {
+                name: "Tree of War",
+                url: "/elves/buildings/treeOfWar",
+                upgrades: treeOfWarUpgrades["Archer"]
+            },
+        ],
         description: "<p>^Requires &/buildings/treeOfTechnology#Architecture& *1* upgrade to train.^</p><p>A ranged attacker with low health and damage. Archers are best used as a support unit to increase the damage output of a base. Put your archers behind upgraded blockers and enable hold position to prevent them from chasing the enemy.</p>",
         transformsTo: [
             "Hippogryph Rider"
@@ -103,12 +133,24 @@ export const elvesUnits = [
         imgR: "/images/elves/units/ent/entR.webp",
         name: "Ent",
         team: "elves",
+        type: "units",
         hotkey: "E",
         gold: 30,
         supply: 3,
         feed: "12-24",
-        treeOfTechnologyUpgrades: true,
-        treeOfWarUpgrades: treeOfWarUpgrades["Ent"],
+        externalUpgrades: [
+            {
+                name: "Tree of Technology",
+                url: "/elves/buildings/treeOfTechnology",
+            }
+        ],
+        upgradesFromBuilding: [
+            {
+                name: "Tree of War",
+                url: "/elves/buildings/treeOfWar",
+                upgrades: treeOfWarUpgrades["Ent"]
+            },
+        ],
         description: "<p>^Requires &#Sprout& upgrade to train.^</p><p>The Ent is a slow and durable melee attacker that can be used to setup kills, but it is not strong enough to fight the enemy head-on. It is most effective when paired with a reliable damage source, but can be dangerous in large numbers.</p>",
         transformsTo: [
             "Ancient"
@@ -151,12 +193,24 @@ export const elvesUnits = [
         imgR: "/images/elves/units/druid/druidR.webp",
         name: "Druid",
         team: "elves",
+        type: "units",
         hotkey: "R",
         gold: 60,
         supply: 3,
         feed: "24-48",
-        treeOfTechnologyUpgrades: true,
-        treeOfWarUpgrades: treeOfWarUpgrades["Druid"],
+        externalUpgrades: [
+            {
+                name: "Tree of Technology",
+                url: "/elves/buildings/treeOfTechnology",
+            }
+        ],
+        upgradesFromBuilding: [
+            {
+                name: "Tree of War",
+                url: "/elves/buildings/treeOfWar",
+                upgrades: treeOfWarUpgrades["Druid"]
+            },
+        ],
         description: "^Requires &#Druid Training 1& upgrade.<p>You can only build one of this unit.</p>^<p>A spell-caster with powerful offensive and supportive abilities. The druid can be used to setup kills, to weaken the enemy or to shut-down power plays.</p>",
         stats: {
             "Attack Damage": 42,
@@ -228,9 +282,15 @@ export const elvesUnits = [
         imgR: "/images/elves/units/hippogryph/hippogryphR.webp",
         name: "Hippogryph",
         team: "elves",
+        type: "units",
         description: "<p>@This unit is not trainable!@</p><p>$Morphs from &/elves/units/Owl Scout&.$</p>The hippogryph is a ferocious flying predator that weakens the target by reducing its move speed. They are most effective when used in large packs to chase down injured foes or to kill isolated enemies.",
         feed: "16-32",
-        treeOfTechnologyUpgrades: true,
+        externalUpgrades: [
+            {
+                name: "Tree of Technology",
+                url: "/elves/buildings/treeOfTechnology",
+            }
+        ],
         stats: {
             "Attack Damage": 4,
             "Attack Speed": 1.0,
@@ -271,6 +331,7 @@ export const elvesUnits = [
         img: "/images/elves/units/hippogryphRider/hippogryphRider.webp",
         imgR: "/images/elves/units/hippogryphRider/hippogryphRiderR.webp",
         name: "Hippogryph Rider",
+        type: "units",
         description: "<p>@This unit is not trainable!@</p><p>$Morphs from combining &/elves/units/Hippogryph& and &/elves/units/Archer&.$</p>The hippogryph rider is a flying ranged attacker with high mobility. It can be used to defend large bases, to harass the enemy from a distance and to chase down isolated or injured foes.",
         feed: "24-48",
         team: "elves",
@@ -287,6 +348,7 @@ export const elvesUnits = [
         imgR: "/images/elves/units/ancient/ancientR.webp",
         name: "Ancient",
         team: "elves",
+        type: "units",
         feed: "", //TODO
         description: "<p>@This unit is not trainable!@</p><p>$Morphs from &/elves/units/Ent&.$</p><p>The &/elves/units/Ancient& is larger than the &/elves/units/Ent&, making it the perfect unit to trap your enemies. He is also slower and cannot &/elves/units/Ent#Burrow&.</p>",
         transformsTo: [

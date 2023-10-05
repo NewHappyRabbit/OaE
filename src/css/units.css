@@ -1,3 +1,31 @@
+/* Abilities, units, upgrades icons set size */
+.upgradeImage,
+.unitImage,
+.entityImage {
+	height: 64px;
+	width: 64px;
+}
+
+/* Main building/unit images (top images) */
+.mainImg {
+	width: 64px;
+}
+
+@media (max-width: 768px) {
+	.mainImg {
+		width: 90px;
+		/* width: 120px; */
+	}
+
+	.statsContainer {
+		width: 100%;
+	}
+
+	.statsContainer table {
+		width: 100% !important;
+	}
+}
+
 .unitsContainer {
 	width: 50%;
 	background-repeat: no-repeat;
@@ -29,4 +57,17 @@
 
 .teamFlags:hover {
 	filter: brightness(1.5);
+}
+
+.topRow .card img {
+	height: 120px;
+	width: auto;
+}
+
+.topRow .card {
+	filter: brightness(0.9);
+}
+
+.topRow .card:hover {
+	filter: brightness(1);
 }

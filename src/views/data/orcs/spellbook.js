@@ -36,8 +36,8 @@ export const spellBookAbilities = [
         description: "<p>^Level 1^: Place a turret with ^2^ health at the selected point that activates after ^5^ seconds. Active turrets can attack blockers within ^500^ radius, dealing ^10^ damage per hit. The turret lats up to ^60^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *1*)%%</p><p>^Level 2^: Place a turret with ^3^ health at the selected point that activates after ^5^ seconds. Active turrets can attack blockers within ^500^ radius, dealing ^15^ damage per hit. If no targets are found, the turret will become invisible. The turret lats up to ^90^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *3*)%%</p><p>^Level 3^: Place a turret with ^4^ health at the selected point that activates after ^5^ seconds. Active turrets can attack blockers within ^500^ radius, dealing ^20^ damage per hit. The turrets attack rate is increased by ^50%^ over ^90^ seconds. If no targets are found, the turret will become invisible. The turret lats up to ^120^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *5*)%%</p>"
     },
     {
-        img: "/images/orcs/spellbook/ghost.webp", //TODO Find image
-        imgR: "/images/orcs/spellbook/ghostR.webp",
+        img: "/images/orcs/spellbook/ghost.png",
+        imgR: "/images/orcs/spellbook/ghost.png",
         name: "Ghost",
         hotkey: "D",
         mana: "20/20/20",

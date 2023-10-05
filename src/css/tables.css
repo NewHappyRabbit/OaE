@@ -1,0 +1,7 @@
+td.name {
+	font-size: 20px;
+}
+
+td.description h4:first-of-type {
+	margin-top: 12px;
+}

@@ -3211,6 +3211,8 @@ export const elvesBuildings = [
         img: "/images/elves/buildings/goldMine.webp",
         imgR: "/images/elves/buildings/goldMineR.webp",
         name: "Gold Mine",
+        team: "elves",
+        type: "buildings",
         hotkey: "G",
         feed: "0-3",
         stats: {
@@ -3222,9 +3224,16 @@ export const elvesBuildings = [
         img: "/images/elves/buildings/blocker/blocker.webp",
         imgR: "/images/elves/buildings/blocker/blockerR.webp",
         name: "Blocker",
+        team: "elves",
+        type: "buildings",
         hotkey: "B",
         gold: 8,
-        treeOfTechnologyUpgrades: true,
+        externalUpgrades: [
+            {
+                name: "Tree of Technology",
+                url: "/elves/buildings/treeOfTechnology",
+            }
+        ],
         hasRequires: true,
         feed: "3-6",
         description: "The &/elves/buildings/Blocker& has ^80^ health and can be used to wall off sections of the map to restrict the mobility of the opposing team.<p>You can use the blocker as a ruler to measure the distance between objects. If there is ^1^ blocker space between any obstacle either horizontally, vertically or diagonally the enemy cannot walk in.</p>",
@@ -3284,6 +3293,8 @@ export const elvesBuildings = [
         img: "/images/elves/buildings/treeOfWar.webp",
         imgR: "/images/elves/buildings/treeOfWarR.webp",
         name: "Tree Of War",
+        team: "elves",
+        type: "buildings",
         hotkey: "R",
         gold: 30,
         feed: "12-24",
@@ -3297,6 +3308,8 @@ export const elvesBuildings = [
         img: "/images/elves/buildings/treeOfTechnology.webp",
         imgR: "/images/elves/buildings/treeOfTechnologyR.webp",
         name: "Tree Of Technology",
+        team: "elves",
+        type: "buildings",
         hotkey: "C",
         description: "A research facility that offer upgrades for units and structures. Build this when the enemies are far away to get enough time to research time-consuming upgrades, or place it inside a strong base.",
         gold: 40,
@@ -3310,6 +3323,8 @@ export const elvesBuildings = [
         img: "/images/elves/buildings/treeOfLife.webp",
         imgR: "/images/elves/buildings/treeOfLifeR.webp",
         name: "Tree Of Life",
+        team: "elves",
+        type: "buildings",
         description: "A structure that can unlock talents. It's located in the top-left corner of the map.",
         upgrades: treeOfLifeUpgrades
     },
@@ -3317,6 +3332,8 @@ export const elvesBuildings = [
         img: "/images/elves/buildings/magicTower.webp",
         imgR: "/images/elves/buildings/magicTowerR.webp",
         name: "Magic Tower",
+        team: "elves",
+        type: "buildings",
         requires: "&/elves/buildings/treeOfTechnology#Architecture& *1*",
         description: "<p>^Requires &/elves/buildings/TreeOfTechnology#Architecture& *1*.^</p>A balanced tower with moderate damage output, range and attack speed.",
         gold: 20,
@@ -3329,7 +3346,12 @@ export const elvesBuildings = [
             "Health": 20,
             "Mana regeneration": 0.2,
         },
-        treeOfTechnologyUpgrades: true,
+        externalUpgrades: [
+            {
+                name: "Tree of Technology",
+                url: "/elves/buildings/treeOfTechnology",
+            }
+        ],
         upgrades: [
             {
                 img: "/images/elves/upgrades/magicTower/pathOfFire.webp",
@@ -3405,6 +3427,8 @@ export const elvesBuildings = [
         img: "/images/elves/buildings/fireTower/fireTower.webp",
         imgR: "/images/elves/buildings/fireTower/fireTowerR.webp",
         name: "Fire Tower",
+        team: "elves",
+        type: "buildings",
         description: "A short-range tower with high burst damage and fast attack speed. Good positioning is required to utilize this tower to its fullest potential.",
         gold: 30,
         feed: "20-40",
@@ -3416,7 +3440,12 @@ export const elvesBuildings = [
             "Health": 20,
             "Mana regeneration": 0.2,
         },
-        treeOfTechnologyUpgrades: true,
+        externalUpgrades: [
+            {
+                name: "Tree of Technology",
+                url: "/elves/buildings/treeOfTechnology",
+            }
+        ],
         abilities: [
             {
                 img: "/images/elves/buildings/fireTower/abilities/blaze.png",
@@ -3433,6 +3462,8 @@ export const elvesBuildings = [
         img: "/images/elves/buildings/earthTower/earthTower.webp",
         imgR: "/images/elves/buildings/earthTower/earthTowerR.webp",
         name: "Earth Tower",
+        team: "elves",
+        type: "buildings",
         description: "A mid-range tower that can attack up to ^4^ enemies at once. This tower is excellent at defending small bases from multiple attackers, but is very weak against duo and solo attacks.",
         gold: 20,
         feed: "16-32",
@@ -3444,12 +3475,19 @@ export const elvesBuildings = [
             "Health": 20,
             "Mana regeneration": 0.2,
         },
-        treeOfTechnologyUpgrades: true,
+        externalUpgrades: [
+            {
+                name: "Tree of Technology",
+                url: "/elves/buildings/treeOfTechnology",
+            }
+        ],
     },
     {
         img: "/images/elves/buildings/frostTower/frostTower.webp",
         imgR: "/images/elves/buildings/frostTower/frostTowerR.webp",
         name: "Frost Tower",
+        team: "elves",
+        type: "buildings",
         description: "A mid-range tower with moderate damage output and slow attack rate.", //TODO Its same as Magic Tower
         gold: 10,
         feed: "12-24",
@@ -3461,7 +3499,12 @@ export const elvesBuildings = [
             "Health": 20,
             "Mana regeneration": 0.2,
         },
-        treeOfTechnologyUpgrades: true,
+        externalUpgrades: [
+            {
+                name: "Tree of Technology",
+                url: "/elves/buildings/treeOfTechnology",
+            }
+        ],
         abilities: [
             {
                 img: "/images/elves/buildings/frostTower/abilities/chill.webp",
@@ -3478,6 +3521,8 @@ export const elvesBuildings = [
         img: "/images/elves/buildings/lightningTower/lightningTower.webp",
         imgR: "/images/elves/buildings/lightningTower/lightningTowerR.webp",
         name: "Lightning Tower",
+        team: "elves",
+        type: "buildings",
         description: "A long-range tower with high damage output and slow attack rate.",
         gold: 55,
         feed: "30-60",
@@ -3489,7 +3534,12 @@ export const elvesBuildings = [
             "Health": 20,
             "Mana regeneration": 0.2,
         },
-        treeOfTechnologyUpgrades: true,
+        externalUpgrades: [
+            {
+                name: "Tree of Technology",
+                url: "/elves/buildings/treeOfTechnology",
+            }
+        ],
         abilities: [
             {
                 img: "/images/elves/buildings/lightningTower/abilities/stormStrike.png",

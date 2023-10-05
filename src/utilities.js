@@ -1,5 +1,3 @@
-import { html, render } from 'lit-html'
-
 export function markers(string) {
     // Markers: &link& *blue* ^yellow^ @red@ $green$ %%purple%%
 

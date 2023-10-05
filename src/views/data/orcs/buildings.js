@@ -1201,15 +1201,17 @@ export const orcsBuildings = [
         img: "/images/orcs/buildings/altar.webp",
         imgR: "/images/orcs/buildings/altarR.webp",
         name: "Altar",
+        team: "orcs",
+        type: "buildings",
         description: "*The Altar* is used to research upgrades for your unit. Located in the top-left corner of the map.",
         upgradesSeparated: altarUpgrades
-        // TODO upgrades: [ conjurer, dmg, ...]
     },
     {
         img: "/images/orcs/buildings/morph.webp",
         imgR: "/images/orcs/buildings/morphR.webp",
         name: "Morph",
+        team: "orcs",
+        type: "buildings",
         description: "This building is used to morph your unit into a stronger unit with more abilities. Located in the top-left corner of the map.",
-        //TODO all morphs price to upg
     }
 ];
