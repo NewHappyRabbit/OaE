@@ -23,7 +23,7 @@ export const elvesUnits = [
             }
         ],
         stats: {
-            "Damage": 80,
+            "Attack Damage": 80,
             "Move speed": 250,
             "Health": 20,
             //TODO

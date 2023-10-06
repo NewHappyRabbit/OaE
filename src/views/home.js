@@ -5,6 +5,41 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 const news = [
     {
+        title: "Known issues fix",
+        date: "06.10.2023",
+        content: `
+        <h4 class="text-yellow">Whats fixed:</h4>
+        <ul>
+            <li>Owl scout icon</li>
+            <li>Grunt: some stats was wrong, updated it</li>
+            <li>Destruction upgrade: had 2 level 4's, fixed to say level 4 and 5</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">Known issues or wrong info:</h4>
+        <ul>
+            <li>Orcs spell *Scryer*: icon missing</li>
+            <li>*Blocker*: description</li>
+            <li>*Tenacity* - Check which level increases the damage of *Blizzard* (Druid ability)</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">Here's whats coming soon:</h4>
+        <ul>
+            <li>Add content table at the top of every unit/building page, where you can click a ability/upgrade and have the website scroll it into view.</li>
+            <li>Elves and orcs: tips for units, buildings, upgrades, etc.</li>
+            <li>Elves units: better description</li>
+            <li>Elves buildings: *Tech Center*, *Barracks*</li>
+            <li>*Tree of Technology*: Description for main upgrades.</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">New things coming for the website:</h4>
+        <ul>
+            <li>Major design overhaul</li>
+            <li>Custom borders for tables</li>
+            <li>Ability for verified members to upload a photo of the scoreboard after a match and have it converted & saved as data that can be used for stats and game history (balance check)</li>
+        </ul>
+        `
+    },
+    {
         title: "Mobile responsiveness",
         date: "05.10.2023",
         content: `

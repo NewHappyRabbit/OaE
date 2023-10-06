@@ -53,5 +53,4 @@ export const spellBookAbilities = [
         cooldown: "60/45/30",
         description: "<p>^Level 1^: Fire a poisoned in the selected direction. If the projectile collides with a hostile ground unit it deals ^10^ damage over ^10^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *2*)%%</p><p>^Level 2^: Fire a poisoned in the selected direction. If the projectile collides with a hostile ground unit it deals ^25^ damage over ^10^ seconds. If the projectile travels further than ^200^ range the targets move speed is reduced up to ^40%^ based on the total distance traveled, for a maximum of ^3^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *3*)%%</p><p>^Level 3^: Fire a poisoned in the selected direction. If the projectile collides with a hostile ground unit it deals ^40^ damage over ^10^ seconds. If the projectile travels further than ^200^ range the targets move speed is reduced up to ^80%^ based on the total distance traveled, for a maximum of ^4^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *4*)%%</p>"
     }
-    //TODO
 ];

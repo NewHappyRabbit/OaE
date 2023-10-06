@@ -368,7 +368,7 @@ const berserkerAbilities = [
         gold: "25/35/45/55/65/75",
         description: "<p>^Level 1^: Normal attacks heal you for ^50%^ of the damage dealt.</p><p>^Level 2^: Normal attacks heal you for ^100%^ of the damage dealt.</p><p>^Level 3^: Normal attacks heal you for ^150%^ of the damage dealt.</p><p>^Level 4^: Normal attacks heal you for ^200%^ of the damage dealt.</p><p>^Level 5^: Normal attacks heal you for ^250%^ of the damage dealt. %%(Requires &/orcs/buildings/Morph& *2*)%%</p><p>^Level 6^: Normal attacks heal you for ^300%^ of the damage dealt.</p>"
     }
-]; //TODO
+];
 
 export const orcsUnits = [
     {
@@ -387,8 +387,8 @@ export const orcsUnits = [
         stats: {
             "Damage": 14,
             "Attack speed": 1.5,
-            "Attack range": 270,
-            "Move speed": "N/A", //TODO Check
+            "Attack range": 92,
+            "Move speed": 270,
             "Health": 3000,
 
         },
@@ -517,7 +517,7 @@ export const orcsUnits = [
                 url: "/orcs/buildings/altar",
             }
         ],
-        description: "<p>^Replace the &/orcs/units/Grunt& with &/orcs/units/Berserker&.^</p><p>The berserker is an offensive pusher with moderate survivability. He is vulnerable to magic damage and may struggle with tower bases.</p>", //TODO
+        description: "<p>^Replace the &/orcs/units/Grunt& with &/orcs/units/Berserker&.^</p><p>The berserker is an offensive pusher with moderate survivability. He is vulnerable to magic damage and may struggle with tower bases.</p>",
         stats: {
             "Damage": 16,
             "Attack speed": 1.5,
