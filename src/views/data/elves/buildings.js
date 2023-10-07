@@ -813,6 +813,12 @@ const treeOfTechnologyUpgrades = [
                                 old: 50,
                                 new: 67,
                                 parenthesesVal: "+17",
+                            },
+                            {
+                                name: "Wrath Damage",
+                                old: "50-200",
+                                new: "55-219",
+                                parenthesesVal: "+5/+19",
                             }
                         ]
                     },
@@ -831,6 +837,12 @@ const treeOfTechnologyUpgrades = [
                                 old: 40,
                                 new: 46,
                                 parenthesesVal: "+6",
+                            },
+                            {
+                                name: "Blizzard Damage",
+                                old: 400,
+                                new: 760,
+                                parenthesesVal: "+360",
                             }
                         ]
                     },
@@ -859,6 +871,12 @@ const treeOfTechnologyUpgrades = [
                                 parenthesesVal: "+17",
                             },
                             {
+                                name: "Wrath Damage",
+                                old: "55-219",
+                                new: "74-296",
+                                parenthesesVal: "+19/+77",
+                            },
+                            {
                                 name: "Armor",
                                 old: 0,
                                 new: 2,
@@ -881,6 +899,12 @@ const treeOfTechnologyUpgrades = [
                                 old: 46,
                                 new: 52,
                                 parenthesesVal: "+6",
+                            },
+                            {
+                                name: "Blizzard Damage",
+                                old: 760,
+                                new: 1120,
+                                parenthesesVal: "+360",
                             },
                             {
                                 name: "Armor",
@@ -921,6 +945,12 @@ const treeOfTechnologyUpgrades = [
                                 new: 101,
                                 parenthesesVal: "+17",
                             },
+                            {
+                                name: "Wrath Damage",
+                                old: "74-296",
+                                new: "108-431",
+                                parenthesesVal: "+34/+135",
+                            },
                         ]
                     },
                     {
@@ -938,6 +968,12 @@ const treeOfTechnologyUpgrades = [
                                 old: 52,
                                 new: 58,
                                 parenthesesVal: "+6",
+                            },
+                            {
+                                name: "Blizzard Damage",
+                                old: 1120,
+                                new: 1480,
+                                parenthesesVal: "+360",
                             },
                         ]
                     },
@@ -965,6 +1001,12 @@ const treeOfTechnologyUpgrades = [
                                 new: 118,
                                 parenthesesVal: "+17",
                             },
+                            {
+                                name: "Wrath Damage",
+                                old: "108-431",
+                                new: "156-624",
+                                parenthesesVal: "+48/+193",
+                            },
                         ]
                     },
                     {
@@ -982,6 +1024,12 @@ const treeOfTechnologyUpgrades = [
                                 old: 58,
                                 new: 64,
                                 parenthesesVal: "+6",
+                            },
+                            {
+                                name: "Blizzard Damage",
+                                old: 1480,
+                                new: 1840,
+                                parenthesesVal: "+360",
                             },
                             {
                                 name: "Max mana",
@@ -1016,6 +1064,12 @@ const treeOfTechnologyUpgrades = [
                                 new: 135,
                                 parenthesesVal: "+17",
                             },
+                            {
+                                name: "Wrath Damage",
+                                old: "156-624",
+                                new: "219-875",
+                                parenthesesVal: "+63/+251",
+                            },
                         ]
                     },
                     {
@@ -1033,6 +1087,12 @@ const treeOfTechnologyUpgrades = [
                                 old: 64,
                                 new: 70,
                                 parenthesesVal: "+6",
+                            },
+                            {
+                                name: "Blizzard Damage",
+                                old: 1840,
+                                new: 2200,
+                                parenthesesVal: "+360",
                             },
                         ]
                     },
@@ -1061,6 +1121,12 @@ const treeOfTechnologyUpgrades = [
                                 parenthesesVal: "+17",
                             },
                             {
+                                name: "Wrath Damage",
+                                old: "219-875",
+                                new: "295-1181",
+                                parenthesesVal: "+76/+306",
+                            },
+                            {
                                 name: "Armor",
                                 old: 2,
                                 new: 5,
@@ -1083,6 +1149,12 @@ const treeOfTechnologyUpgrades = [
                                 old: 70,
                                 new: 76,
                                 parenthesesVal: "+6",
+                            },
+                            {
+                                name: "Blizzard Damage",
+                                old: 2200,
+                                new: 2560,
+                                parenthesesVal: "+360",
                             },
                             {
                                 name: "Max mana",
@@ -1123,6 +1195,12 @@ const treeOfTechnologyUpgrades = [
                                 new: 169,
                                 parenthesesVal: "+17",
                             },
+                            {
+                                name: "Wrath Damage",
+                                old: "295-1181",
+                                new: "388-1551",
+                                parenthesesVal: "+93/+370",
+                            },
                         ]
                     },
                     {
@@ -1140,6 +1218,12 @@ const treeOfTechnologyUpgrades = [
                                 old: 76,
                                 new: 82,
                                 parenthesesVal: "+6",
+                            },
+                            {
+                                name: "Blizzard Damage",
+                                old: 2560,
+                                new: 2920,
+                                parenthesesVal: "+360",
                             },
                         ]
                     },
@@ -1167,6 +1251,12 @@ const treeOfTechnologyUpgrades = [
                                 new: 186,
                                 parenthesesVal: "+17",
                             },
+                            {
+                                name: "Wrath Damage",
+                                old: "388-1551",
+                                new: "494-1976",
+                                parenthesesVal: "+106/+425",
+                            },
                         ]
                     },
                     {
@@ -1184,6 +1274,12 @@ const treeOfTechnologyUpgrades = [
                                 old: 82,
                                 new: 88,
                                 parenthesesVal: "+6",
+                            },
+                            {
+                                name: "Blizzard Damage",
+                                old: 2920,
+                                new: 3280,
+                                parenthesesVal: "+360",
                             },
                             {
                                 name: "Max mana",
@@ -1218,6 +1314,12 @@ const treeOfTechnologyUpgrades = [
                                 new: 203,
                                 parenthesesVal: "+17",
                             },
+                            {
+                                name: "Wrath Damage",
+                                old: "494-1976",
+                                new: "615-2459",
+                                parenthesesVal: "+121/+483",
+                            },
                         ]
                     },
                     {
@@ -1235,6 +1337,12 @@ const treeOfTechnologyUpgrades = [
                                 old: 88,
                                 new: 94,
                                 parenthesesVal: "+6",
+                            },
+                            {
+                                name: "Blizzard Damage",
+                                old: 3280,
+                                new: 3640,
+                                parenthesesVal: "+360",
                             },
                         ]
                     },
@@ -1263,6 +1371,12 @@ const treeOfTechnologyUpgrades = [
                                 parenthesesVal: "+17",
                             },
                             {
+                                name: "Wrath Damage",
+                                old: "615-2459",
+                                new: "750-3000",
+                                parenthesesVal: "+135/+541",
+                            },
+                            {
                                 name: "Attack speed",
                                 new: "+25%",
                             }
@@ -1283,6 +1397,12 @@ const treeOfTechnologyUpgrades = [
                                 old: 94,
                                 new: 100,
                                 parenthesesVal: "+6",
+                            },
+                            {
+                                name: "Blizzard Damage",
+                                old: 3640,
+                                new: 4000,
+                                parenthesesVal: "+360",
                             },
                             {
                                 name: "Attack speed",
@@ -3149,15 +3269,15 @@ export const treeOfLifeUpgrades = [
         description: "Allows you to build structures without a &/elves/buildings/Gold Mine&."
     },
     {
-        img: "/images/elves/upgrades/treeOfLife/techCenter.webp",
-        imgR: "/images/elves/upgrades/treeOfLife/techCenterR.webp",
+        img: "/images/elves/buildings/techCenter.webp",
+        imgR: "/images/elves/buildings/techCenterR.webp",
         name: "Tech Center",
         hotkey: "E",
         description: "<p>Replace the &/elves/buildings/Tree Of Technology& with the &/elves/buildings/Tech Center&.</p><p>The &/elves/buildings/Tech Center& has ^2x2^ size and is built ^+33%^ faster.</p><p class='text-danger'>All player owned &/elves/buildings/Tree Of Technology& are destroyed and refunded when you choose this talent.</p>"
     },
     {
-        img: "/images/elves/upgrades/treeOfLife/barracks.webp",
-        imgR: "/images/elves/upgrades/treeOfLife/barracksR.webp",
+        img: "/images/elves/buildings/barracks.webp",
+        imgR: "/images/elves/buildings/barracksR.webp",
         name: "Barracks",
         hotkey: "R",
         description: "<p>Replace the &/elves/buildings/Tree Of War& with the &/elves/buildings/Barracks&.</p><p>The &/elves/buildings/Barracks& has ^2x2^ size and is built ^+33%^ faster.</p><p class='text-danger'>All player owned &/elves/buildings/Tree Of War& are destroyed and refunded when you choose this talent.</p>"
@@ -3552,4 +3672,32 @@ export const elvesBuildings = [
             }
         ]
     },
-]; //TODO check if other buildings in game
+    {
+        img: "/images/elves/buildings/barracks.webp",
+        imgR: "/images/elves/buildings/barracksR.webp",
+        name: "Barracks",
+        team: "elves",
+        type: "buildings",
+        hotkey: "R",
+        gold: 30,
+        feed: "12-24",
+        stats: {
+            "Health": 40,
+        },
+        description: "Replaces the &/elves/buildings/Tree Of War&, has *2x2* size and is built ^33%^ faster. Visit the &/elves/buildings/Tree Of War& page for more information.",
+    },
+    {
+        img: "/images/elves/buildings/techCenter.webp",
+        imgR: "/images/elves/buildings/techCenterR.webp",
+        name: "Tech Center",
+        team: "elves",
+        type: "buildings",
+        hotkey: "C",
+        description: "Replaces the &/elves/buildings/Tree Of Technology&, has *2x2* size and is built ^33%^ faster. Visit the &/elves/buildings/Tree Of Technology& page for more information.",
+        gold: 40,
+        feed: "16-32",
+        stats: {
+            "Health": 40,
+        },
+    },
+];

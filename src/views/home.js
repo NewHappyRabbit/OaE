@@ -5,6 +5,43 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 const news = [
     {
+        title: "Added missing info",
+        date: "07.10.2023",
+        content: `
+        <h4 class="text-yellow">Whats fixed/added:</h4>
+        <ul>
+            <li>Added General info page: Commands for all types of players</li>
+            <li>Added dividers between different sections for better visibility</li>
+            <li>Wide tables (Tree of Technology and Altar) now have alternating colors for columns, instead of rows</li>
+            <li>Some units names were not showing as links on mobile</li>
+            <li>Tenacity: Added damage increases for the abilities of Ent and Druid</li>
+            <li>Elves buildings: &/elves/buildings/Tech Center&, &/elves/buildings/Barracks&</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">Known issues or wrong info:</h4>
+        <ul>
+            <li>Orcs spell *Scryer*: icon missing</li>
+            <li>*Blocker*: description</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">Here's whats coming soon:</h4>
+        <ul>
+            <li>General info page: F1 menu explained</li>
+            <li>Add content table at the top of every unit/building page, where you can click a ability/upgrade and have the website scroll it into view.</li>
+            <li>Elves and orcs: tips for units, buildings, upgrades, etc.</li>
+            <li>Elves units: better description</li>
+            <li>*Tree of Technology*: Description for main upgrades.</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">New things coming for the website:</h4>
+        <ul>
+            <li>Major design overhaul</li>
+            <li>Custom borders for tables</li>
+            <li>Ability for verified members to upload a photo of the scoreboard after a match and have it converted & saved as data that can be used for stats and game history (balance check)</li>
+        </ul>
+        `
+    },
+    {
         title: "Known issues fix",
         date: "06.10.2023",
         content: `

@@ -9,6 +9,7 @@ export const elvesUnits = [
         team: "elves",
         type: "units",
         description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.", //TODO
+        feed: "Hit: 30 / Kill: 20",
         externalUpgrades: [
             {
                 name: "Tree of Technology",
@@ -26,7 +27,8 @@ export const elvesUnits = [
             "Attack Damage": 80,
             "Move speed": 250,
             "Health": 20,
-            //TODO
+            "Attack Range": 300,
+            "Attack Speed": 2.5
         },
         abilities: spellBookAbilities,
 
@@ -349,7 +351,7 @@ export const elvesUnits = [
         name: "Ancient",
         team: "elves",
         type: "units",
-        feed: "", //TODO
+        feed: "12-24",
         description: "<p>@This unit is not trainable!@</p><p>$Morphs from &/elves/units/Ent&.$</p><p>The &/elves/units/Ancient& is larger than the &/elves/units/Ent&, making it the perfect unit to trap your enemies. He is also slower and cannot &/elves/units/Ent#Burrow&.</p>",
         transformsTo: [
             "Ent"
@@ -358,7 +360,7 @@ export const elvesUnits = [
             "Attack Damage": 18,
             "Attack Speed": 2.0,
             "Attack Range": 128,
-            "Move speed": 190, // TODO CHANGE
+            "Move speed": 140,
             "Health": 50
         },
         abilities: [

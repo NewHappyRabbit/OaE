@@ -1,9 +1,10 @@
 import page from 'page';
 import './css/global.css';
-import { unitsPage } from './views/units.js';
+import { unitsPage } from './views/teams/units/units.js';
 import { homePage } from './views/home';
 import { renderNav } from './views/navbar';
-import { selectTeamPage, teamPage } from './views/teams';
+import { selectTeamPage, teamPage } from './views/teams/teams';
+import { generalPage } from './views/general/general';
 
 export const container = document.getElementById('container'); // where to render everything
 export const deviceMobile = window.innerWidth < 768; // used for rendering responsive design templates
@@ -30,6 +31,7 @@ function scrollToView() {
 renderNav();
 
 page('/', homePage, scrollToView);
+page('/general', generalPage, scrollToView)
 page('/teams', selectTeamPage, scrollToView);
 page('/orcs', teamPage, scrollToView);
 page('/elves', teamPage, scrollToView);

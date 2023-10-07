@@ -1,9 +1,8 @@
-import '../css/units.css';
-import { html, render } from 'lit-html'
+import { html, render } from 'lit-html';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
-import { container, deviceMobile } from '../app';
-import { markers, rmvSpc } from '../utilities';
-import { teams } from './teams';
+import { container, deviceMobile } from '../../../app';
+import { markers, rmvSpc } from '../../../utilities';
+import { teams } from '../teams';
 
 // This is the main Units and Buildings page template
 export function unitsPage(ctx, next) {
@@ -20,9 +19,9 @@ export function unitsPage(ctx, next) {
 
     document.title = `OaE - ${selectedEntity.name}`;
 
-    const unitTable = (entities) => html`
-        <div class="mb-5">
-            <div class="tableWrapper customTableWrapper">
+    // Use this when I make it work right
+    const unitTableCustom = (entities) => html`
+        <div class="tableWrapper customTableWrapper">
                 <div class="customTopBorder"></div>
                 <div class="customRightBorder"></div>
                 <div class="customBottomBorder"></div>
@@ -32,6 +31,13 @@ export function unitsPage(ctx, next) {
                 <div class="customBottomLeftBorder"></div>
                 <div class="customBottomRightBorder"></div>
                 <table class="table w-auto customTable customTableAlternateRows" data-bs-theme="dark">
+                    ..........
+    `
+
+    const unitTable = (entities) => html`
+        <div class="mb-5">
+            <div class="tableWrapper">
+                <table class="table w-auto table-striped table-hover" data-bs-theme="dark">
                     <thead>
                         <tr>
                             <th class="text-center">Classic</th>
@@ -76,7 +82,7 @@ export function unitsPage(ctx, next) {
                     </div>
                     <div class="mt-2">
                         <h2 class="text-center text-green">
-                            ${entity.name}
+                            ${unsafeHTML(markers(entity.name))}
                             ${entity.hotkey ? html`<span class="hotkey">(${entity.hotkey})</span>` : entity.passive === true ? html`<span class="text-purple">(Passive)</span>` : ""}
                         </h2>
                             ${entity.mana ? html`<p class="text-blue mb-0">Mana: ${entity.mana}</p>` : ""}
@@ -136,7 +142,7 @@ export function unitsPage(ctx, next) {
                 <h4 class="mt-3">${mainUpgrade.name} ${mainUpgrade.hotkey ? html`(<span class="text-purple">${mainUpgrade.hotkey}</span>)` : ""}</h4>
                 ${mainUpgrade.description ? html`<p>${unsafeHTML(markers(mainUpgrade.description))}</p>` : ""}
                 <div class="tableWrapper wideTable">
-                    <table class="table table-striped table-hover mb-0 w-auto" data-bs-theme="dark">
+                    <table class="table table-striped-columns mb-0 w-auto" data-bs-theme="dark">
                         <tr>
                             <th class="text-center">Level</th>
                             ${mainUpgrade.upgrades.map(upgrade => html`
@@ -185,6 +191,7 @@ export function unitsPage(ctx, next) {
                     </table>
                 </div>
             </div>
+            <hr class="mt-5 mb-5">
             `})}
         </div>
     `;
@@ -234,6 +241,7 @@ export function unitsPage(ctx, next) {
             </div>
         </div>
         ${entity.abilities ? html`
+            <hr class="mt-5 mb-5">
             <h2 class="text-yellow">Abilities</h2>
             ${selectedTeam.name === 'orcs' && entity.type === 'units' ? html`
             <p class="fs-3 text-red">All orc abilities below will display cooldown and stats like this: <span class="text-yellow">X/Y</span>, where <span class="text-yellow">X is Morph Level 1</span> and <span class="text-yellow">Y is Morph Level 2</span>!</p>
@@ -243,11 +251,13 @@ export function unitsPage(ctx, next) {
         ` : ""}
 
         ${entity.upgrades ? html`
+            <hr class="mt-5 mb-5">
             <h2 class="text-yellow mt-3">Upgrades</a></h2>
             ${deviceMobile ? unitTableMobile(entity.upgrades) : unitTable(entity.upgrades)}
         ` : ""}
 
         ${entity.upgradesFromBuilding?.map(building => html`
+            <hr class="mt-5 mb-5">
             <h2 class="text-yellow mt-3">Upgrades from <a href=${building.url}>${building.name}</a></h2>
             ${deviceMobile ? unitTableMobile(building.upgrades) : unitTable(building.upgrades)}
         `)}
@@ -255,7 +265,8 @@ export function unitsPage(ctx, next) {
         ${entity.upgradesSeparated ? wideUpgradesTable(entity.upgradesSeparated) : ""}
 
         ${entity.externalUpgrades?.map(upgrade => html`
-                <p class="fw-bold text-green fs-5 mt-5">This ${entity.type === 'units' ? 'unit' : 'building'} can get additional upgrades for health, armor, etc. from the <a href=${upgrade.url}>${upgrade.name}</a>!</p>
+            <hr class="mt-5 mb-5">
+            <p class="fw-bold text-green fs-5 mt-5">This ${entity.type === 'units' ? 'unit' : 'building'} can get additional upgrades for health, armor, etc. from the <a href=${upgrade.url}>${upgrade.name}</a>!</p>
         `)}
     `;
 

@@ -50,8 +50,7 @@ export const spellBookAbilities = [
         name: "Recycle",
         hotkey: "S",
         mana: "25/15/10",
-        cooldown: "", //TODO Check if it has
-        description: "<p>^Level 1^: Select a player owned unit or structure to sell. The target takes damage over time until it's killed and up to ^50%^ of the total building cost is returned over ^5^ seconds. %%(Requires &/elves/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Select a player owned unit or structure to sell. The target takes damage over time until it's killed and up to ^75%^ of the total building cost is returned over ^4^ seconds. %%(Requires &/elves/buildings/treeOfTechnology#Magic& *3*)%%</p><p>^Level 13^: Select a player owned unit or structure to sell. The target takes damage over time until it's killed and up to ^100%^ of the total building cost is returned over ^3^ seconds. %%(Requires &/elves/buildings/treeOfTechnology#Magic& *5*)%%</p>" //TODO Check if unit gives refund
+        description: "<p>^Level 1^: Select a player owned unit or structure to sell. The target takes damage over time until it's killed and up to ^50%^ of the total building cost is returned over ^5^ seconds. %%(Requires &/elves/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Select a player owned unit or structure to sell. The target takes damage over time until it's killed and up to ^75%^ of the total building cost is returned over ^4^ seconds. %%(Requires &/elves/buildings/treeOfTechnology#Magic& *3*)%%</p><p>^Level 13^: Select a player owned unit or structure to sell. The target takes damage over time until it's killed and up to ^100%^ of the total building cost is returned over ^3^ seconds. %%(Requires &/elves/buildings/treeOfTechnology#Magic& *5*)%%</p>"
     },
     {
         img: "/images/elves/spellbook/divineShield.png",

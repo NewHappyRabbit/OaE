@@ -2,6 +2,7 @@
 @import url("./scroll.css");
 @import url("./tables.css");
 @import url("./nav.css");
+@import url("./units.css");
 /* @import url("./customTable.css"); */
 
 :root {
@@ -121,6 +122,20 @@ td.text-purple {
 .text-dark-purple,
 td.text-dark-purple {
 	color: var(--dark-purple);
+}
+
+/* Page divider */
+hr {
+	opacity: 1;
+	height: 8px;
+	background-image: linear-gradient(
+		90deg,
+		transparent,
+		var(--primary-blue),
+		transparent
+	);
+	border: 0;
+	height: 1px;
 }
 
 .feed {

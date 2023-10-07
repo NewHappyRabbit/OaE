@@ -1,12 +1,11 @@
-import '../css/units.css';
 import { html, render } from 'lit-html'
-import { container } from '../app';
-import { rmvSpc } from '../utilities';
+import { container } from '../../app';
+import { rmvSpc } from '../../utilities';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
-import { elvesBuildings } from './data/elves/buildings';
-import { elvesUnits } from './data/elves/units';
-import { orcsBuildings } from './data/orcs/buildings';
-import { orcsUnits } from './data/orcs/units';
+import { elvesBuildings } from '../data/elves/buildings';
+import { elvesUnits } from '../data/elves/units';
+import { orcsBuildings } from '../data/orcs/buildings';
+import { orcsUnits } from '../data/orcs/units';
 
 export const teams = {
     "orcs": {
@@ -44,7 +43,8 @@ const topRowTemplate = (units) => html`
 export function teamPage(ctx, next) {
     const selectedTeamName = ctx.path.replace('/', '');
 
-    document.title = `OaE - ${teams[selectedTeamName].nameCapitalized}`;
+    document.title = `OaE - ${teams[selectedTeamName].nameCapitalized} `;
+
 
     const teamTemplate = (team) => html`
         <div class="d-flex align-items-center justify-content-center">
@@ -53,12 +53,14 @@ export function teamPage(ctx, next) {
             <img style="transform: rotate(180deg)" src=${team.header}/>
         </div>
 
-        <h2 class="mt-5 text-center">Units</h2>
+        <h2 class="mt-5 text-center text-yellow">Units</h2>
         ${topRowTemplate(team.units, 'units')}
 
-        <h2 class="mt-5 text-center">Buildings</h2>
+        <hr class="mt-5">
+
+        <h2 class="mt-5 text-center text-yellow">Buildings</h2>
         ${topRowTemplate(team.buildings, 'buildings')}
-    `;
+`;
 
     render(teamTemplate(teams[selectedTeamName]), container);
     next();
@@ -67,26 +69,26 @@ export function teamPage(ctx, next) {
 export function selectTeamPage(ctx, next) {
     document.title = "OaE - Teams";
     const selectTeamTemplate = () => html`
-        <h1 class="text-center">Pick your team</h1>
+    <h1 class="text-center"> Pick your team</h1>
         <div class="d-flex justify-content-center">
             <div class="text-center">
-                <img src="/images/header-decoration-gold.png"/>
+                <img src="/images/header-decoration-gold.png" />
                 <h2 class="d-inline">Elves</h2>
-                <img style="transform: rotate(180deg)" src="/images/header-decoration-gold.png"/>
+                <img style="transform: rotate(180deg)" src="/images/header-decoration-gold.png" />
                 <a class="teamFlags" href="/elves">
-                    <img class="d-block m-auto w-50" src="/images/elves/banner.png"/>
+                    <img class="d-block m-auto w-50" src="/images/elves/banner.png" />
                 </a>
             </div>
             <div class="text-center">
-                <img src="/images/header-decoration.png"/>
+                <img src="/images/header-decoration.png" />
                 <h2 class="d-inline">Orcs</h2>
-                <img style="transform: rotate(180deg)" src="/images/header-decoration.png"/>
+                <img style="transform: rotate(180deg)" src="/images/header-decoration.png" />
                 <a class="teamFlags" href="/orcs">
-                    <img class="d-block m-auto w-50" src="/images/orcs/banner.png"/>
+                    <img class="d-block m-auto w-50" src="/images/orcs/banner.png" />
                 </a>
             </div>
         </div>
-    `;
+`;
 
     render(selectTeamTemplate(), container);
     next();
