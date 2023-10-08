@@ -10,6 +10,7 @@ import { ocrPage } from './views/ocr';
 export const container = document.getElementById('container'); // where to render everything
 export const deviceMobile = window.innerWidth < 768; // used for rendering responsive design templates
 
+
 function scrollToView() {
     // Scroll to top
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
