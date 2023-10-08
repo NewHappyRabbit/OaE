@@ -15,6 +15,9 @@ const navBar = () => html`
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item" data-toggle=${deviceMobile ? "collapse" : ""} data-target="#navbarSupportedContent">
+                <a class="nav-link" href="/ocr">OCR Test</a>
+            </li>
+            <li class="nav-item" data-toggle=${deviceMobile ? "collapse" : ""} data-target="#navbarSupportedContent">
                 <a class="nav-link" href="/general">General info</a>
             </li>
             <!-- <li class="nav-item">

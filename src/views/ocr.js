@@ -113,7 +113,11 @@ function btnClick(e) {
 export function ocrPage(ctx, next) {
     const ocrTemplate = () => html`
             <h1 class="text-blue text-center">Screen Recognition TESTING</h1>
+            <p class="fs-3 text-center text-red">WARNING! This is a test only! Upload an image, compare recognized lines of text with the image and mark answer as correct/incorrect. Your answer will be saved in a database</p>
+            <p class="fs-3 text-center text-red">Don't spam, don't lie</p>
             <div class="d-flex flex-column m-auto gap-3 w-50 justify-content-center align-items-center">
+                <div id="btns" class="text-center text-yellow fs-3">
+                </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Upload image to recognize</label>
                     <input @change=${handleInputChange} class="form-control" type="file" accept="image/*">
@@ -130,8 +134,6 @@ export function ocrPage(ctx, next) {
                         <tbody>
                         </tbody>
                     </table>
-                </div>
-                <div id="btns" class="text-center text-yellow fs-3">
                 </div>
             </div>
         `;
