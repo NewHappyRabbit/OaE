@@ -27,6 +27,7 @@ const news = [
         <h4 class="text-yellow mt-5">Here's whats coming soon:</h4>
         <ul>
             <li>General info page: F1 menu explained</li>
+            <li>Analytics</li>
             <li>Add content table at the top of every unit/building page, where you can click a ability/upgrade and have the website scroll it into view.</li>
             <li>Elves and orcs: tips for units, buildings, upgrades, etc.</li>
             <li>Elves units: better description</li>
