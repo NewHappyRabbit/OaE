@@ -1,10 +1,4 @@
-/*!**********************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/global.css ***!
-  \**********************************************************************/
 @import url(https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css);
-/*!**********************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/scroll.css ***!
-  \**********************************************************************/
 ::-webkit-scrollbar {
 	width: 12px;
 }
@@ -29,9 +23,6 @@
 	background-color: var(--orange);
 }
 
-/*!**********************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/tables.css ***!
-  \**********************************************************************/
 td.name {
 	font-size: 20px;
 }
@@ -40,13 +31,15 @@ td.description h4:first-of-type {
 	margin-top: 12px;
 }
 
-/*!*******************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/nav.css ***!
-  \*******************************************************************/
 @media (max-width: 768px) {
 	.navbar-nav li {
 		border-bottom: 1px solid var(--primary-blue);
 	}
+}
+
+.navbar-brand {
+	/* add shadow to text */
+	text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .navbar ul a {
@@ -62,9 +55,6 @@ td.description h4:first-of-type {
 	color: #7289da;
 }
 
-/*!*********************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/units.css ***!
-  \*********************************************************************/
 /* Abilities, units, upgrades icons set size */
 .upgradeImage,
 .unitImage,
@@ -76,6 +66,7 @@ td.description h4:first-of-type {
 /* Main building/unit images (top images) */
 .mainImg {
 	width: 64px;
+	/* max-width: 100%; */
 }
 
 @media (max-width: 768px) {
@@ -139,10 +130,60 @@ td.description h4:first-of-type {
 	filter: brightness(1);
 }
 
-/*!**************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/global.css (1) ***!
-  \**************************************************************************/
+#downloadContainer {
+	position: relative;
+	height: 500px;
+
+	/* Make it take all the space above and to the side (go above container padding) */
+	width: calc(100% + 3rem);
+	margin-left: -1.5rem;
+	margin-top: -1.5rem;
+}
+
+/* Orcs and elves title */
+#downloadContainer h1 {
+	font-size: 8rem;
+	/* add shadow to text */
+	text-shadow: 0px 5px 10px rgba(0, 0, 0, 1);
+}
+
+@media (max-width: 768px) {
+	#downloadContainer {
+		height: 200px;
+		width: calc(100% + 1rem);
+		margin-left: -0.5rem;
+		margin-top: -0.5rem;
+	}
+
+	#downloadContainer h1 {
+		font-size: 4rem;
+	}
+}
+
+#downloadContainer * {
+	z-index: 1;
+}
+
+#downloadContainer:before {
+	content: "";
+	border-radius: 10px;
+	position: absolute;
+	background-image: url(bd38cce1c03f9c9e8baa.jpg);
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	filter: brightness(0.3);
+}
+
 /* @import url("./customTable.css"); */
+
+h1,
+h2 {
+	text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
 
 :root {
 	--yellow: #f6c501;
@@ -307,5 +348,24 @@ hr {
 
 .tableWrapper {
 	overflow-x: auto;
+}
+
+#scrollToTop {
+	display: none;
+	position: fixed;
+	border-radius: 100%;
+	width: 64px;
+	height: 64px;
+	background: var(--blue);
+	color: white;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	font-size: 2rem;
+	opacity: 0.8;
+	transition: opacity 0.1s ease-in-out;
+}
+
+#scrollToTop:hover {
+	opacity: 1;
 }
 

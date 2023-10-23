@@ -3,7 +3,13 @@
 @import url("./tables.css");
 @import url("./nav.css");
 @import url("./units.css");
+@import url("./home.css");
 /* @import url("./customTable.css"); */
+
+h1,
+h2 {
+	text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
 
 :root {
 	--yellow: #f6c501;
@@ -168,4 +174,23 @@ hr {
 
 .tableWrapper {
 	overflow-x: auto;
+}
+
+#scrollToTop {
+	display: none;
+	position: fixed;
+	border-radius: 100%;
+	width: 64px;
+	height: 64px;
+	background: var(--blue);
+	color: white;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	font-size: 2rem;
+	opacity: 0.8;
+	transition: opacity 0.1s ease-in-out;
+}
+
+#scrollToTop:hover {
+	opacity: 1;
 }

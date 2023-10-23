@@ -14,6 +14,22 @@ module.exports = {
                     MiniCssExtractPlugin.loader, 'css-loader'
                 ]
             },
+            {
+                test: /\.(js|jsx|ts|tsx)$/,
+                use: [
+                    {
+                        loader: 'minify-html-literals-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            },
         ]
     },
     output: {
@@ -28,5 +44,8 @@ module.exports = {
         new CompressionPlugin({
             test: /\.js(\?.*)?$/i,
         }),
-    ]
+    ],
+    resolve: {
+        extensions: [".ts", ".js"],
+    }
 };

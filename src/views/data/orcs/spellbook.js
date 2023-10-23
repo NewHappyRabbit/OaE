@@ -1,7 +1,7 @@
 export const spellBookAbilities = [
     {
-        img: "/images/orcs/spellbook/scryer.webp", //TODO Find image
-        imgR: "/images/orcs/spellbook/scryerR.webp",
+        img: "/images/orcs/spellbook/scryer.png",
+        imgR: "/images/orcs/spellbook/scryerR.png",
         name: "Scryer",
         hotkey: "W",
         mana: "25/20/15",

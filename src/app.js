@@ -33,7 +33,7 @@ function scrollToView() {
 renderNav();
 
 page('/', homePage, scrollToView);
-page('/ocr', ocrPage, scrollToView);
+// page('/ocr', ocrPage, scrollToView);
 page('/general', generalPage, scrollToView)
 page('/teams', selectTeamPage, scrollToView);
 page('/orcs', teamPage, scrollToView);

@@ -21,3 +21,21 @@ export function markers(string) {
 export function rmvSpc(string) {
     return string.replaceAll(' ', '');
 }
+
+window.onscroll = function () {
+    switchScrollToTop();
+}
+
+export function switchScrollToTop() {
+    const btn = document.getElementById("scrollToTop");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
+        btn.style.display = "block";
+    else
+        btn.style.display = "none";
+}
+
+export function scrollToTop() {
+    console.log('hi')
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}

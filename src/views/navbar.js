@@ -15,14 +15,8 @@ const navBar = () => html`
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item" data-toggle=${deviceMobile ? "collapse" : ""} data-target="#navbarSupportedContent">
-                <a class="nav-link" href="/ocr">OCR Test</a>
-            </li>
-            <li class="nav-item" data-toggle=${deviceMobile ? "collapse" : ""} data-target="#navbarSupportedContent">
                 <a class="nav-link" href="/general">General info</a>
             </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="/teams">Teams</a>
-            </li> -->
             <li class="nav-item" data-toggle=${deviceMobile ? "collapse" : ""} data-target="#navbarSupportedContent">
                 <a class="nav-link" href="/elves">Elves</a>
             </li>
@@ -32,11 +26,6 @@ const navBar = () => html`
             <li class="nav-item" data-toggle=${deviceMobile ? "collapse" : ""} data-target="#navbarSupportedContent">
                 <a class="nav-link discord-btn"href="https://discord.gg/UdSwB3Pk"><i class="bi bi-discord"></i> Discord</a>
             </li>
-        <!-- //TODO IMPLEMENT SEARCH 
-            <form class="form d-flex gap-3 my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form> -->
     </div>
 `;
 

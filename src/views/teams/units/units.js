@@ -6,6 +6,7 @@ import { teams } from '../teams';
 
 // This is the main Units and Buildings page template
 export function unitsPage(ctx, next) {
+
     const selectedEntityName = ctx.params.name;
     const selectedTeam = teams[ctx.params.team];
     const selectedEntityType = ctx.params.type;
@@ -197,8 +198,8 @@ export function unitsPage(ctx, next) {
     `;
 
     const unitTemplate = (entity) => html`
-        <a href="/${entity.team}" class="btn btn-outline-light d-none d-md-inline fs-5"><i class="bi bi-arrow-left"></i> Return</a>
-
+        <a href="/${entity.team}" class="btn btn-secondary d-none d-md-inline fs-4"><i class="bi bi-arrow-left"></i> Return</a>
+        
         ${deviceMobile ? html`
             <div class="d-flex flex-column align-items-center gap-3 mb-3 justify-content-center">
                 <div class="d-flex align-items-center gap-5 justify-content-center">
@@ -209,11 +210,11 @@ export function unitsPage(ctx, next) {
             </div>
         ` : html`
             <div class="d-flex align-items-center gap-3 mb-3 justify-content-center">
-                <img src=${selectedTeam.header}/>
+                <img src="${selectedTeam.header}"/>
                 <img class="mainImg" src="${entity.img}" class="unitImage" title="Classic Image"/>
                 <img class="mainImg" src="${entity.imgR}" class="unitImage" title="Reforged Image"/>
                 <h1 class="text-blue">${entity.name} ${entity.hotkey ? html`<span class="text-purple">(${entity.hotkey})</span>` : ""}</h1>
-                <img style="transform: rotate(180deg)" src=${selectedTeam.header}/>
+                <img style="transform: rotate(180deg)" src="${selectedTeam.header}"/>
             </div>
         `}
 

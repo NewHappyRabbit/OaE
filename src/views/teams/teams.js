@@ -30,10 +30,9 @@ const topRowTemplate = (units) => html`
     <div class="d-flex flex-wrap justify-content-center gap-4 topRow">
         ${units.map(unit => html`
             <div class="card text-bg-dark p-2">
-                    <a class="text-center" href="/${unit.team}/${unit.type}/${rmvSpc(unit.name)}"><img src=${unit.imgR}></a>
+                    <a class="text-center" href="/${unit.team}/${unit.type}/${rmvSpc(unit.name)}"><img src="${unit.imgR}"></a>
                     <div class="card-body p-0">
                         <a href="/${unit.team}/${unit.type}/${rmvSpc(unit.name)}"><h5 class="card-title text-center">${unit.name}</h5></a>
-                        <!-- TODO ADD small description  <p class="card-text fs-6">${unsafeHTML(unit.description)}</p> -->
                     </div>
             </div>
         `)}
@@ -48,9 +47,9 @@ export function teamPage(ctx, next) {
 
     const teamTemplate = (team) => html`
         <div class="d-flex align-items-center justify-content-center">
-            <img src=${team.header}/>
+            <img src="${team.header}"/>
             <h1 class="m-0">${team.nameCapitalized} team</h2>
-            <img style="transform: rotate(180deg)" src=${team.header}/>
+            <img style="transform: rotate(180deg)" src="${team.header}"/>
         </div>
 
         <h2 class="mt-5 text-center text-yellow">Units</h2>

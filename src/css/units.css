@@ -9,6 +9,7 @@
 /* Main building/unit images (top images) */
 .mainImg {
 	width: 64px;
+	/* max-width: 100%; */
 }
 
 @media (max-width: 768px) {

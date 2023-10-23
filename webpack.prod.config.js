@@ -15,6 +15,22 @@ module.exports = {
                     MiniCssExtractPlugin.loader, 'css-loader'
                 ]
             },
+            {
+                test: /\.(js|jsx|ts|tsx)$/,
+                use: [
+                    {
+                        loader: 'minify-html-literals-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            },
         ]
     },
     output: {
@@ -28,8 +44,11 @@ module.exports = {
         new CompressionPlugin({
             test: /\.js(\?.*)?$/i,
         }),
-        new WebpackObfuscator({
-            rotateStringArray: true
-        }),
-    ]
+        // new WebpackObfuscator({
+        //     rotateStringArray: true
+        // }),
+    ],
+    resolve: {
+        extensions: [".ts", ".js"],
+    }
 };
