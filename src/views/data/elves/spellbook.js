@@ -33,7 +33,7 @@ export const spellBookAbilities = [
         hotkey: "R",
         range: "200/300/400",
         cooldown: "10/8/6",
-        description: "<p>^Level 1^: Heal a friendly unit for ^1^ life per point of mana until the target is fully healed or you run out of mana. %%(Requires &/elves/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Heal a friendly unit for ^1.5^ life per point of mana until the target is fully healed or you run out of mana. The cooldown is reduced to ^4^ seconds when used on a non-worker target. %%(Requires &/elves/buildings/treeOfTechnology#Magic& *2*)%%</p><p>^Level 3^: Heal a friendly unit for ^21.5^ life per point of mana until the target is fully healed or you run out of mana. The cooldown is reduced to ^2^ seconds when used on a non-worker target. %%(Requires &/elves/buildings/treeOfTechnology#Magic& *3*)%%</p>"
+        description: "<p>^Level 1^: Heal a friendly unit for ^1^ life per point of mana until the target is fully healed or you run out of mana. %%(Requires &/elves/buildings/treeOfTechnology#Magic& *1*)%%</p><p>^Level 2^: Heal a friendly unit for ^1.5^ life per point of mana until the target is fully healed or you run out of mana. The cooldown is reduced to ^4^ seconds when used on a non-worker target. %%(Requires &/elves/buildings/treeOfTechnology#Magic& *2*)%%</p><p>^Level 3^: Heal a friendly unit for ^21.5^ life per point of mana until the target is fully healed or you run out of mana. The cooldown is reduced to ^2^ seconds when used on a non-worker target. Removes most debuffs from the target. %%(Requires &/elves/buildings/treeOfTechnology#Magic& *3*)%%</p>"
     },
     {
         img: "/images/elves/spellbook/freeze.webp",

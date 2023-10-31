@@ -5,6 +5,38 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 const news = [
     {
+        title: "New map update 1.7.5",
+        date: "31.10.2023",
+        content: `
+        <h4 class="text-yellow">Whats fixed/added:</h4>
+        <ul>
+            <li>Added a new Map page in the navigation bar. This page will contain map patch notes and download links.</li>
+            <li>Added F1 menu items explanation.</li>
+            <li>Current page is marked in yellow now in navigation menu.</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">Known issues or wrong info:</h4>
+        <ul>
+            <li>None</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">Here's whats coming soon:</h4>
+        <ul>
+            <li>Analytics</li>
+            <li>Add content table at the top of every unit/building page, where you can click a ability/upgrade and have the website scroll it into view.</li>
+            <li>Elves and orcs: tips for units, buildings, upgrades, etc.</li>
+            <li>Elves units: better description</li>
+            <li>*Tree of Technology*: Description for main upgrades.</li>
+        </ul>
+
+        <h4 class="text-yellow mt-5">New things coming for the website:</h4>
+        <ul>
+            <li>Custom borders for tables</li>
+            <li>Ability for verified members to upload a photo of the scoreboard after a match and have it converted & saved as data that can be used for stats and game history (balance check)</li>
+        </ul>
+        `
+    },
+    {
         title: "Missing icons, download link",
         date: "23.10.2023",
         content: `
@@ -217,9 +249,9 @@ export function homePage(ctx, next) {
             <div class="text-center">
                 <h1 class="lifecraft text-yellow mb-0">Orcs & Elves</h1>
                 <h3>Created by <span class="text-yellow">Infernium</span></h3>
-                <h3 class="d-none d-md-block">Latest version: <span class="text-yellow">1.7.4</span></h3>
+                <h3 class="d-none d-md-block">Latest version: <span class="text-yellow">1.7.5</span></h3>
             </div>
-            <a download class="fs-2 btn btn-primary d-none d-md-block" href="../../resources/Orcs and Elves IE (Patch 1.7.4p) Winter.w3x">Download <i class="bi bi-download"></i></a>
+            <a class="fs-2 btn btn-primary d-none d-md-block" href="/map">Download <i class="bi bi-download"></i></a>
         </div>
 
         ${newsTemplate(news[0])}

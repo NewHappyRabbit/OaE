@@ -21,3 +21,7 @@
 .navbar .discord-btn {
 	color: #7289da;
 }
+
+.nav-item .nav-link.active {
+	color: var(--yellow);
+}

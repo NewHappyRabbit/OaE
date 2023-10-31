@@ -162,8 +162,17 @@ hr {
 	}
 }
 
-:target > td {
+/* :target > td {
 	animation: highlight 3s ease-in-out;
+} */
+
+.scrolledIntoView,
+.scrolledIntoView > td {
+	animation: highlight 3s ease-in-out;
+}
+
+* {
+	scroll-margin-top: 5rem;
 }
 
 /* Dont let table text overflow on next line (keep text in one line) */

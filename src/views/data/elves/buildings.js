@@ -3378,7 +3378,7 @@ export const elvesBuildings = [
                 gold: 8,
                 feed: "9-18",
                 name: "Stone Blocker",
-                description: "Upgrade &/elves/buildings/Blocker#Big Blocker& to &/elves/buildings/Blocker#Stone Blocker&<ul><li>Health: 154 -> ^264^ (^+110^)</li><li>Feed: 6-12 -> @9-18@</li></ul>"
+                description: "Upgrade &/elves/buildings/Blocker#Big Blocker& to &/elves/buildings/Blocker#Stone Blocker&<ul><li>Health: 154 -> ^277^ (^+123^)</li><li>Feed: 6-12 -> @9-18@</li></ul>"
             },
             {
                 img: "/images/elves/buildings/blocker/redStoneBlocker.webp",

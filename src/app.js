@@ -6,6 +6,7 @@ import { renderNav } from './views/navbar';
 import { selectTeamPage, teamPage } from './views/teams/teams';
 import { generalPage } from './views/general/general';
 import { ocrPage } from './views/ocr';
+import { mapPage } from './views/map';
 
 export const container = document.getElementById('container'); // where to render everything
 export const deviceMobile = window.innerWidth < 768; // used for rendering responsive design templates
@@ -26,15 +27,19 @@ function scrollToView() {
 
         if (!element) return;
 
+        element.classList.add('scrolledIntoView')
+
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 1000);
 }
 
-renderNav();
+// Middleware
+page('*', renderNav);
 
 page('/', homePage, scrollToView);
 // page('/ocr', ocrPage, scrollToView);
 page('/general', generalPage, scrollToView)
+page('/map', mapPage, scrollToView);
 page('/teams', selectTeamPage, scrollToView);
 page('/orcs', teamPage, scrollToView);
 page('/elves', teamPage, scrollToView);

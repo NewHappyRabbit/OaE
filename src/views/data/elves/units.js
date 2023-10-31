@@ -275,7 +275,7 @@ export const elvesUnits = [
                 hotkey: "R",
                 mana: 75,
                 description: "Sleep the target for ^4^ seconds. Sleeping units wake up if they take damage.",
-                cooldown: 10
+                cooldown: 40
             }
         ]
     },

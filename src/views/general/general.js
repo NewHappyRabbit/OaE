@@ -18,7 +18,6 @@ const commandsTemplate = () => html`
 
     <h4 class="text-yellow">Observers commands</h4>
     ${commandsTable(commands.observers)}
-    <hr>
 `;
 
 const commandsTable = (commands) => html`

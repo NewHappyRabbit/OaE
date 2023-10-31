@@ -6,8 +6,8 @@
 ::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 6);
 	background-color: var(--dark-purple);
-	-webkit-border-radius: 0px;
-	border-radius: 0px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 
 /* Handle */

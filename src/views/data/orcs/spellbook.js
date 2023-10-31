@@ -4,7 +4,7 @@ export const spellBookAbilities = [
         imgR: "/images/orcs/spellbook/scryerR.png",
         name: "Scryer",
         hotkey: "W",
-        mana: "25/20/15",
+        mana: "20/15/10",
         cooldown: "60/30/0",
         description: "<p>^Level 1^: Gain vision over ^600^ radius for ^6^ seconds and reveal invisible units. %%(Requires &/orcs/buildings/altar#Conjurer& *1*)%%</p><p>^Level 2^: Gain vision over ^600^ radius for ^8^ seconds and reveal invisible units. The effect persists on workers for up to ^3^ seconds after leaving the area. %%(Requires &/orcs/buildings/altar#Conjurer& *3*)%%</p><p>^Level 3^: Gain vision over ^600^ radius for ^10^ seconds and reveal invisible units. The effect persists on workers for up to ^5^ seconds after leaving the area. All &/elves/units/ElvenWorker#Watching Owl&*s* in the region are dispelled. %%(Requires &/orcs/buildings/altar#Conjurer& *5*)%%</p>"
     },
@@ -14,7 +14,7 @@ export const spellBookAbilities = [
         name: "Corruption",
         hotkey: "E",
         mana: "20/15/10",
-        cooldown: "40/20/0",
+        cooldown: "40/20/2",
         description: "<p>^Level 1^: Spawn a seed of corruption that activates after ^12^ seconds delay, making the area unbuildable for up to ^60^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *1*)%%</p><p>^Level 2^: Spawn a seed of corruption that activates after ^10^ seconds delay, making the area unbuildable for up to ^90^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *3*)%%</p><p>^Level 3^: Spawn a seed of corruption that activates after ^8^ seconds delay, making the area unbuildable for up to ^120^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *5*)%%</p>"
     },
     {
@@ -33,7 +33,7 @@ export const spellBookAbilities = [
         hotkey: "S",
         mana: "50/50/50",
         cooldown: "30/15/0",
-        description: "<p>^Level 1^: Place a turret with ^2^ health at the selected point that activates after ^5^ seconds. Active turrets can attack blockers within ^500^ radius, dealing ^10^ damage per hit. The turret lats up to ^60^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *1*)%%</p><p>^Level 2^: Place a turret with ^3^ health at the selected point that activates after ^5^ seconds. Active turrets can attack blockers within ^500^ radius, dealing ^15^ damage per hit. If no targets are found, the turret will become invisible. The turret lats up to ^90^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *3*)%%</p><p>^Level 3^: Place a turret with ^4^ health at the selected point that activates after ^5^ seconds. Active turrets can attack blockers within ^500^ radius, dealing ^20^ damage per hit. The turrets attack rate is increased by ^50%^ over ^90^ seconds. If no targets are found, the turret will become invisible. The turret lats up to ^120^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *5*)%%</p>"
+        description: "<p>^Level 1^: Place a turret with ^2^ health at the selected point that activates after ^5^ seconds. Active turrets can attack blockers within ^500^ radius, dealing ^10^ damage per hit. The turret lats up to ^60^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *2*)%%</p><p>^Level 2^: Place a turret with ^3^ health at the selected point that activates after ^5^ seconds. Active turrets can attack blockers within ^500^ radius, dealing ^15^ damage per hit. If no targets are found, the turret will become invisible. The turret lats up to ^90^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *3*)%%</p><p>^Level 3^: Place a turret with ^4^ health at the selected point that activates after ^5^ seconds. Active turrets can attack blockers within ^500^ radius, dealing ^20^ damage per hit. The turrets attack rate is increased by ^50%^ over ^90^ seconds. If no targets are found, the turret will become invisible. The turret lats up to ^120^ seconds. %%(Requires &/orcs/buildings/altar#Conjurer& *5*)%%</p>"
     },
     {
         img: "/images/orcs/spellbook/ghost.png",
