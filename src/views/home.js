@@ -5,6 +5,16 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 const news = [
     {
+        title: "New map update 1.8.0a",
+        date: "14.05.2024",
+        content: `
+        <h4 class="text-yellow">Whats fixed/added:</h4>
+        <ul>
+            <li>New map download in /map page</li>
+        </ul>
+        `
+    },
+    {
         title: "New map update 1.7.5",
         date: "31.10.2023",
         content: `
@@ -249,7 +259,7 @@ export function homePage(ctx, next) {
             <div class="text-center">
                 <h1 class="lifecraft text-yellow mb-0">Orcs & Elves</h1>
                 <h3>Created by <span class="text-yellow">Infernium</span></h3>
-                <h3 class="d-none d-md-block">Latest version: <span class="text-yellow">1.7.5</span></h3>
+                <h3 class="d-none d-md-block">Latest version: <span class="text-yellow">1.8.0a</span></h3>
             </div>
             <a class="fs-2 btn btn-primary d-none d-md-block" href="/map">Download <i class="bi bi-download"></i></a>
         </div>

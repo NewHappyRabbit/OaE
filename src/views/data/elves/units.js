@@ -92,9 +92,9 @@ export const elvesUnits = [
         team: "elves",
         type: "units",
         hotkey: "W",
-        gold: 20,
-        supply: 2,
-        feed: "8-16",
+        gold: 40,
+        supply: 3,
+        feed: "15",
         externalUpgrades: [
             {
                 name: "Tree of Technology",
@@ -113,10 +113,10 @@ export const elvesUnits = [
             "Hippogryph Rider"
         ],
         stats: {
-            "Attack Damage": 8,
+            "Attack Damage": 12,
             "Attack Speed": 1.0,
             "Attack Range": 600,
-            "Move speed": 250,
+            "Move speed": 240,
             "Health": 20
         },
         abilities: [
@@ -285,8 +285,10 @@ export const elvesUnits = [
         name: "Hippogryph",
         team: "elves",
         type: "units",
-        description: "<p>@This unit is not trainable!@</p><p>$Morphs from &/elves/units/Owl Scout&.$</p>The hippogryph is a ferocious flying predator that weakens the target by reducing its move speed. They are most effective when used in large packs to chase down injured foes or to kill isolated enemies.",
-        feed: "16-32",
+        description: "The hippogryph is a ferocious flying predator that weakens the target by reducing its move speed. They are most effective when used in large packs to chase down injured foes or to kill isolated enemies.",
+        feed: "30",
+        supply: 3,
+        gold: 60,
         externalUpgrades: [
             {
                 name: "Tree of Technology",
@@ -294,11 +296,11 @@ export const elvesUnits = [
             }
         ],
         stats: {
-            "Attack Damage": 4,
+            "Attack Damage": 12,
             "Attack Speed": 1.0,
             "Attack Range": 750,
-            "Move speed": 300,
-            "Health": 50
+            "Move speed": 280,
+            "Health": 40
         },
         transformsTo: [
             "Owl Scout",

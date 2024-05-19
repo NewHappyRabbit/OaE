@@ -47,5 +47,5 @@ page('/:team/:type/:name', unitsPage, scrollToView);
 // page('/:team/units/:name', entityPage, scrollToView);
 // page('/:team/buildings/:name', entityPage, scrollToView);
 
-page('*', () => page('/')); // Everything else, redirect to home page
+// page('*', () => page('/')); // Everything else, redirect to home page
 page();
